@@ -154,18 +154,18 @@ function estimatePlayerMetrics(player, season) {
   return null;
 }
 
-// 82-0 benchmarks scaled for Kentucky college dataset (5x 90th percentile)
+// Benchmarks calibrated from 30 national champions (1996-2026)
 const BENCHMARKS = {
-  pts: 78.5,
-  reb: 36,
-  ast: 16,
-  stl: 6.5,
-  blk: 5.5,
+  pts: 80.8,
+  reb: 39,
+  ast: 16.5,
+  stl: 7.7,
+  blk: 5.0,
 };
 
 const STAT_WEIGHTS = {
-  pts: 0.46,
-  reb: 0.25,
+  pts: 0.44,
+  reb: 0.27,
   ast: 0.18,
   stl: 0.07,
   blk: 0.04,
@@ -187,11 +187,11 @@ function adjustDefensiveStats(picks) {
 
 function getStrengthsAndWeaknesses(totals) {
   const thresholds = {
-    pts: { benchmark: 78.5, strengthPct: 0.88, weaknessPct: 0.58, strong: 'Elite Scoring', weak: 'Offensive Struggles' },
-    reb: { benchmark: 36,   strengthPct: 0.88, weaknessPct: 0.58, strong: 'Dominant Rebounding', weak: 'Rebounding Issues' },
-    ast: { benchmark: 16,   strengthPct: 0.85, weaknessPct: 0.55, strong: 'Great Ball Movement', weak: 'Ball Movement Issues' },
-    stl: { benchmark: 6.5,  strengthPct: 0.82, weaknessPct: 0.50, strong: 'Disruptive Defense', weak: 'Lack of Defensive Pressure' },
-    blk: { benchmark: 5.5,  strengthPct: 0.80, weaknessPct: 0.45, strong: 'Strong Rim Protection', weak: 'Weak Rim Protection' },
+    pts: { benchmark: 80.8, strengthPct: 0.88, weaknessPct: 0.58, strong: 'Elite Scoring', weak: 'Offensive Struggles' },
+    reb: { benchmark: 39,   strengthPct: 0.88, weaknessPct: 0.58, strong: 'Dominant Rebounding', weak: 'Rebounding Issues' },
+    ast: { benchmark: 16.5, strengthPct: 0.85, weaknessPct: 0.55, strong: 'Great Ball Movement', weak: 'Ball Movement Issues' },
+    stl: { benchmark: 7.7,  strengthPct: 0.82, weaknessPct: 0.50, strong: 'Disruptive Defense', weak: 'Lack of Defensive Pressure' },
+    blk: { benchmark: 5.0,  strengthPct: 0.80, weaknessPct: 0.45, strong: 'Strong Rim Protection', weak: 'Weak Rim Protection' },
   };
 
   const strengths = [];
