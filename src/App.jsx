@@ -992,7 +992,7 @@ function PlayingScreen({
                 disabled={!selectedPosition}
                 className="mt-3 w-full py-3 rounded-lg bg-green-600 hover:bg-green-500 disabled:opacity-50 disabled:cursor-not-allowed font-bold text-sm transition-all"
               >
-                Lock Into {selectedPosition || 'Position'}
+                Assign to {selectedPosition || 'Position'}
               </button>
             </div>
           )}
@@ -1360,7 +1360,7 @@ export default function App() {
       <header className="sticky top-0 z-50 bg-[#0a0c14]/90 backdrop-blur border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-blue-400 text-lg">🏀</span>
+            <img src="/logo.png" alt="Big Blue Roulette" className="h-8 w-8 object-contain" />
             <span className="font-black text-white tracking-tight">BIG BLUE ROULETTE</span>
           </div>
           {phase === 'playing' && (
