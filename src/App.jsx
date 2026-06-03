@@ -996,6 +996,43 @@ function PlayingScreen({
               </button>
             </div>
           )}
+
+          {/* Compact lineup indicator */}
+          <div className="mt-6 flex justify-center gap-3 sm:gap-4">
+            {POSITIONS.map((position) => {
+              const pick = lineup[position];
+              const initials = pick ? pick.playerName.split(' ').map(n => n[0]).join('') : '';
+              const positionColor = {
+                PG: '#3b82f6',
+                SG: '#a855f7',
+                SF: '#22c55e',
+                PF: '#f97316',
+                C: '#ef4444'
+              }[position];
+
+              return (
+                <div key={position} className="flex flex-col items-center gap-1">
+                  <div
+                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center border-2 transition-all ${
+                      pick
+                        ? 'bg-white/10 border-white/30'
+                        : 'bg-white/5 border-dashed border-white/20'
+                    }`}
+                    style={pick ? { borderColor: positionColor } : {}}
+                  >
+                    {pick ? (
+                      <span className="text-white font-bold text-sm sm:text-base">{initials}</span>
+                    ) : (
+                      <span className="text-white/50 text-xs sm:text-sm font-semibold">{position}</span>
+                    )}
+                  </div>
+                  <span className={`text-xs font-semibold ${pick ? 'text-white' : 'text-white/40'}`}>
+                    {position}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </section>
 
         {/* Lineup panel */}
