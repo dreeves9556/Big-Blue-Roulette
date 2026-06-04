@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { allSeasons, players, POSITIONS, POSITION_LABELS, seasonPlayersMap } from './data/players.js';
 import { playerSeasonStatsById } from './data/playerSeasonStats.js';
-import { ChevronRight, Download, Link2, RotateCcw, Shuffle, Sparkles, Trophy, Hash, MapPin, HelpCircle } from 'lucide-react';
+import { ChevronRight, Download, Link2, RotateCcw, Shuffle, Sparkles, Trophy, Hash, MapPin, HelpCircle, Users, Calculator, ArrowLeft } from 'lucide-react';
 import './App.css';
 import JerseyGame from './components/JerseyGame.jsx';
 import HometownGame from './components/HometownGame.jsx';
 import TwentyQuestionsGame from './components/TwentyQuestionsGame.jsx';
+import LineupBuilder from './components/LineupBuilder.jsx';
 
 const POSITION_FLEXIBILITY = {
   PG: ['PG', 'SG'],
@@ -511,7 +512,167 @@ function IntroScreen({ onStart }) {
           <HelpCircle className="w-4 h-4" />
           20 Questions Mini-Game
         </button>
+        <button
+          onClick={() => onStart('lineupbuilder')}
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-teal-600/20 hover:bg-teal-600/30 border border-teal-500/30 active:scale-95 text-teal-200 font-bold rounded-xl transition-all duration-150"
+        >
+          <Users className="w-4 h-4" />
+          Dream Lineup Builder
+        </button>
+        <div className="h-px bg-white/10 my-2" />
+        <button
+          onClick={() => onStart('howitworks')}
+          className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-white/5 hover:bg-white/10 border border-white/15 active:scale-95 text-gray-300 font-semibold rounded-xl transition-all duration-150"
+        >
+          <Calculator className="w-4 h-4" />
+          How the Algorithm Works
+        </button>
       </div>
+    </div>
+  );
+}
+
+function StatRow({ label, weight, benchmark, color }) {
+  return (
+    <div className="flex items-center gap-3 rounded-lg bg-black/25 border border-white/10 px-3 py-2.5">
+      <div className={`text-xs font-bold w-12 ${color}`}>{label}</div>
+      <div className="flex-1">
+        <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+          <div className={`h-full ${color.replace('text-', 'bg-')}`} style={{ width: `${weight * 100}%` }} />
+        </div>
+      </div>
+      <div className="text-xs text-gray-300 font-semibold w-10 text-right">{Math.round(weight * 100)}%</div>
+      <div className="text-[11px] text-gray-500 w-24 text-right">champ avg {benchmark}</div>
+    </div>
+  );
+}
+
+function HowItWorks({ onBack }) {
+  return (
+    <div className="w-full max-w-2xl mx-auto flex flex-col gap-6 animate-fadeIn">
+      <button
+        type="button"
+        onClick={onBack}
+        className="self-start inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all"
+      >
+        <ArrowLeft className="w-4 h-4" />
+        Back to menu
+      </button>
+
+      <div className="text-center">
+        <div className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-3">
+          <Calculator className="w-3.5 h-3.5" /> Under the Hood
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">How the Algorithm Works</h1>
+        <p className="mt-2 text-gray-400 text-sm max-w-lg mx-auto leading-relaxed">
+          At its heart, Big Blue Roulette is a math game. You're not really coaching, you're
+          trying to assemble five real Kentucky seasons whose <span className="text-white font-semibold">combined box-score numbers</span> add up to a championship-caliber team.
+        </p>
+      </div>
+
+      {/* Step 1: the raw numbers */}
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-left flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-black">1</span>
+          <div className="text-sm font-bold text-white uppercase tracking-widest">Each player brings real stats</div>
+        </div>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Every pick uses that player's <span className="text-white font-semibold">actual per-game numbers</span> from the season you drafted
+          him: points, rebounds, assists, steals, and blocks. Older seasons (pre-1980) are nudged with a small era
+          adjustment, and missing steal/block data is estimated from the player's position. Your five starters' stats
+          are then <span className="text-white font-semibold">added together</span> into one team line.
+        </p>
+      </div>
+
+      {/* Step 2: weighting */}
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-left flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-black">2</span>
+          <div className="text-sm font-bold text-white uppercase tracking-widest">Stats are weighted &amp; scored</div>
+        </div>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          Not every stat matters equally. Your team total in each category is compared against the
+          <span className="text-white font-semibold"> average of 30 national champions</span> (1996&ndash;2026), then blended together
+          using these weights to produce a single <span className="text-white font-semibold">Team Strength rating</span>:
+        </p>
+        <div className="flex flex-col gap-2 mt-1">
+          <StatRow label="PTS" weight={STAT_WEIGHTS.pts} benchmark={BENCHMARKS.pts} color="text-blue-300" />
+          <StatRow label="REB" weight={STAT_WEIGHTS.reb} benchmark={BENCHMARKS.reb} color="text-green-300" />
+          <StatRow label="AST" weight={STAT_WEIGHTS.ast} benchmark={BENCHMARKS.ast} color="text-purple-300" />
+          <StatRow label="STL" weight={STAT_WEIGHTS.stl} benchmark={BENCHMARKS.stl} color="text-orange-300" />
+          <StatRow label="BLK" weight={STAT_WEIGHTS.blk} benchmark={BENCHMARKS.blk} color="text-red-300" />
+        </div>
+        <p className="text-xs text-gray-500 leading-relaxed mt-1">
+          Scoring carries the most weight, then rebounding and playmaking. Steals and blocks matter least, but a
+          team with zero rim protection still gets dinged.
+        </p>
+      </div>
+
+      {/* Step 3: wins */}
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-left flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-black">3</span>
+          <div className="text-sm font-bold text-white uppercase tracking-widest">Strength becomes a record</div>
+        </div>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          That Team Strength rating is mapped onto a <span className="text-white font-semibold">40-game season</span>. The closer you get
+          to a perfect, balanced champion line, the more wins you bank, which sets your tournament tier:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+          {[
+            { w: '40 W', t: 'National Champions', c: 'text-yellow-300' },
+            { w: '35+ W', t: 'Final Four', c: 'text-green-300' },
+            { w: '30+ W', t: 'Elite Eight', c: 'text-blue-300' },
+            { w: '28+ W', t: 'Sweet Sixteen', c: 'text-purple-300' },
+            { w: '24+ W', t: 'First Round', c: 'text-orange-300' },
+            { w: '20+ W', t: 'Bubble Team', c: 'text-orange-400' },
+            { w: '< 20 W', t: 'Missed Tournament', c: 'text-red-400' },
+          ].map((row) => (
+            <div key={row.t} className="flex items-center justify-between rounded-lg bg-black/25 border border-white/10 px-3 py-2">
+              <span className="text-xs text-gray-400 font-semibold">{row.w}</span>
+              <span className={`text-xs font-bold ${row.c}`}>{row.t}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Step 4: positions */}
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-left flex flex-col gap-3">
+        <div className="flex items-center gap-2">
+          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white text-xs font-black">4</span>
+          <div className="text-sm font-bold text-white uppercase tracking-widest">Why natural position matters</div>
+        </div>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          A player's <span className="text-yellow-300 font-semibold">★ natural position</span> is where he actually played. You can slide him to
+          an adjacent spot (a point guard can play the two; a power forward can play the three or center), but a
+          player taller than 6&apos;9&quot; can&apos;t be jammed into a guard slot.
+        </p>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          The real lesson is <span className="text-white font-semibold">balance</span>. Each position naturally supplies different numbers, guards
+          pile up assists and steals, forwards and centers own the glass and block shots. Stack five high scorers
+          who can&apos;t rebound and your champion-average comparison falls apart in REB and BLK. A complete, well-rounded
+          five almost always out-scores a lopsided collection of stars.
+        </p>
+      </div>
+
+      {/* The honest caveat */}
+      <div className="bg-amber-500/5 border border-amber-500/25 rounded-2xl p-5 text-left flex flex-col gap-2">
+        <div className="text-sm font-bold text-amber-300 uppercase tracking-widest">A note on nuance</div>
+        <p className="text-sm text-gray-300 leading-relaxed">
+          It&apos;s genuinely hard to code the nuance that makes a great player great, leadership, clutch shot-making,
+          on-ball defense, locker-room fit, or how two stars actually mesh on the floor. A box score can&apos;t capture
+          all of that. So treat this as what it is: a fun <span className="text-white font-semibold">math game</span> about building the most
+          balanced, statistically complete team you can from Kentucky&apos;s history, not the final word on who was truly best.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        onClick={onBack}
+        className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150"
+      >
+        Got it, let&apos;s draft
+      </button>
     </div>
   );
 }
@@ -1325,7 +1486,17 @@ export default function App() {
       setPhase('twentyquestions');
       return;
     }
-    
+
+    if (mode === 'lineupbuilder') {
+      setPhase('lineupbuilder');
+      return;
+    }
+
+    if (mode === 'howitworks') {
+      setPhase('howitworks');
+      return;
+    }
+
     const normalizedMode = mode === 'classic' ? 'classic' : 'hoopIQ';
     setGameMode(normalizedMode);
     setLineup(EMPTY_LINEUP);
@@ -1455,6 +1626,10 @@ export default function App() {
         {phase === 'hometown' && <HometownGame onBack={() => setPhase('intro')} />}
 
         {phase === 'twentyquestions' && <TwentyQuestionsGame onBack={() => setPhase('intro')} />}
+
+        {phase === 'lineupbuilder' && <LineupBuilder onBack={() => setPhase('intro')} />}
+
+        {phase === 'howitworks' && <HowItWorks onBack={() => setPhase('intro')} />}
 
         {phase === 'shared' && sharedPayload && (
           <SharedLineup payload={sharedPayload} onStartNew={startGame} />
