@@ -1486,9 +1486,9 @@ export default function App() {
             href="https://www.buymeacoffee.com/danielt279y"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-gray-200 text-xs font-medium"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/8 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all text-gray-300 hover:text-white text-sm font-semibold shadow-sm"
           >
-            <span>☕</span> Buy me a coffee
+            <span className="text-base">☕</span> Buy me a coffee
           </a>
         </div>
       </footer>
