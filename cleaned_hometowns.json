@@ -1,0 +1,698 @@
+[
+  {
+    "id": "allen_ermal",
+    "fullName": "Ermal Allen",
+    "hometown": {
+      "city": "Morristown",
+      "state": "New Jersey"
+    }
+  },
+  {
+    "id": "anderson_dwight",
+    "fullName": "Dwight Anderson",
+    "hometown": {
+      "city": "Dayton",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "andrews_jim",
+    "fullName": "Jim Andrews",
+    "hometown": {
+      "city": "Lima",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "barker_cliff",
+    "fullName": "Cliff Barker",
+    "hometown": {
+      "city": "Yorktown",
+      "state": "Virginia"
+    }
+  },
+  {
+    "id": "barnstable_dale",
+    "fullName": "Dale Barnstable",
+    "hometown": {
+      "city": "Antioch",
+      "state": "Tennessee"
+    }
+  },
+  {
+    "id": "beal_dicky",
+    "fullName": "Dicky Beal",
+    "hometown": {
+      "city": "Covington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "beck_ed",
+    "fullName": "Ed Beck",
+    "hometown": {
+      "city": "Fort Valley",
+      "state": "Georgia"
+    }
+  },
+  {
+    "id": "bennett_winston",
+    "fullName": "Winston Bennett",
+    "hometown": {
+      "city": "Louisville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "bird_jerry",
+    "fullName": "Jerry Bird",
+    "hometown": {
+      "city": "Corbin",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "blackmon_james",
+    "fullName": "James Blackmon",
+    "hometown": {
+      "city": "Marion",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "brassow_jeff",
+    "fullName": "Jeff Brassow",
+    "hometown": {
+      "city": "Houston",
+      "state": "Texas"
+    }
+  },
+  {
+    "id": "burchett_carroll",
+    "fullName": "Carroll Burchett",
+    "hometown": {
+      "city": "Fuget",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "burrow_bob",
+    "fullName": "Bob Burrow",
+    "hometown": {
+      "city": "Wells",
+      "state": "Minnesota"
+    }
+  },
+  {
+    "id": "casey_dwane",
+    "fullName": "Dwane Casey",
+    "hometown": {
+      "city": "Morganfield",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "casey_mike",
+    "fullName": "Mike Casey",
+    "hometown": {
+      "city": "Simpsonville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "cluggish_marion",
+    "fullName": "Marion Cluggish",
+    "hometown": {
+      "city": "Corbin",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "coffman_bennie",
+    "fullName": "Bennie Coffman",
+    "hometown": {
+      "city": "Huntington",
+      "state": "West Virginia"
+    }
+  },
+  {
+    "id": "cohen_sid",
+    "fullName": "Sid Cohen",
+    "hometown": {
+      "city": "Brooklyn",
+      "state": "New York"
+    }
+  },
+  {
+    "id": "combs_carl",
+    "fullName": "Carl Combs",
+    "hometown": {
+      "city": "Hazard",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "conley_larry",
+    "fullName": "Larry Conley",
+    "hometown": {
+      "city": "Ashland",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "cowan_fred",
+    "fullName": "Fred Cowan",
+    "hometown": {
+      "city": "Sturgis",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "cox_johnny",
+    "fullName": "Johnny Cox",
+    "hometown": {
+      "city": "Hazard",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "crigler_john",
+    "fullName": "John Crigler",
+    "hometown": {
+      "city": "Hebron",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "davender_ed",
+    "fullName": "Ed Davender",
+    "hometown": {
+      "city": "Brooklyn",
+      "state": "New York"
+    }
+  },
+  {
+    "id": "deeken_ted",
+    "fullName": "Ted Deeken",
+    "hometown": {
+      "city": "Louisville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "dent_rodney",
+    "fullName": "Rodney Dent",
+    "hometown": {
+      "city": "Edison",
+      "state": "Georgia"
+    }
+  },
+  {
+    "id": "edwards_allen",
+    "fullName": "Allen Edwards",
+    "hometown": {
+      "city": "Miami",
+      "state": "Florida"
+    }
+  },
+  {
+    "id": "embry_randy",
+    "fullName": "Randy Embry",
+    "hometown": {
+      "city": "Owensboro",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "epps_anthony",
+    "fullName": "Anthony Epps",
+    "hometown": {
+      "city": "Lebanon",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "evans_billy",
+    "fullName": "Billy Evans",
+    "hometown": {
+      "city": "Berea",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "farnsley_keith",
+    "fullName": "Keith Farnsley",
+    "hometown": {
+      "city": "New Albany",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "feldhaus_allen",
+    "fullName": "Allen Feldhaus",
+    "hometown": {
+      "city": "Burlington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "feldhaus_deron",
+    "fullName": "Deron Feldhaus",
+    "hometown": {
+      "city": "Maysville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "gettelfinger_chris",
+    "fullName": "Chris Gettelfinger",
+    "hometown": {
+      "city": "Knoxville",
+      "state": "Tennessee"
+    }
+  },
+  {
+    "id": "groza_alex",
+    "fullName": "Alex Groza",
+    "hometown": {
+      "city": "Martins Ferry",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "harden_roger",
+    "fullName": "Roger Harden",
+    "hometown": {
+      "city": "Valparaiso",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "harrison_chris",
+    "fullName": "Chris Harrison",
+    "hometown": {
+      "city": "Tollesboro",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "heitz_tom",
+    "fullName": "Tom Heitz",
+    "hometown": {
+      "city": "Hamilton",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "hirsch_walter",
+    "fullName": "Walter Hirsch",
+    "hometown": {
+      "city": "Dayton",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "hollenbeck_kent",
+    "fullName": "Kent Hollenbeck",
+    "hometown": {
+      "city": "Knoxville",
+      "state": "Tennessee"
+    }
+  },
+  {
+    "id": "huber_lee",
+    "fullName": "Lee Huber",
+    "hometown": {
+      "city": "Louisville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "jaracz_thad",
+    "fullName": "Thad Jaracz",
+    "hometown": {
+      "city": "Lexington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "jennings_ned",
+    "fullName": "Ned Jennings",
+    "hometown": {
+      "city": "Carlisle",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "johnson_larry",
+    "fullName": "Larry Johnson",
+    "hometown": {
+      "city": "Morganfield",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "jones_wallace",
+    "fullName": "Wallace Jones",
+    "hometown": {
+      "city": "Harlan",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "key_stan",
+    "fullName": "Stan Key",
+    "hometown": {
+      "city": "Hazel",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "king_james",
+    "fullName": "James King",
+    "hometown": {
+      "city": "Sharpe",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "kron_tommy",
+    "fullName": "Tommy Kron",
+    "hometown": {
+      "city": "Tell City",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "lanter_bo",
+    "fullName": "Bo Lanter",
+    "hometown": {
+      "city": "Versailles",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "lee_james",
+    "fullName": "James Lee",
+    "hometown": {
+      "city": "Lexington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "lickert_bill",
+    "fullName": "Bill Lickert",
+    "hometown": {
+      "city": "Lexington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "line_jim",
+    "fullName": "Jim Line",
+    "hometown": {
+      "city": "Akron",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "linville_shelby",
+    "fullName": "Shelby Linville",
+    "hometown": {
+      "city": "Middletown",
+      "state": "Ohio"
+    }
+  },
+  {
+    "id": "lyons_ronnie",
+    "fullName": "Ronnie Lyons",
+    "hometown": {
+      "city": "Maysville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "macy_kyle",
+    "fullName": "Kyle Macy",
+    "hometown": {
+      "city": "Peru",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "martinez_gimel",
+    "fullName": "Gimel Martinez",
+    "hometown": {
+      "city": "Miami",
+      "state": "Florida"
+    }
+  },
+  {
+    "id": "mashburn_jamal",
+    "fullName": "Jamal Mashburn",
+    "hometown": {
+      "city": "Bronx",
+      "state": "New York"
+    }
+  },
+  {
+    "id": "master_jim",
+    "fullName": "Jim Master",
+    "hometown": {
+      "city": "Fort Wayne",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "mcbrayer_paul",
+    "fullName": "Paul McBrayer",
+    "hometown": {
+      "city": "Lawrenceburg",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "mccarty_walter",
+    "fullName": "Walter McCarty",
+    "hometown": {
+      "city": "Evansville",
+      "state": "Indiana"
+    }
+  },
+  {
+    "id": "miller_derrick",
+    "fullName": "Derrick Miller",
+    "hometown": {
+      "city": "Savannah",
+      "state": "Georgia"
+    }
+  },
+  {
+    "id": "mills_don",
+    "fullName": "Don Mills",
+    "hometown": {
+      "city": "Berea",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "mills_terry",
+    "fullName": "Terry Mills",
+    "hometown": {
+      "city": "Barbourville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "minniefield_dirk",
+    "fullName": "Dirk Minniefield",
+    "hometown": {
+      "city": "Lexington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "mohammed_nazr",
+    "fullName": "Nazr Mohammed",
+    "hometown": {
+      "city": "Chicago",
+      "state": "Illinois"
+    }
+  },
+  {
+    "id": "newton_cm",
+    "fullName": "C.M. Newton",
+    "hometown": {
+      "city": "Fort Lauderdale",
+      "state": "Florida"
+    }
+  },
+  {
+    "id": "noel_paul",
+    "fullName": "Paul Noel",
+    "hometown": {
+      "city": "Midway",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "opper_bernie",
+    "fullName": "Bernard Opper",
+    "hometown": {
+      "city": "New York",
+      "state": "New York"
+    }
+  },
+  {
+    "id": "parker_tom",
+    "fullName": "Tom Parker",
+    "hometown": {
+      "city": "Collinsville",
+      "state": "Illinois"
+    }
+  },
+  {
+    "id": "parsons_dick",
+    "fullName": "Dick Parsons",
+    "hometown": {
+      "city": "Yancey",
+      "state": "North Carolina"
+    }
+  },
+  {
+    "id": "payne_tom",
+    "fullName": "Tom Payne",
+    "hometown": {
+      "city": "Louisville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "pelphrey_john",
+    "fullName": "John Pelphrey",
+    "hometown": {
+      "city": "Paintsville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "phillips_mike",
+    "fullName": "Mike Phillips",
+    "hometown": {
+      "city": "Manchester",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "prickett_jared",
+    "fullName": "Jared Prickett",
+    "hometown": {
+      "city": "Fairmont",
+      "state": "West Virginia"
+    }
+  },
+  {
+    "id": "pursiful_larry",
+    "fullName": "Larry Pursiful",
+    "hometown": {
+      "city": "Four Mile",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "riley_pat",
+    "fullName": "Pat Riley",
+    "hometown": {
+      "city": "Schenectady",
+      "state": "New York"
+    }
+  },
+  {
+    "id": "rollins_ken",
+    "fullName": "Ken Rollins",
+    "hometown": {
+      "city": "Wickliffe",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "rouse_layton",
+    "fullName": "Layton Rouse",
+    "hometown": {
+      "city": "Ludlow",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "sale_forest",
+    "fullName": "Forest Sale",
+    "hometown": {
+      "city": "Lawrenceburg",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "simmons_oliver",
+    "fullName": "Oliver Simmons",
+    "hometown": {
+      "city": "Nashville",
+      "state": "Tennessee"
+    }
+  },
+  {
+    "id": "spicer_carey",
+    "fullName": "Carey Spicer",
+    "hometown": {
+      "city": "Lexington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "staker_carl",
+    "fullName": "Carl Staker",
+    "hometown": {
+      "city": "Maysville",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "steele_larry",
+    "fullName": "Larry Steele",
+    "hometown": {
+      "city": "Bainbridge",
+      "state": "Georgia"
+    }
+  },
+  {
+    "id": "tsioropoulos_lou",
+    "fullName": "Lou Tsioropoulos",
+    "hometown": {
+      "city": "Lynn",
+      "state": "Massachusetts"
+    }
+  },
+  {
+    "id": "turpin_melvin",
+    "fullName": "Melvin Turpin",
+    "hometown": {
+      "city": "Lexington",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "watson_bobby",
+    "fullName": "Bobby Watson",
+    "hometown": {
+      "city": "Owensboro",
+      "state": "Kentucky"
+    }
+  },
+  {
+    "id": "white_waller",
+    "fullName": "Waller White",
+    "hometown": {
+      "city": "Lawrenceburg",
+      "state": "Kentucky"
+    }
+  }
+]

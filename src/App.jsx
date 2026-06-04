@@ -1466,7 +1466,7 @@ export default function App() {
         )}
       </main>
 
-      <footer className="mt-8 pb-6 text-center text-xs text-gray-600">
+      <footer className="mt-8 pb-8 text-center text-xs text-gray-600">
         Data sourced from{' '}
         <a
           href="http://www.bigbluehistory.net/bb/statistics/"
@@ -1478,6 +1478,16 @@ export default function App() {
         </a>
         <div className="mt-2 text-gray-500">
           Created by Daniel Reeves
+        </div>
+        <div className="mt-4">
+          <a
+            href="https://www.buymeacoffee.com/danielt279y"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-gray-200 text-xs font-medium"
+          >
+            <span>☕</span> Buy me a coffee
+          </a>
         </div>
       </footer>
     </div>

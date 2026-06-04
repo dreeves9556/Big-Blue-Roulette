@@ -1,0 +1,754 @@
+[
+  {
+    "id": "allen_ermal",
+    "fullName": "Ermal Allen",
+    "hometown": {
+      "city": "</B>Morristown",
+      "state": ""
+    }
+  },
+  {
+    "id": "anderson_dwight",
+    "fullName": "Dwight Anderson",
+    "hometown": {
+      "city": "</B>Dayton",
+      "state": ""
+    }
+  },
+  {
+    "id": "andrews_jim",
+    "fullName": "Jim Andrews",
+    "hometown": {
+      "city": "</B>Lima",
+      "state": ""
+    }
+  },
+  {
+    "id": "barker_cliff",
+    "fullName": "Cliff Barker",
+    "hometown": {
+      "city": "</B>Yorktown",
+      "state": ""
+    }
+  },
+  {
+    "id": "barnstable_dale",
+    "fullName": "Dale Barnstable",
+    "hometown": {
+      "city": "</B>Antioch",
+      "state": ""
+    }
+  },
+  {
+    "id": "beal_dicky",
+    "fullName": "Dicky Beal",
+    "hometown": {
+      "city": "</B>Covington",
+      "state": ""
+    }
+  },
+  {
+    "id": "beck_ed",
+    "fullName": "Ed Beck",
+    "hometown": {
+      "city": "</B>Fort Valley",
+      "state": ""
+    }
+  },
+  {
+    "id": "bennett_winston",
+    "fullName": "Winston Bennett",
+    "hometown": {
+      "city": "</B>Louisville",
+      "state": ""
+    }
+  },
+  {
+    "id": "bird_jerry",
+    "fullName": "Jerry Bird",
+    "hometown": {
+      "city": "</B>Corbin",
+      "state": ""
+    }
+  },
+  {
+    "id": "blackmon_james",
+    "fullName": "James Blackmon",
+    "hometown": {
+      "city": "</B>Marion",
+      "state": ""
+    }
+  },
+  {
+    "id": "brassow_jeff",
+    "fullName": "Jeff Brassow",
+    "hometown": {
+      "city": "</B>Houston",
+      "state": ""
+    }
+  },
+  {
+    "id": "burchett_carroll",
+    "fullName": "Carroll Burchett",
+    "hometown": {
+      "city": "</B>Fuget",
+      "state": ""
+    }
+  },
+  {
+    "id": "burrow_bob",
+    "fullName": "Bob Burrow",
+    "hometown": {
+      "city": "</B>Wells",
+      "state": ""
+    }
+  },
+  {
+    "id": "casey_dwane",
+    "fullName": "Dwane Casey",
+    "hometown": {
+      "city": "</B>Morganfield",
+      "state": ""
+    }
+  },
+  {
+    "id": "casey_mike",
+    "fullName": "Mike Casey",
+    "hometown": {
+      "city": "</B>Simpsonville",
+      "state": ""
+    }
+  },
+  {
+    "id": "cluggish_marion",
+    "fullName": "Marion Cluggish",
+    "hometown": {
+      "city": "</B>Corbin",
+      "state": ""
+    }
+  },
+  {
+    "id": "coffman_bennie",
+    "fullName": "Bennie Coffman",
+    "hometown": {
+      "city": "</B>Huntington",
+      "state": ""
+    }
+  },
+  {
+    "id": "cohen_sid",
+    "fullName": "Sid Cohen",
+    "hometown": {
+      "city": "</B>Brooklyn",
+      "state": ""
+    }
+  },
+  {
+    "id": "combs_carl",
+    "fullName": "Carl Combs",
+    "hometown": {
+      "city": "</B>Hazard",
+      "state": ""
+    }
+  },
+  {
+    "id": "conley_larry",
+    "fullName": "Larry Conley",
+    "hometown": {
+      "city": "</B>Ashland",
+      "state": ""
+    }
+  },
+  {
+    "id": "cowan_fred",
+    "fullName": "Fred Cowan",
+    "hometown": {
+      "city": "</B>Sturgis",
+      "state": ""
+    }
+  },
+  {
+    "id": "cox_johnny",
+    "fullName": "Johnny Cox",
+    "hometown": {
+      "city": "</B>Hazard",
+      "state": ""
+    }
+  },
+  {
+    "id": "crigler_john",
+    "fullName": "John Crigler",
+    "hometown": {
+      "city": "</B>Hebron",
+      "state": ""
+    }
+  },
+  {
+    "id": "davender_ed",
+    "fullName": "Ed Davender",
+    "hometown": {
+      "city": "</B>Brooklyn",
+      "state": ""
+    }
+  },
+  {
+    "id": "deeken_ted",
+    "fullName": "Ted Deeken",
+    "hometown": {
+      "city": "</B>Louisville",
+      "state": ""
+    }
+  },
+  {
+    "id": "dent_rodney",
+    "fullName": "Rodney Dent",
+    "hometown": {
+      "city": "</B>Edison",
+      "state": ""
+    }
+  },
+  {
+    "id": "edwards_allen",
+    "fullName": "Allen Edwards",
+    "hometown": {
+      "city": "</B>Miami",
+      "state": ""
+    }
+  },
+  {
+    "id": "embry_randy",
+    "fullName": "Randy Embry",
+    "hometown": {
+      "city": "</B>Owensboro",
+      "state": ""
+    }
+  },
+  {
+    "id": "epps_anthony",
+    "fullName": "Anthony Epps",
+    "hometown": {
+      "city": "</B>Lebanon",
+      "state": ""
+    }
+  },
+  {
+    "id": "evans_billy",
+    "fullName": "Billy Evans",
+    "hometown": {
+      "city": "</B>Berea",
+      "state": ""
+    }
+  },
+  {
+    "id": "farnsley_keith",
+    "fullName": "Keith Farnsley",
+    "hometown": {
+      "city": "</B>New Albany",
+      "state": ""
+    }
+  },
+  {
+    "id": "feldhaus_allen",
+    "fullName": "Allen Feldhaus",
+    "hometown": {
+      "city": "</B>Burlington",
+      "state": ""
+    }
+  },
+  {
+    "id": "feldhaus_deron",
+    "fullName": "Deron Feldhaus",
+    "hometown": {
+      "city": "</B>Maysville",
+      "state": ""
+    }
+  },
+  {
+    "id": "gettelfinger_chris",
+    "fullName": "Chris Gettelfinger",
+    "hometown": {
+      "city": "</B>Knoxville",
+      "state": ""
+    }
+  },
+  {
+    "id": "groza_alex",
+    "fullName": "Alex Groza",
+    "hometown": {
+      "city": "</B>Martins Ferry",
+      "state": ""
+    }
+  },
+  {
+    "id": "harden_roger",
+    "fullName": "Roger Harden",
+    "hometown": {
+      "city": "</B>Valparaiso",
+      "state": ""
+    }
+  },
+  {
+    "id": "harrison_chris",
+    "fullName": "Chris Harrison",
+    "hometown": {
+      "city": "</B>Tollesboro",
+      "state": ""
+    }
+  },
+  {
+    "id": "heitz_tom",
+    "fullName": "Tom Heitz",
+    "hometown": {
+      "city": "</B>Hamilton",
+      "state": ""
+    }
+  },
+  {
+    "id": "hirsch_walter",
+    "fullName": "Walter Hirsch",
+    "hometown": {
+      "city": "</B>Dayton",
+      "state": ""
+    }
+  },
+  {
+    "id": "hollenbeck_kent",
+    "fullName": "Kent Hollenbeck",
+    "hometown": {
+      "city": "</B>Knoxville",
+      "state": ""
+    }
+  },
+  {
+    "id": "huber_lee",
+    "fullName": "Lee Huber",
+    "hometown": {
+      "city": "</B>Louisville",
+      "state": ""
+    }
+  },
+  {
+    "id": "hurt_charles",
+    "fullName": "Charles Hurt",
+    "hometown": {
+      "city": "</B>Shelbyville",
+      "state": ""
+    }
+  },
+  {
+    "id": "jaracz_thad",
+    "fullName": "Thad Jaracz",
+    "hometown": {
+      "city": "</B>Lexington",
+      "state": ""
+    }
+  },
+  {
+    "id": "jennings_ned",
+    "fullName": "Ned Jennings",
+    "hometown": {
+      "city": "</B>Carlisle",
+      "state": ""
+    }
+  },
+  {
+    "id": "johnson_larry",
+    "fullName": "Larry Johnson",
+    "hometown": {
+      "city": "</B>Morganfield",
+      "state": ""
+    }
+  },
+  {
+    "id": "jones_wallace",
+    "fullName": "Wallace Jones",
+    "hometown": {
+      "city": "</B>Harlan",
+      "state": ""
+    }
+  },
+  {
+    "id": "key_stan",
+    "fullName": "Stan Key",
+    "hometown": {
+      "city": "</B>Hazel",
+      "state": ""
+    }
+  },
+  {
+    "id": "king_james",
+    "fullName": "James King",
+    "hometown": {
+      "city": "</B>Sharpe",
+      "state": ""
+    }
+  },
+  {
+    "id": "kron_tommy",
+    "fullName": "Tommy Kron",
+    "hometown": {
+      "city": "</B>Tell City",
+      "state": ""
+    }
+  },
+  {
+    "id": "lanter_bo",
+    "fullName": "Bo Lanter",
+    "hometown": {
+      "city": "</B>Versailles",
+      "state": ""
+    }
+  },
+  {
+    "id": "lee_james",
+    "fullName": "James Lee",
+    "hometown": {
+      "city": "</B>Lexington",
+      "state": ""
+    }
+  },
+  {
+    "id": "lickert_bill",
+    "fullName": "Bill Lickert",
+    "hometown": {
+      "city": "</B>Lexington",
+      "state": ""
+    }
+  },
+  {
+    "id": "line_jim",
+    "fullName": "Jim Line",
+    "hometown": {
+      "city": "</B>Akron",
+      "state": ""
+    }
+  },
+  {
+    "id": "linville_shelby",
+    "fullName": "Shelby Linville",
+    "hometown": {
+      "city": "</B>Middletown",
+      "state": ""
+    }
+  },
+  {
+    "id": "lyons_ronnie",
+    "fullName": "Ronnie Lyons",
+    "hometown": {
+      "city": "</B>Maysville",
+      "state": ""
+    }
+  },
+  {
+    "id": "macy_kyle",
+    "fullName": "Kyle Macy",
+    "hometown": {
+      "city": "</B>Peru",
+      "state": ""
+    }
+  },
+  {
+    "id": "martinez_gimel",
+    "fullName": "Gimel Martinez",
+    "hometown": {
+      "city": "</B>Miami",
+      "state": ""
+    }
+  },
+  {
+    "id": "mashburn_jamal",
+    "fullName": "Jamal Mashburn",
+    "hometown": {
+      "city": "</B>Bronx",
+      "state": ""
+    }
+  },
+  {
+    "id": "master_jim",
+    "fullName": "Jim Master",
+    "hometown": {
+      "city": "</B>Fort Wayne",
+      "state": ""
+    }
+  },
+  {
+    "id": "mcbrayer_paul",
+    "fullName": "Paul McBrayer",
+    "hometown": {
+      "city": "</B>Lawrenceburg",
+      "state": ""
+    }
+  },
+  {
+    "id": "mccarty_walter",
+    "fullName": "Walter McCarty",
+    "hometown": {
+      "city": "</B>Evansville",
+      "state": ""
+    }
+  },
+  {
+    "id": "miller_derrick",
+    "fullName": "Derrick Miller",
+    "hometown": {
+      "city": "</B>Savannah",
+      "state": ""
+    }
+  },
+  {
+    "id": "mills_don",
+    "fullName": "Don Mills",
+    "hometown": {
+      "city": "</B>Berea",
+      "state": ""
+    }
+  },
+  {
+    "id": "mills_terry",
+    "fullName": "Terry Mills",
+    "hometown": {
+      "city": "</B>Barbourville",
+      "state": ""
+    }
+  },
+  {
+    "id": "minniefield_dirk",
+    "fullName": "Dirk Minniefield",
+    "hometown": {
+      "city": "</B>Lexington",
+      "state": ""
+    }
+  },
+  {
+    "id": "mohammed_nazr",
+    "fullName": "Nazr Mohammed",
+    "hometown": {
+      "city": "</B>Chicago",
+      "state": ""
+    }
+  },
+  {
+    "id": "newton_cm",
+    "fullName": "C.M. Newton",
+    "hometown": {
+      "city": "</B>Fort Lauderdale",
+      "state": ""
+    }
+  },
+  {
+    "id": "noel_paul",
+    "fullName": "Paul Noel",
+    "hometown": {
+      "city": "</B>Midway",
+      "state": ""
+    }
+  },
+  {
+    "id": "opper_bernie",
+    "fullName": "Bernard Opper",
+    "hometown": {
+      "city": "</B>New York",
+      "state": ""
+    }
+  },
+  {
+    "id": "parker_tom",
+    "fullName": "Tom Parker",
+    "hometown": {
+      "city": "</B>Collinsville",
+      "state": ""
+    }
+  },
+  {
+    "id": "parsons_dick",
+    "fullName": "Dick Parsons",
+    "hometown": {
+      "city": "</B>Yancey",
+      "state": ""
+    }
+  },
+  {
+    "id": "payne_tom",
+    "fullName": "Tom Payne",
+    "hometown": {
+      "city": "</B>Louisville",
+      "state": ""
+    }
+  },
+  {
+    "id": "pelphrey_john",
+    "fullName": "John Pelphrey",
+    "hometown": {
+      "city": "</B>Paintsville",
+      "state": ""
+    }
+  },
+  {
+    "id": "phillips_mike",
+    "fullName": "Mike Phillips",
+    "hometown": {
+      "city": "</B>Manchester",
+      "state": ""
+    }
+  },
+  {
+    "id": "prickett_jared",
+    "fullName": "Jared Prickett",
+    "hometown": {
+      "city": "</B>Fairmont",
+      "state": ""
+    }
+  },
+  {
+    "id": "pursiful_larry",
+    "fullName": "Larry Pursiful",
+    "hometown": {
+      "city": "</B>Four Mile",
+      "state": ""
+    }
+  },
+  {
+    "id": "riley_pat",
+    "fullName": "Pat Riley",
+    "hometown": {
+      "city": "</B>Schenectady",
+      "state": ""
+    }
+  },
+  {
+    "id": "rollins_ken",
+    "fullName": "Ken Rollins",
+    "hometown": {
+      "city": "</B>Wickliffe",
+      "state": ""
+    }
+  },
+  {
+    "id": "rouse_layton",
+    "fullName": "Layton Rouse",
+    "hometown": {
+      "city": "</B>Ludlow",
+      "state": ""
+    }
+  },
+  {
+    "id": "sale_forest",
+    "fullName": "Forest Sale",
+    "hometown": {
+      "city": "</B>Lawrenceburg",
+      "state": ""
+    }
+  },
+  {
+    "id": "shidler_jay",
+    "fullName": "Jay Shidler",
+    "hometown": {
+      "city": "</B>Lawrenceville",
+      "state": ""
+    }
+  },
+  {
+    "id": "simmons_oliver",
+    "fullName": "Oliver Simmons",
+    "hometown": {
+      "city": "</B>Nashville",
+      "state": ""
+    }
+  },
+  {
+    "id": "spicer_carey",
+    "fullName": "Carey Spicer",
+    "hometown": {
+      "city": "</B>Lexington",
+      "state": ""
+    }
+  },
+  {
+    "id": "staker_carl",
+    "fullName": "Carl Staker",
+    "hometown": {
+      "city": "</B>Maysville",
+      "state": ""
+    }
+  },
+  {
+    "id": "steele_larry",
+    "fullName": "Larry Steele",
+    "hometown": {
+      "city": "</B>Bainbridge",
+      "state": ""
+    }
+  },
+  {
+    "id": "tsioropoulos_lou",
+    "fullName": "Lou Tsioropoulos",
+    "hometown": {
+      "city": "</B>Lynn",
+      "state": ""
+    }
+  },
+  {
+    "id": "turpin_melvin",
+    "fullName": "Melvin Turpin",
+    "hometown": {
+      "city": "</B>Lexington",
+      "state": ""
+    }
+  },
+  {
+    "id": "verderber_chuck",
+    "fullName": "Chuck Verderber",
+    "hometown": {
+      "city": "</B>Lincoln",
+      "state": ""
+    }
+  },
+  {
+    "id": "walker_kenny",
+    "fullName": "Kenny Walker",
+    "hometown": {
+      "city": "</B>Roberta",
+      "state": ""
+    }
+  },
+  {
+    "id": "watson_bobby",
+    "fullName": "Bobby Watson",
+    "hometown": {
+      "city": "</B>Owensboro",
+      "state": ""
+    }
+  },
+  {
+    "id": "whitaker_lucian",
+    "fullName": "Lucian Whitaker",
+    "hometown": {
+      "city": "</B>Sarasota",
+      "state": ""
+    }
+  },
+  {
+    "id": "white_waller",
+    "fullName": "Waller White",
+    "hometown": {
+      "city": "</B>Lawrenceburg",
+      "state": ""
+    }
+  },
+  {
+    "id": "williams_lavon",
+    "fullName": "Lavon Williams",
+    "hometown": {
+      "city": "</B>Denver",
+      "state": ""
+    }
+  },
+  {
+    "id": "woods_sean",
+    "fullName": "Sean Woods",
+    "hometown": {
+      "city": "</B>Indianapolis",
+      "state": ""
+    }
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "aberdeen_denzel",
+    "fullName": "Denzel Aberdeen",
+    "seasons": [
+      "2025-26"
+    ],
+    "height": 77,
+    "weight": 195,
+    "jerseyNumber": "1",
+    "class": "SR",
+    "primaryPosition": "SG"
+  },
+  {
+    "id": "gilgeous_shai",
+    "jerseyNumber": "22",
+    "fullName": "Shai Gilgeous-Alexander",
+    "seasons": [
+      "2017-18"
+    ],
+    "primaryPosition": "SG"
+  },
+  {
+    "id": "hawthorne_braydon",
+    "fullName": "Braydon Hawthorne",
+    "seasons": [
+      "2025-26"
+    ],
+    "height": 80,
+    "weight": 190,
+    "jerseyNumber": "22",
+    "class": "FR",
+    "primaryPosition": "SF"
+  },
+  {
+    "id": "mkg_michael",
+    "jerseyNumber": "14",
+    "fullName": "Michael Kidd-Gilchrist",
+    "seasons": [
+      "2011-12"
+    ],
+    "primaryPosition": "SF"
+  },
+  {
+    "id": "quaintance_jayden",
+    "fullName": "Jayden Quaintance",
+    "seasons": [
+      "2025-26"
+    ],
+    "height": 83,
+    "weight": 255,
+    "jerseyNumber": "21",
+    "class": "SO",
+    "primaryPosition": "PF"
+  }
+]
