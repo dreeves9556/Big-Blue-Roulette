@@ -1,0 +1,17 @@
+{
+  "name": "Big Blue Roulette",
+  "short_name": "Big Blue Roulette",
+  "description": "Draft your dream Kentucky basketball team across history",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c14",
+  "theme_color": "#0033A0",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
