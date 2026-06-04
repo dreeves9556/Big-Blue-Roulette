@@ -1250,8 +1250,8 @@ export default function App() {
   const spinRoulette = useCallback(() => {
     if (spinning || openPositions.length === 0 || currentSeason !== null) return;
 
-    const availableSeasons = allSeasons.filter((season) => !usedSeasons.includes(season));
-    const seasonPool = availableSeasons.length > 0 ? availableSeasons : allSeasons;
+    const availableSeasons = allSeasons.filter((season) => !usedSeasons.includes(season) && getSeasonStartYear(season) >= 1950);
+    const seasonPool = availableSeasons.length > 0 ? availableSeasons : allSeasons.filter((season) => getSeasonStartYear(season) >= 1950);
 
     setSpinning(true);
     setCurrentSeason(null);
