@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { allSeasons, players, POSITIONS, POSITION_LABELS, seasonPlayersMap } from './data/players.js';
 import { playerSeasonStatsById } from './data/playerSeasonStats.js';
-import { ChevronRight, Download, Link2, RotateCcw, Shuffle, Sparkles, Trophy } from 'lucide-react';
+import { ChevronRight, Download, Link2, RotateCcw, Shuffle, Sparkles, Trophy, Hash, MapPin, HelpCircle } from 'lucide-react';
 import './App.css';
+import JerseyGame from './components/JerseyGame.jsx';
+import HometownGame from './components/HometownGame.jsx';
+import TwentyQuestionsGame from './components/TwentyQuestionsGame.jsx';
 
 const POSITION_FLEXIBILITY = {
   PG: ['PG', 'SG'],
@@ -130,7 +133,7 @@ function estimatePlayerMetrics(player, season) {
       };
     }
     
-    // Pre-1980: Use real PTS/REB/AST, but era-estimated STL/BLK based on position
+    // Pre-1980: Use real PTS/REB/AST with era adjustment, era-estimated STL/BLK based on position
     const positionEstimates = {
       'PG': { stl: 1.2, blk: 0.1 },
       'SG': { stl: 1.0, blk: 0.2 },
@@ -140,13 +143,14 @@ function estimatePlayerMetrics(player, season) {
     };
     
     const estimates = positionEstimates[player.primaryPosition] || { stl: 0.5, blk: 0.3 };
+    const era = getEraAdjustment(year);
     
     return {
-      pts: realStats.pts ?? 0,
-      reb: realStats.reb ?? 0,
-      ast: realStats.ast ?? 0,
-      stl: estimates.stl,
-      blk: estimates.blk,
+      pts: (realStats.pts ?? 0) * era.pts,
+      reb: (realStats.reb ?? 0) * era.reb,
+      ast: (realStats.ast ?? 0) * era.ast,
+      stl: estimates.stl * era.stl,
+      blk: estimates.blk * era.blk,
     };
   }
 
@@ -468,6 +472,28 @@ function IntroScreen({ onStart }) {
           className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-white/5 hover:bg-white/10 border border-white/15 active:scale-95 text-white font-bold rounded-xl transition-all duration-150"
         >
           Play HoopIQ (Stats Hidden) <ChevronRight className="w-4 h-4" />
+        </button>
+        <div className="h-px bg-white/10 my-2" />
+        <button
+          onClick={() => onStart('jersey')}
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 active:scale-95 text-purple-200 font-bold rounded-xl transition-all duration-150"
+        >
+          <Hash className="w-4 h-4" />
+          Jersey Guesser Mini-Game
+        </button>
+        <button
+          onClick={() => onStart('hometown')}
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 active:scale-95 text-green-200 font-bold rounded-xl transition-all duration-150"
+        >
+          <MapPin className="w-4 h-4" />
+          Hometown Guesser Mini-Game
+        </button>
+        <button
+          onClick={() => onStart('twentyquestions')}
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/30 active:scale-95 text-amber-200 font-bold rounded-xl transition-all duration-150"
+        >
+          <HelpCircle className="w-4 h-4" />
+          20 Questions Mini-Game
         </button>
       </div>
     </div>
@@ -1233,7 +1259,7 @@ export default function App() {
     setSelectedPosition(null);
 
     const intervalId = window.setInterval(() => {
-      setRouletteSeason(getRandom(allSeasons));
+      setRouletteSeason(getRandom(seasonPool));
     }, 80);
 
     window.setTimeout(() => {
@@ -1246,13 +1272,29 @@ export default function App() {
       ));
       setSpinning(false);
     }, 1400);
-  }, [openPositions.length, spinning, usedSeasons]);
+  }, [openPositions.length, spinning, usedSeasons, currentSeason]);
 
   const startGame = useCallback((mode = 'hoopIQ') => {
-    const normalizedMode = mode === 'classic' ? 'classic' : 'hoopIQ';
     clearShareQueryParam();
-    setGameMode(normalizedMode);
     setSharedPayload(null);
+    
+    if (mode === 'jersey') {
+      setPhase('jersey');
+      return;
+    }
+    
+    if (mode === 'hometown') {
+      setPhase('hometown');
+      return;
+    }
+    
+    if (mode === 'twentyquestions') {
+      setPhase('twentyquestions');
+      return;
+    }
+    
+    const normalizedMode = mode === 'classic' ? 'classic' : 'hoopIQ';
+    setGameMode(normalizedMode);
     setLineup(EMPTY_LINEUP);
     setCurrentSeason(null);
     setRouletteSeason(null);
@@ -1374,6 +1416,12 @@ export default function App() {
 
       <main className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
         {phase === 'intro' && <IntroScreen onStart={startGame} />}
+
+        {phase === 'jersey' && <JerseyGame onBack={() => setPhase('intro')} />}
+
+        {phase === 'hometown' && <HometownGame onBack={() => setPhase('intro')} />}
+
+        {phase === 'twentyquestions' && <TwentyQuestionsGame onBack={() => setPhase('intro')} />}
 
         {phase === 'shared' && sharedPayload && (
           <SharedLineup payload={sharedPayload} onStartNew={startGame} />

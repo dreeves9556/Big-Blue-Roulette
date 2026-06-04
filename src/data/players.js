@@ -3464,3 +3464,24 @@ export const players = [
     "primaryPosition": "SG"
   }
 ];
+
+export const POSITIONS = ['PG', 'SG', 'SF', 'PF', 'C'];
+
+export const POSITION_LABELS = {
+  PG: 'Point Guard',
+  SG: 'Shooting Guard',
+  SF: 'Small Forward',
+  PF: 'Power Forward',
+  C: 'Center',
+};
+
+// All unique seasons across all players, sorted
+export const allSeasons = [...new Set(players.flatMap((p) => p.seasons))].sort();
+
+// Map season -> players who played in that season
+export const seasonPlayersMap = Object.fromEntries(
+  allSeasons.map((season) => [
+    season,
+    players.filter((p) => p.seasons.includes(season)),
+  ])
+);
