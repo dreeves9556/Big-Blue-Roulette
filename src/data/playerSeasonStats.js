@@ -5953,9 +5953,9 @@ export const playerSeasonStatsById = {
   },
   "cohen_sid": {
     "1958-59": {
-      "pts": 12.1,
-      "reb": 5.4,
-      "ast": 2.1,
+      "pts": 8.1,
+      "reb": 3,
+      "ast": 0,
       "stl": 0,
       "blk": 0,
       "games": 25
@@ -6205,16 +6205,16 @@ export const playerSeasonStatsById = {
       "games": 27
     },
     "1951-52": {
-      "pts": 2.9,
-      "reb": 4.1,
-      "ast": 0.7,
+      "pts": 7.9,
+      "reb": 10.3,
+      "ast": 1.6,
       "stl": 0,
       "blk": 0,
       "games": 32
     },
     "1953-54": {
-      "pts": 14.6,
-      "reb": 9.9,
+      "pts": 14.5,
+      "reb": 9.6,
       "ast": 0,
       "stl": 0,
       "blk": 0,
@@ -6603,6 +6603,76 @@ export const playerSeasonStatsById = {
       "stl": 2.7,
       "blk": 3.4,
       "games": 28
+    }
+  },
+  "bird_jerry": {
+    "1953-54": {
+      "pts": 3.5,
+      "reb": 3,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 4
+    },
+    "1954-55": {
+      "pts": 10.7,
+      "reb": 10.8,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    },
+    "1955-56": {
+      "pts": 16.2,
+      "reb": 11.3,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    }
+  },
+  "burrow_bob": {
+    "1954-55": {
+      "pts": 19,
+      "reb": 17.7,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    },
+    "1955-56": {
+      "pts": 21.1,
+      "reb": 14.6,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 25
+    }
+  },
+  "evans_billy": {
+    "1951-52": {
+      "pts": 5.2,
+      "reb": 5.3,
+      "ast": 1.8,
+      "stl": 0,
+      "blk": 0,
+      "games": 31
+    },
+    "1953-54": {
+      "pts": 8.8,
+      "reb": 7.2,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 25
+    },
+    "1954-55": {
+      "pts": 13.9,
+      "reb": 8.5,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 24
     }
   }
 };

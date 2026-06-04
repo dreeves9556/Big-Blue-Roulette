@@ -617,10 +617,8 @@ export const players = [
     "jerseyNumber": "22",
     "fullName": "Sid Cohen",
     "seasons": [
-      "1957-58",
       "1958-59",
-      "1959-60",
-      "1960-61"
+      "1959-60"
     ],
     "primaryPosition": "SG"
   },
@@ -3139,7 +3137,6 @@ export const players = [
     "fullName": "Lou Tsioropoulos",
     "seasons": [
       "1951-52",
-      "1952-53",
       "1953-54"
     ],
     "primaryPosition": "SF"
