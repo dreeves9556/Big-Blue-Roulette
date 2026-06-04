@@ -27,7 +27,7 @@ export const players = [
   },
   {
     "id": "allen_dontaie",
-    "jerseyNumber": "5",
+    "jerseyNumber": "11",
     "fullName": "Dontaie Allen",
     "seasons": [
       "2019-20",
@@ -49,7 +49,7 @@ export const players = [
   },
   {
     "id": "alleyne_shagari",
-    "jerseyNumber": "10",
+    "jerseyNumber": "21",
     "fullName": "Shagari Alleyne",
     "seasons": [
       "2004-05",
@@ -59,7 +59,7 @@ export const players = [
   },
   {
     "id": "allison_desmond",
-    "jerseyNumber": "20",
+    "jerseyNumber": "32",
     "fullName": "Desmond Allison",
     "seasons": [
       "1997-98",
@@ -80,7 +80,7 @@ export const players = [
   },
   {
     "id": "anderson_derek",
-    "jerseyNumber": "13",
+    "jerseyNumber": "23",
     "fullName": "Derek Anderson",
     "seasons": [
       "1995-96",
@@ -90,7 +90,7 @@ export const players = [
   },
   {
     "id": "anderson_dwight",
-    "jerseyNumber": "11",
+    "jerseyNumber": "23",
     "fullName": "Dwight Anderson",
     "seasons": [
       "1979-80"
@@ -141,7 +141,7 @@ export const players = [
   },
   {
     "id": "baker_jemarl",
-    "jerseyNumber": "7",
+    "jerseyNumber": "13",
     "fullName": "Jemarl Baker",
     "seasons": [
       "2017-18",
@@ -151,7 +151,7 @@ export const players = [
   },
   {
     "id": "barbour_antwain",
-    "jerseyNumber": "14",
+    "jerseyNumber": "33",
     "fullName": "Antwain Barbour",
     "seasons": [
       "2001-02",
@@ -162,7 +162,7 @@ export const players = [
   },
   {
     "id": "barker_cliff",
-    "jerseyNumber": "8",
+    "jerseyNumber": "23",
     "fullName": "Cliff Barker",
     "seasons": [
       "1944-45",
@@ -174,7 +174,7 @@ export const players = [
   },
   {
     "id": "barnstable_dale",
-    "jerseyNumber": "13",
+    "jerseyNumber": "18",
     "fullName": "Dale Barnstable",
     "seasons": [
       "1947-48",
@@ -185,7 +185,7 @@ export const players = [
   },
   {
     "id": "beal_dicky",
-    "jerseyNumber": "10",
+    "jerseyNumber": "11",
     "fullName": "Dicky Beal",
     "seasons": [
       "1980-81",
@@ -209,7 +209,7 @@ export const players = [
   },
   {
     "id": "beck_ed",
-    "jerseyNumber": "41",
+    "jerseyNumber": "34",
     "fullName": "Ed Beck",
     "seasons": [
       "1955-56",
@@ -220,7 +220,7 @@ export const players = [
   },
   {
     "id": "beckham_twany",
-    "jerseyNumber": "10",
+    "jerseyNumber": "11",
     "fullName": "Twany Beckham",
     "seasons": [
       "2010-11",
@@ -243,7 +243,7 @@ export const players = [
   },
   {
     "id": "benson_kerry",
-    "jerseyNumber": "14",
+    "jerseyNumber": "20",
     "fullName": "Kerry Benson",
     "seasons": [
       "2007-08"
@@ -263,7 +263,7 @@ export const players = [
   },
   {
     "id": "blackmon_james",
-    "jerseyNumber": "23",
+    "jerseyNumber": "10",
     "fullName": "James Blackmon",
     "seasons": [
       "1984-85",
@@ -274,7 +274,7 @@ export const players = [
   },
   {
     "id": "bledsoe_eric",
-    "jerseyNumber": "12",
+    "jerseyNumber": "24",
     "fullName": "Eric Bledsoe",
     "seasons": [
       "2009-10"
@@ -295,7 +295,7 @@ export const players = [
   },
   {
     "id": "bogans_keith",
-    "jerseyNumber": "32",
+    "jerseyNumber": "10",
     "fullName": "Keith Bogans",
     "seasons": [
       "1999-00",
@@ -316,7 +316,7 @@ export const players = [
   },
   {
     "id": "boston_brandon",
-    "jerseyNumber": "10",
+    "jerseyNumber": "3",
     "fullName": "Brandon Boston Jr.",
     "seasons": [
       "2020-21"
@@ -336,7 +336,7 @@ export const players = [
   },
   {
     "id": "bradley_michael",
-    "jerseyNumber": "30",
+    "jerseyNumber": "33",
     "fullName": "Michael Bradley",
     "seasons": [
       "1997-98",
@@ -359,7 +359,7 @@ export const players = [
   },
   {
     "id": "bradshaw_aaron",
-    "jerseyNumber": "23",
+    "jerseyNumber": "2",
     "fullName": "Aaron Bradshaw",
     "seasons": [
       "2023-24"
@@ -368,7 +368,7 @@ export const players = [
   },
   {
     "id": "brassow_jeff",
-    "jerseyNumber": "12",
+    "jerseyNumber": "14",
     "fullName": "Jeff Brassow",
     "seasons": [
       "1990-91",
@@ -380,7 +380,7 @@ export const players = [
   },
   {
     "id": "brea_koby",
-    "jerseyNumber": "24",
+    "jerseyNumber": "4",
     "fullName": "Koby Brea",
     "seasons": [
       "2024-25"
@@ -411,7 +411,7 @@ export const players = [
   },
   {
     "id": "burchett_carroll",
-    "jerseyNumber": "14",
+    "jerseyNumber": "40",
     "fullName": "Carroll Burchett",
     "seasons": [
       "1959-60",
@@ -422,7 +422,7 @@ export const players = [
   },
   {
     "id": "burks_jordan",
-    "jerseyNumber": "22",
+    "jerseyNumber": "23",
     "fullName": "Jordan Burks",
     "seasons": [
       "2023-24"
@@ -451,7 +451,7 @@ export const players = [
   },
   {
     "id": "calipari_brad",
-    "jerseyNumber": "10",
+    "jerseyNumber": "12",
     "fullName": "Brad Calipari",
     "seasons": [
       "2016-17",
@@ -462,7 +462,7 @@ export const players = [
   },
   {
     "id": "camara_souleymane",
-    "jerseyNumber": "14",
+    "jerseyNumber": "40",
     "fullName": "Souleymane Camara",
     "seasons": [
       "1999-00",
@@ -473,7 +473,7 @@ export const players = [
   },
   {
     "id": "canada_brennan",
-    "jerseyNumber": "11",
+    "jerseyNumber": "14",
     "fullName": "Brennan Canada",
     "seasons": [
       "2020-21",
@@ -485,7 +485,7 @@ export const players = [
   },
   {
     "id": "carr_andrew",
-    "jerseyNumber": "22",
+    "jerseyNumber": "7",
     "fullName": "Andrew Carr",
     "seasons": [
       "2024-25"
@@ -495,7 +495,7 @@ export const players = [
   },
   {
     "id": "carrier_josh",
-    "jerseyNumber": "4",
+    "jerseyNumber": "5",
     "fullName": "Josh Carrier",
     "seasons": [
       "2001-02",
@@ -507,7 +507,7 @@ export const players = [
   },
   {
     "id": "carruth_rashaad",
-    "jerseyNumber": "14",
+    "jerseyNumber": "2",
     "fullName": "Rashaad Carruth",
     "seasons": [
       "2001-02"
@@ -516,7 +516,7 @@ export const players = [
   },
   {
     "id": "carter_jared",
-    "jerseyNumber": "14",
+    "jerseyNumber": "43",
     "fullName": "Jared Carter",
     "seasons": [
       "2005-06",
@@ -593,7 +593,7 @@ export const players = [
   },
   {
     "id": "cluggish_marion",
-    "jerseyNumber": "43",
+    "jerseyNumber": "12",
     "fullName": "Marion Cluggish",
     "seasons": [
       "1939-40",
@@ -604,7 +604,7 @@ export const players = [
   },
   {
     "id": "coffman_bennie",
-    "jerseyNumber": "41",
+    "jerseyNumber": "30",
     "fullName": "Bennie Coffman",
     "seasons": [
       "1958-59",
@@ -657,7 +657,7 @@ export const players = [
   },
   {
     "id": "conner_jimmydan",
-    "jerseyNumber": "15",
+    "jerseyNumber": "20",
     "fullName": "Jimmy Dan Conner",
     "seasons": [
       "1972-73",
@@ -1482,6 +1482,7 @@ export const players = [
   },
   {
     "id": "horn_walker",
+    "jerseyNumber": "21",
     "fullName": "Walker Horn",
     "seasons": [
       "2023-24",
@@ -1489,7 +1490,6 @@ export const players = [
     ],
     "height": 75,
     "weight": 190,
-    "jerseyNumber": "11",
     "class": "SR",
     "primaryPosition": "SF"
   },
@@ -3392,7 +3392,7 @@ export const players = [
   },
   {
     "id": "williams_lavon",
-    "jerseyNumber": "20",
+    "jerseyNumber": "52",
     "fullName": "Lavon Williams",
     "seasons": [
       "1979-80",
