@@ -70,7 +70,7 @@ export const players = [
   },
   {
     "id": "almonor_ansley",
-    "jerseyNumber": "2",
+    "jerseyNumber": "15",
     "fullName": "Ansley Almonor",
     "seasons": [
       "2024-25"
