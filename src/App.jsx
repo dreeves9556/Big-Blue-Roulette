@@ -13,6 +13,8 @@ const POSITION_FLEXIBILITY = {
   SF: ['SG', 'SF', 'PF'],
   PF: ['SF', 'PF', 'C'],
   C: ['PF', 'C'],
+  F: ['SF', 'PF'],
+  G: ['PG', 'SG'],
 };
 
 const EMPTY_LINEUP = {
