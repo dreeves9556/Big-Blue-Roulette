@@ -330,6 +330,20 @@ function getPickPlayablePositions(pick) {
   return POSITION_FLEXIBILITY[pick.primaryPosition] || [pick.primaryPosition];
 }
 
+function seasonHasUsablePlayers(season, openPositions, draftedPlayerIds, playerIdSet) {
+  const roster = seasonPlayersMap[season] || [];
+  for (const player of roster) {
+    if (!playerIdSet.has(player.id)) continue;
+    if (draftedPlayerIds.has(player.id)) continue;
+    const playable = getPlayablePositions(player);
+    if (!playable.some((pos) => openPositions.includes(pos))) continue;
+    if (estimatePlayerMetrics(player, season) !== null) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function PositionBadge({ position }) {
   const colors = {
     PG: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
@@ -1250,10 +1264,27 @@ export default function App() {
   }, [shareStatus]);
 
   const spinRoulette = useCallback(() => {
-    if (spinning || openPositions.length === 0 || currentSeason !== null) return;
+    if (spinning || openPositions.length === 0) return;
 
-    const availableSeasons = allSeasons.filter((season) => !usedSeasons.includes(season) && getSeasonStartYear(season) >= 1950);
-    const seasonPool = availableSeasons.length > 0 ? availableSeasons : allSeasons.filter((season) => getSeasonStartYear(season) >= 1950);
+    const unusedSeasons = allSeasons.filter((season) => !usedSeasons.includes(season) && getSeasonStartYear(season) >= 1950);
+    const allValidSeasons = allSeasons.filter((season) => getSeasonStartYear(season) >= 1950);
+
+    let seasonPool = unusedSeasons.filter((season) =>
+      seasonHasUsablePlayers(season, openPositions, draftedPlayerIds, playerIdSet)
+    );
+    let isFromUnused = true;
+
+    if (seasonPool.length === 0) {
+      seasonPool = allValidSeasons.filter((season) =>
+        seasonHasUsablePlayers(season, openPositions, draftedPlayerIds, playerIdSet)
+      );
+      isFromUnused = false;
+    }
+
+    if (seasonPool.length === 0) {
+      seasonPool = unusedSeasons.length > 0 ? unusedSeasons : allValidSeasons;
+      isFromUnused = unusedSeasons.length > 0;
+    }
 
     setSpinning(true);
     setCurrentSeason(null);
@@ -1270,11 +1301,11 @@ export default function App() {
       setRouletteSeason(chosenSeason);
       setCurrentSeason(chosenSeason);
       setUsedSeasons((prev) => (
-        availableSeasons.length > 0 ? [...prev, chosenSeason] : [chosenSeason]
+        isFromUnused ? [...prev, chosenSeason] : [chosenSeason]
       ));
       setSpinning(false);
     }, 1400);
-  }, [openPositions.length, spinning, usedSeasons, currentSeason]);
+  }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet]);
 
   const startGame = useCallback((mode = 'hoopIQ') => {
     clearShareQueryParam();
