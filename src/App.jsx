@@ -490,6 +490,12 @@ function IntroScreen({ onStart }) {
         >
           Play HoopIQ (Stats Hidden) <ChevronRight className="w-4 h-4" />
         </button>
+        <button
+          onClick={() => onStart('mattjones')}
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-red-600 hover:bg-red-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150 shadow-lg shadow-red-600/30"
+        >
+          Matt Jones Mode (No Dan Issel)
+        </button>
         <div className="h-px bg-white/10 my-2" />
         <button
           onClick={() => onStart('jersey')}
@@ -685,7 +691,7 @@ const POSITION_COLORS_HEX = {
   C: '#ef4444',
 };
 
-function generateShareImage(lineup, projection) {
+function generateShareImage(lineup, projection, isMattJonesMode = false) {
   const W = 640;
   const H = 760;
   const canvas = document.createElement('canvas');
@@ -704,10 +710,15 @@ function generateShareImage(lineup, projection) {
   for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
   for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
 
-  // Top accent bar
+  // Top accent bar - red for Matt Jones Mode, blue otherwise
   const grad = ctx.createLinearGradient(0, 0, W, 0);
-  grad.addColorStop(0, '#1d4ed8');
-  grad.addColorStop(1, '#3b82f6');
+  if (isMattJonesMode) {
+    grad.addColorStop(0, '#dc2626');
+    grad.addColorStop(1, '#ef4444');
+  } else {
+    grad.addColorStop(0, '#1d4ed8');
+    grad.addColorStop(1, '#3b82f6');
+  }
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, W, 4);
 
@@ -719,6 +730,23 @@ function generateShareImage(lineup, projection) {
   ctx.fillStyle = '#6b7280';
   ctx.font = '12px system-ui, -apple-system, sans-serif';
   ctx.fillText('Kentucky Wildcats All-Time Draft', 24, 58);
+
+  // Matt Jones Mode badge
+  if (isMattJonesMode) {
+    ctx.fillStyle = '#dc2626';
+    ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+    const badgeText = 'MATT JONES MODE';
+    const badgeW = ctx.measureText(badgeText).width + 16;
+    const badgeX = W - badgeW - 20;
+    const badgeY = 70;
+    ctx.beginPath();
+    ctx.roundRect(badgeX, badgeY, badgeW, 20, 4);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.fillText(badgeText, badgeX + badgeW / 2, badgeY + 14);
+    ctx.textAlign = 'left';
+  }
 
   // Tier badge
   const tierColors = {
@@ -923,11 +951,11 @@ function TeamAnalysis({ totals }) {
   );
 }
 
-function FinalLineup({ lineup, projection, onRestart, onCopyShare, shareStatus }) {
+function FinalLineup({ lineup, projection, onRestart, onCopyShare, shareStatus, isMattJonesMode }) {
   const [imageStatus, setImageStatus] = useState('');
 
   const handleShareImage = useCallback(() => {
-    const canvas = generateShareImage(lineup, projection);
+    const canvas = generateShareImage(lineup, projection, isMattJonesMode);
     canvas.toBlob((blob) => {
       if (!blob) { setImageStatus('Could not generate image.'); return; }
       const shareData = {
@@ -1028,7 +1056,7 @@ function PlayingScreen({
   selectedPlayer, setSelectedPlayer, selectedPosition, setSelectedPosition,
   selectedPlayerOpenPositions, spinRoulette, placePlayer,
   lineup, repositioningFrom, setRepositioningFrom, moveOrSwapPlayer, isMoveLegal,
-  usedSeasons,
+  usedSeasons, roundNumber,
 }) {
   const [mobileTab, setMobileTab] = useState('draft');
 
@@ -1064,7 +1092,7 @@ function PlayingScreen({
             </div>
             <button
               onClick={spinRoulette}
-              disabled={spinning || openPositions.length === 0 || (currentSeason && !selectedPlayer)}
+              disabled={spinning || openPositions.length === 0 || (currentSeason && roundNumber === 1)}
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-2.5 text-sm font-bold transition-all"
             >
               {spinning ? <Sparkles className="w-4 h-4 animate-pulse" /> : <Shuffle className="w-4 h-4" />}
@@ -1303,6 +1331,7 @@ function PlayingScreen({
 export default function App() {
   const [phase, setPhase] = useState('intro');
   const [gameMode, setGameMode] = useState('hoopIQ');
+  const [isMattJonesMode, setIsMattJonesMode] = useState(false);
   const [lineup, setLineup] = useState(EMPTY_LINEUP);
   const [currentSeason, setCurrentSeason] = useState(null);
   const [rouletteSeason, setRouletteSeason] = useState(null);
@@ -1427,24 +1456,55 @@ export default function App() {
   const spinRoulette = useCallback(() => {
     if (spinning || openPositions.length === 0) return;
 
-    const unusedSeasons = allSeasons.filter((season) => !usedSeasons.includes(season) && getSeasonStartYear(season) >= 1950);
-    const allValidSeasons = allSeasons.filter((season) => getSeasonStartYear(season) >= 1950);
+    const danIsselSeasons = ['1967-68', '1968-69', '1969-70'];
+    
+    const unusedSeasons = allSeasons.filter((season) => 
+      !usedSeasons.includes(season) && 
+      getSeasonStartYear(season) >= 1950 &&
+      !(isMattJonesMode && danIsselSeasons.includes(season))
+    );
+    const allValidSeasons = allSeasons.filter((season) => 
+      getSeasonStartYear(season) >= 1950 &&
+      !(isMattJonesMode && danIsselSeasons.includes(season))
+    );
+
+    console.log('Matt Jones Mode:', isMattJonesMode);
+    console.log('Unused seasons count:', unusedSeasons.length);
+    console.log('All valid seasons count:', allValidSeasons.length);
+    console.log('Open positions:', openPositions);
 
     let seasonPool = unusedSeasons.filter((season) =>
       seasonHasUsablePlayers(season, openPositions, draftedPlayerIds, playerIdSet)
     );
     let isFromUnused = true;
 
+    console.log('Season pool after first filter:', seasonPool.length);
+
     if (seasonPool.length === 0) {
       seasonPool = allValidSeasons.filter((season) =>
         seasonHasUsablePlayers(season, openPositions, draftedPlayerIds, playerIdSet)
       );
       isFromUnused = false;
+      console.log('Season pool after second filter:', seasonPool.length);
     }
 
     if (seasonPool.length === 0) {
       seasonPool = unusedSeasons.length > 0 ? unusedSeasons : allValidSeasons;
       isFromUnused = unusedSeasons.length > 0;
+      console.log('Season pool after fallback:', seasonPool.length);
+    }
+
+    // Final fallback: if still empty, use all seasons without filtering
+    if (seasonPool.length === 0) {
+      seasonPool = allSeasons.filter((season) => getSeasonStartYear(season) >= 1950);
+      isFromUnused = false;
+      console.log('Season pool after final fallback:', seasonPool.length);
+    }
+
+    // Safety check: if still no seasons, don't spin
+    if (seasonPool.length === 0) {
+      console.error('No valid seasons available for roulette');
+      return;
     }
 
     setSpinning(true);
@@ -1466,7 +1526,7 @@ export default function App() {
       ));
       setSpinning(false);
     }, 1400);
-  }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet]);
+  }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet, isMattJonesMode]);
 
   const startGame = useCallback((mode = 'hoopIQ') => {
     clearShareQueryParam();
@@ -1497,8 +1557,9 @@ export default function App() {
       return;
     }
 
-    const normalizedMode = mode === 'classic' ? 'classic' : 'hoopIQ';
+    const normalizedMode = mode === 'classic' || mode === 'mattjones' ? 'classic' : 'hoopIQ';
     setGameMode(normalizedMode);
+    setIsMattJonesMode(mode === 'mattjones');
     setLineup(EMPTY_LINEUP);
     setCurrentSeason(null);
     setRouletteSeason(null);
@@ -1611,7 +1672,9 @@ export default function App() {
           </div>
           {phase === 'playing' && (
             <div className="text-xs text-gray-400">
-              <span className="mr-2 text-blue-300 uppercase tracking-widest">{gameMode === 'classic' ? 'Classic' : 'HoopIQ'}</span>
+              <span className="mr-2 text-blue-300 uppercase tracking-widest">
+                {isMattJonesMode ? 'Matt Jones Mode' : (gameMode === 'classic' ? 'Classic' : 'HoopIQ')}
+              </span>
               Round <span className="text-white font-semibold">{roundNumber}</span> of 5
             </div>
           )}
@@ -1660,6 +1723,7 @@ export default function App() {
             moveOrSwapPlayer={moveOrSwapPlayer}
             isMoveLegal={isMoveLegal}
             usedSeasons={usedSeasons}
+            roundNumber={roundNumber}
           />
         )}
 
@@ -1670,6 +1734,7 @@ export default function App() {
             onRestart={restartGame}
             onCopyShare={copyShareLink}
             shareStatus={shareStatus}
+            isMattJonesMode={isMattJonesMode}
           />
         )}
       </main>
