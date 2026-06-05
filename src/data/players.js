@@ -79,6 +79,15 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "aleksinas_chuck",
+    "jerseyNumber": "50",
+    "fullName": "Chuck Aleksinas",
+    "seasons": [
+      "1978-79"
+    ],
+    "primaryPosition": "C"
+  },
+  {
     "id": "anderson_derek",
     "jerseyNumber": "23",
     "fullName": "Derek Anderson",
@@ -93,6 +102,7 @@ export const players = [
     "jerseyNumber": "23",
     "fullName": "Dwight Anderson",
     "seasons": [
+      "1978-79",
       "1979-80"
     ],
     "primaryPosition": "SG"
@@ -107,6 +117,16 @@ export const players = [
     ],
     "primaryPosition": "C",
     "height": 83
+  },
+  {
+    "id": "flynn_mike",
+    "jerseyNumber": "23",
+    "fullName": "Mike Flynn",
+    "seasons": [
+      "1972-73",
+      "1973-74"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "anthony_myron",
@@ -148,6 +168,33 @@ export const players = [
       "2018-19"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "bounds_brad",
+    "jerseyNumber": "33",
+    "fullName": "Brad Bounds",
+    "seasons": [
+      "1966-67"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "tallent_bob",
+    "jerseyNumber": "24",
+    "fullName": "Bob Tallent",
+    "seasons": [
+      "1966-67"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "bayless_jay",
+    "jerseyNumber": "44",
+    "fullName": "Jay Bayless",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "barbour_antwain",
@@ -260,6 +307,24 @@ export const players = [
     ],
     "primaryPosition": "F",
     "height": 78
+  },
+  {
+    "id": "bibb_bill",
+    "jerseyNumber": "10",
+    "fullName": "Bill Bibb",
+    "seasons": [
+      "1954-55"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "bishop_darryl",
+    "jerseyNumber": "21",
+    "fullName": "Darryl Bishop",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "blackmon_james",
@@ -399,6 +464,15 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "baesler_scotty",
+    "jerseyNumber": "14",
+    "fullName": "Scotty Baesler",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "brooks_keion",
     "jerseyNumber": "12",
     "fullName": "Keion Brooks",
@@ -419,6 +493,16 @@ export const players = [
       "1961-62"
     ],
     "primaryPosition": "PF"
+  },
+  {
+    "id": "brewer_john",
+    "jerseyNumber": "33",
+    "fullName": "John Brewer",
+    "seasons": [
+      "1954-55",
+      "1956-57"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "burks_jordan",
@@ -461,6 +545,15 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "cassady_billyray",
+    "jerseyNumber": "20",
+    "fullName": "Billy Ray Cassady",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "camara_souleymane",
     "jerseyNumber": "40",
     "fullName": "Souleymane Camara",
@@ -494,6 +587,16 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "calvert_gerry",
+    "jerseyNumber": "14",
+    "fullName": "Gerry Calvert",
+    "seasons": [
+      "1954-55",
+      "1956-57"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "carrier_josh",
     "jerseyNumber": "5",
     "fullName": "Josh Carrier",
@@ -513,6 +616,15 @@ export const players = [
       "2001-02"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "chiles_kirk",
+    "jerseyNumber": "14",
+    "fullName": "Kirk Chiles",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "carter_jared",
@@ -573,6 +685,15 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "chandler_dan",
+    "jerseyNumber": "15",
+    "fullName": "Dan Chandler",
+    "seasons": [
+      "1954-55"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "chapman_rex",
     "jerseyNumber": "3",
     "fullName": "Rex Chapman",
@@ -592,6 +713,16 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "clevenger_steve",
+    "jerseyNumber": "12",
+    "fullName": "Steve Clevenger",
+    "seasons": [
+      "1966-67",
+      "1967-68"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "cluggish_marion",
     "jerseyNumber": "12",
     "fullName": "Marion Cluggish",
@@ -601,6 +732,15 @@ export const players = [
       "1941-42"
     ],
     "primaryPosition": "C"
+  },
+  {
+    "id": "claytor_truman",
+    "jerseyNumber": "22",
+    "fullName": "Truman Claytor",
+    "seasons": [
+      "1978-79"
+    ],
+    "primaryPosition": "SG"
   },
   {
     "id": "coffman_bennie",
@@ -621,6 +761,15 @@ export const players = [
       "1959-60"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "corum_paul",
+    "jerseyNumber": "11",
+    "fullName": "Paul Corum",
+    "seasons": [
+      "1954-55"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "collins_daimion",
@@ -665,6 +814,15 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "collinsworth_lincoln",
+    "jerseyNumber": "13",
+    "fullName": "Lincoln Collinsworth",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "cote_bernard",
     "jerseyNumber": "12",
     "fullName": "Bernard Cote",
@@ -699,6 +857,7 @@ export const players = [
     "jerseyNumber": "40",
     "fullName": "Fred Cowan",
     "seasons": [
+      "1978-79",
       "1979-80",
       "1980-81",
       "1981-82",
@@ -728,6 +887,15 @@ export const players = [
       "2007-08"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "critz_george",
+    "jerseyNumber": "40",
+    "fullName": "George Critz",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "crigler_john",
@@ -816,6 +984,15 @@ export const players = [
     "height": 75
   },
   {
+    "id": "doyle_pat",
+    "jerseyNumber": "30",
+    "fullName": "Pat Doyle",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "delk_tony",
     "jerseyNumber": "00",
     "fullName": "Tony Delk",
@@ -890,6 +1067,17 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "edelman_ray",
+    "jerseyNumber": "22",
+    "fullName": "Ray Edelman",
+    "seasons": [
+      "1971-72",
+      "1972-73",
+      "1973-74"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "edwards_justin",
     "jerseyNumber": "1",
     "fullName": "Justin Edwards",
@@ -897,6 +1085,25 @@ export const players = [
       "2023-24"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "adkins_earl",
+    "jerseyNumber": "24",
+    "fullName": "Earl Adkins",
+    "seasons": [
+      "1954-55",
+      "1956-57"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "adams_john",
+    "jerseyNumber": "41",
+    "fullName": "John Adams",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "C"
   },
   {
     "id": "ellis_leron",
@@ -913,9 +1120,8 @@ export const players = [
     "jerseyNumber": "11",
     "fullName": "Randy Embry",
     "seasons": [
-      "1965-66",
-      "1966-67",
-      "1967-68"
+      "1962-63",
+      "1965-66"
     ],
     "primaryPosition": "PG"
   },
@@ -1145,6 +1351,15 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "grawemeyer_phil",
+    "jerseyNumber": "12",
+    "fullName": "Phil Grawemeyer",
+    "seasons": [
+      "1954-55"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "grady_kellan",
     "jerseyNumber": "31",
     "fullName": "Kellan Grady",
@@ -1163,6 +1378,15 @@ export const players = [
       "2018-19"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "green_steve",
+    "jerseyNumber": "0",
+    "fullName": "Steve Green",
+    "seasons": [
+      "1973-74"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "grevey_kevin",
@@ -1209,6 +1433,15 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "hurst_harold",
+    "jerseyNumber": "42",
+    "fullName": "Harold Hurst",
+    "seasons": [
+      "1954-55"
+    ],
+    "primaryPosition": "C"
+  },
+  {
     "id": "halsell_mark",
     "jerseyNumber": "14",
     "fullName": "Mark Halsell",
@@ -1228,6 +1461,24 @@ export const players = [
       "1988-89"
     ],
     "primaryPosition": "C"
+  },
+  {
+    "id": "haskins_merion",
+    "jerseyNumber": "0",
+    "fullName": "Merion Haskins",
+    "seasons": [
+      "1973-74"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "hale_jerry",
+    "jerseyNumber": "15",
+    "fullName": "Jerry Hale",
+    "seasons": [
+      "1972-73"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "harden_roger",
@@ -1292,6 +1543,24 @@ export const players = [
       "1993-94"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "harper_sam",
+    "jerseyNumber": "23",
+    "fullName": "Sam Harper",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "hardwick_john",
+    "jerseyNumber": "31",
+    "fullName": "John Hardwick",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "harrow_ryan",
@@ -1397,7 +1666,6 @@ export const players = [
     "jerseyNumber": "33",
     "fullName": "Tom Heitz",
     "seasons": [
-      "1978-79",
       "1979-80",
       "1980-81"
     ],
@@ -1440,7 +1708,8 @@ export const players = [
     "seasons": [
       "1968-69",
       "1969-70",
-      "1970-71"
+      "1970-71",
+      "1971-72"
     ],
     "primaryPosition": "PG"
   },
@@ -1456,6 +1725,15 @@ export const players = [
       "2013-14"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "howe_dick",
+    "jerseyNumber": "35",
+    "fullName": "Dick Howe",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "C"
   },
   {
     "id": "hopkins_bryce",
@@ -1512,6 +1790,15 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "ishmael_charles",
+    "jerseyNumber": "22",
+    "fullName": "Charles Ishmael",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "hurt_charles",
     "jerseyNumber": "44",
     "fullName": "Charles Hurt",
@@ -1558,7 +1845,8 @@ export const players = [
     "seasons": [
       "1964-65",
       "1965-66",
-      "1966-67"
+      "1966-67",
+      "1967-68"
     ],
     "primaryPosition": "C"
   },
@@ -1711,6 +1999,15 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "kennett_ron",
+    "jerseyNumber": "15",
+    "fullName": "Ron Kennett",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "knight_brandon",
     "jerseyNumber": "12",
     "fullName": "Brandon Knight",
@@ -1780,6 +2077,15 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "laib_art",
+    "jerseyNumber": "54",
+    "fullName": "Art Laib",
+    "seasons": [
+      "1967-68"
+    ],
+    "primaryPosition": "C"
+  },
+  {
     "id": "lanter_bo",
     "jerseyNumber": "12",
     "fullName": "Bo Lanter",
@@ -1846,6 +2152,16 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "lemaster_jim",
+    "jerseyNumber": "22",
+    "fullName": "Jim LeMaster",
+    "seasons": [
+      "1966-67",
+      "1967-68"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "lickert_bill",
     "jerseyNumber": "44",
     "fullName": "Bill Lickert",
@@ -1857,6 +2173,15 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "busey_bill",
+    "jerseyNumber": "10",
+    "fullName": "Bill Busey",
+    "seasons": [
+      "1967-68"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "liggins_deandre",
     "jerseyNumber": "34",
     "fullName": "DeAndre Liggins",
@@ -1866,6 +2191,16 @@ export const players = [
       "2010-11"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "drewitz_rick",
+    "jerseyNumber": "52",
+    "fullName": "Rick Drewitz",
+    "seasons": [
+      "1971-72",
+      "1972-73"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "line_jim",
@@ -1910,6 +2245,15 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "lochmueller_steve",
+    "jerseyNumber": "34",
+    "fullName": "Steve Lochmueller",
+    "seasons": [
+      "1972-73"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "lowe_jaland",
     "fullName": "Jaland Lowe",
     "seasons": [
@@ -1940,6 +2284,15 @@ export const players = [
     ],
     "primaryPosition": "G",
     "height": 70
+  },
+  {
+    "id": "lyons_wendell",
+    "jerseyNumber": "43",
+    "fullName": "Wendell Lyons",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "macy_kyle",
@@ -2084,6 +2437,15 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "mccowan_bob",
+    "jerseyNumber": "11",
+    "fullName": "Bob McCowan",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "meeks_jodie",
     "jerseyNumber": "23",
     "fullName": "Jodie Meeks",
@@ -2115,6 +2477,25 @@ export const players = [
       "2011-12"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "miller_david",
+    "jerseyNumber": "41",
+    "fullName": "David Miller",
+    "seasons": [
+      "1972-73",
+      "1973-74"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "miller_larry",
+    "jerseyNumber": "20",
+    "fullName": "Larry Miller",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "miller_derrick",
@@ -2203,6 +2584,75 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "mills_ray",
+    "jerseyNumber": "34",
+    "fullName": "Ray Mills",
+    "seasons": [
+      "1954-55",
+      "1956-57",
+      "1957-58",
+      "1958-59"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "radabaugh_denny",
+    "jerseyNumber": "50",
+    "fullName": "Denny Radabaugh",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "frudenberger_ray",
+    "jerseyNumber": "51",
+    "fullName": "Ray Frudenberger",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "berger_cliff",
+    "jerseyNumber": "40",
+    "fullName": "Cliff Berger",
+    "seasons": [
+      "1966-67",
+      "1967-68"
+    ],
+    "primaryPosition": "C"
+  },
+  {
+    "id": "gamble_gary",
+    "jerseyNumber": "32",
+    "fullName": "Gary Gamble",
+    "seasons": [
+      "1966-67",
+      "1967-68"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "guyette_bob",
+    "jerseyNumber": "50",
+    "fullName": "Bob Guyette",
+    "seasons": [
+      "1972-73",
+      "1973-74"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "harper_tom",
+    "jerseyNumber": "52",
+    "fullName": "Tom Harper",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "mkg_michael",
     "jerseyNumber": "14",
     "fullName": "Michael Kidd-Gilchrist",
@@ -2230,6 +2680,15 @@ export const players = [
       "2016-17"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "mobley_terry",
+    "jerseyNumber": "12",
+    "fullName": "Terry Mobley",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "montgomery_ej",
@@ -2432,7 +2891,8 @@ export const players = [
     "seasons": [
       "1968-69",
       "1969-70",
-      "1970-71"
+      "1970-71",
+      "1971-72"
     ],
     "primaryPosition": "SF"
   },
@@ -2504,6 +2964,15 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "perry_dan",
+    "jerseyNumber": "33",
+    "fullName": "Dan Perry",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "perry_dwight",
     "jerseyNumber": "30",
     "fullName": "Dwight Perry",
@@ -2537,6 +3006,16 @@ export const players = [
     "height": 82
   },
   {
+    "id": "argento_phil",
+    "jerseyNumber": "23",
+    "fullName": "Phil Argento",
+    "seasons": [
+      "1966-67",
+      "1967-68"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "polson_jarrod",
     "jerseyNumber": "5",
     "fullName": "Jarrod Polson",
@@ -2556,6 +3035,15 @@ export const players = [
       "2010-11"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "pool_randy",
+    "jerseyNumber": "44",
+    "fullName": "Randy Pool",
+    "seasons": [
+      "1967-68"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "pope_mark",
@@ -2578,6 +3066,16 @@ export const players = [
       "2008-09"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "porter_tom",
+    "jerseyNumber": "35",
+    "fullName": "Tom Porter",
+    "seasons": [
+      "1966-67",
+      "1967-68"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "potter_reece",
@@ -2703,6 +3201,33 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "roberts_roy",
+    "jerseyNumber": "33",
+    "fullName": "Roy Roberts",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "rolfes_don",
+    "jerseyNumber": "42",
+    "fullName": "Don Rolfes",
+    "seasons": [
+      "1962-63"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "ross_harold",
+    "jerseyNumber": "21",
+    "fullName": "Harold Ross",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "reeves_antonio",
     "jerseyNumber": "12",
     "fullName": "Antonio Reeves",
@@ -2752,7 +3277,8 @@ export const players = [
     "seasons": [
       "1963-64",
       "1964-65",
-      "1965-66"
+      "1965-66",
+      "1966-67"
     ],
     "primaryPosition": "SF"
   },
@@ -2777,6 +3303,15 @@ export const players = [
     ],
     "height": 78,
     "primaryPosition": "SG"
+  },
+  {
+    "id": "rose_gayle",
+    "jerseyNumber": "23",
+    "fullName": "Gayle Rose",
+    "seasons": [
+      "1954-55"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "rollins_ken",
@@ -2894,6 +3429,7 @@ export const players = [
     "jerseyNumber": "25",
     "fullName": "Jay Shidler",
     "seasons": [
+      "1978-79",
       "1979-80",
       "1980-81",
       "1981-82"
@@ -2942,6 +3478,42 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "smith_adrian",
+    "jerseyNumber": "25",
+    "fullName": "Adrian Smith",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "smith_greg",
+    "jerseyNumber": "15",
+    "fullName": "Greg Smith",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "smith_gj",
+    "jerseyNumber": "42",
+    "fullName": "G.J. Smith",
+    "seasons": [
+      "1972-73"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "smith_bill",
+    "jerseyNumber": "42",
+    "fullName": "Bill Smith",
+    "seasons": [
+      "1956-57"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "sparks_patrick",
     "jerseyNumber": "22",
     "fullName": "Patrick Sparks",
@@ -2973,6 +3545,15 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "spears_benny",
+    "jerseyNumber": "50",
+    "fullName": "Benny Spears",
+    "seasons": [
+      "1967-68"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "staker_carl",
     "jerseyNumber": "16",
     "fullName": "Carl Staker",
@@ -2981,6 +3562,16 @@ export const players = [
       "1939-40"
     ],
     "primaryPosition": "C"
+  },
+  {
+    "id": "stamper_larry",
+    "jerseyNumber": "32",
+    "fullName": "Larry Stamper",
+    "seasons": [
+      "1971-72",
+      "1972-73"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "steele_larry",
@@ -3005,6 +3596,24 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "stephens_tim",
+    "jerseyNumber": "12",
+    "fullName": "Tim Stephens",
+    "seasons": [
+      "1978-79"
+    ],
+    "primaryPosition": "PG"
+  },
+  {
+    "id": "stephens_elmore",
+    "jerseyNumber": "24",
+    "fullName": "Elmore Stephens",
+    "seasons": [
+      "1971-72"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "stewart_aj",
     "jerseyNumber": "15",
     "fullName": "A.J. Stewart",
@@ -3014,6 +3623,15 @@ export const players = [
       "2008-09"
     ],
     "primaryPosition": "PF"
+  },
+  {
+    "id": "stewart_gene",
+    "jerseyNumber": "34",
+    "fullName": "Gene Stewart",
+    "seasons": [
+      "1966-67"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "stockton_brandon",
@@ -3078,6 +3696,15 @@ export const players = [
       "2006-07"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "tillman_clarence",
+    "jerseyNumber": "44",
+    "fullName": "Clarence Tillman",
+    "seasons": [
+      "1978-79"
+    ],
+    "primaryPosition": "PF"
   },
   {
     "id": "toppin_jacob",
@@ -3199,6 +3826,7 @@ export const players = [
     "jerseyNumber": "34",
     "fullName": "Chuck Verderber",
     "seasons": [
+      "1978-79",
       "1979-80",
       "1980-81"
     ],
@@ -3263,6 +3891,15 @@ export const players = [
       "2022-23"
     ],
     "primaryPosition": "PF"
+  },
+  {
+    "id": "warford_reggie",
+    "jerseyNumber": "12",
+    "fullName": "Reggie Warford",
+    "seasons": [
+      "1972-73"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "washington_pj",
@@ -3392,6 +4029,7 @@ export const players = [
     "jerseyNumber": "52",
     "fullName": "Lavon Williams",
     "seasons": [
+      "1978-79",
       "1979-80",
       "1980-81"
     ],
@@ -3439,6 +4077,16 @@ export const players = [
       "1991-92"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "wood_roger",
+    "jerseyNumber": "25",
+    "fullName": "Roger Wood",
+    "seasons": [
+      "1972-73",
+      "1973-74"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "wynyard_tai",

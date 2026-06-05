@@ -29,6 +29,24 @@ export const playerSeasonStatsById = {
       "games": 9
     }
   },
+  "drewitz_rick": {
+    "1972-73": {
+      "pts": 1.3,
+      "reb": 0.8,
+      "ast": 0.3,
+      "stl": 0,
+      "blk": 0,
+      "games": 27
+    },
+    "1973-74": {
+      "pts": 2.0,
+      "reb": 0.8,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 6
+    }
+  },
   "moreno_malachi": {
     "2025-26": {
       "pts": 7.8,
@@ -327,6 +345,24 @@ export const playerSeasonStatsById = {
       "stl": 0.9,
       "blk": 0.2,
       "games": 32
+    }
+  },
+  "edelman_ray": {
+    "1972-73": {
+      "pts": 6.8,
+      "reb": 2.5,
+      "ast": 0.9,
+      "stl": 0,
+      "blk": 0,
+      "games": 27
+    },
+    "1973-74": {
+      "pts": 1.3,
+      "reb": 0.2,
+      "ast": 0.2,
+      "stl": 0,
+      "blk": 0,
+      "games": 19
     }
   },
   "thiero_adou": {
@@ -1045,6 +1081,24 @@ export const playerSeasonStatsById = {
       "games": 37
     }
   },
+  "warford_reggie": {
+    "1972-73": {
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 1
+    },
+    "1973-74": {
+      "pts": 1.1,
+      "reb": 0,
+      "ast": 0.4,
+      "stl": 0,
+      "blk": 0,
+      "games": 7
+    }
+  },
   "washington_pj": {
     "2017-18": {
       "pts": 10.8,
@@ -1099,6 +1153,16 @@ export const playerSeasonStatsById = {
       "stl": 1,
       "blk": 0,
       "games": 9
+    }
+  },
+  "green_steve": {
+    "1973-74": {
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 3
     }
   },
   "baker_jemarl": {
@@ -1833,6 +1897,24 @@ export const playerSeasonStatsById = {
       "games": 10
     }
   },
+  "lochmueller_steve": {
+    "1972-73": {
+      "pts": 3.3,
+      "reb": 2.0,
+      "ast": 0.1,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    },
+    "1973-74": {
+      "pts": 3.6,
+      "reb": 2.7,
+      "ast": 0.1,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    }
+  },
   "lanter_tod": {
     "2012-13": {
       "pts": 0,
@@ -2467,6 +2549,24 @@ export const playerSeasonStatsById = {
       "stl": 0.5,
       "blk": 0.3,
       "games": 30
+    }
+  },
+  "guyette_bob": {
+    "1972-73": {
+      "pts": 5.9,
+      "reb": 4.7,
+      "ast": 0.3,
+      "stl": 0,
+      "blk": 0,
+      "games": 27
+    },
+    "1973-74": {
+      "pts": 12.7,
+      "reb": 7.9,
+      "ast": 1.2,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
     }
   },
   "slone_landon": {
@@ -3123,6 +3223,24 @@ export const playerSeasonStatsById = {
       "games": 29
     }
   },
+  "flynn_mike": {
+    "1972-73": {
+      "pts": 5.4,
+      "reb": 1.7,
+      "ast": 2.5,
+      "stl": 0,
+      "blk": 0,
+      "games": 27
+    },
+    "1973-74": {
+      "pts": 11.5,
+      "reb": 5.9,
+      "ast": 3.2,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    }
+  },
   "daniels_erik": {
     "2000-01": {
       "pts": 5.2,
@@ -3449,6 +3567,24 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 8
+    }
+  },
+  "smith_gj": {
+    "1972-73": {
+      "pts": 2.5,
+      "reb": 1.5,
+      "ast": 0.4,
+      "stl": 0,
+      "blk": 0,
+      "games": 26
+    },
+    "1973-74": {
+      "pts": 4.1,
+      "reb": 2.6,
+      "ast": 0.6,
+      "stl": 0,
+      "blk": 0,
+      "games": 25
     }
   },
   "smith_saul": {
@@ -4457,6 +4593,24 @@ export const playerSeasonStatsById = {
       "games": 36
     }
   },
+  "wood_roger": {
+    "1972-73": {
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 1
+    },
+    "1973-74": {
+      "pts": 1.8,
+      "reb": 1.8,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 6
+    }
+  },
   "pelphrey_john": {
     "1988-89": {
       "pts": 1.7,
@@ -4677,6 +4831,34 @@ export const playerSeasonStatsById = {
       "stl": 1.5,
       "blk": 1.9,
       "games": 28
+    }
+  },
+  "hale_jerry": {
+    "1972-73": {
+      "pts": 1.2,
+      "reb": 0.2,
+      "ast": 0.6,
+      "stl": 0,
+      "blk": 0,
+      "games": 25
+    },
+    "1973-74": {
+      "pts": 1.0,
+      "reb": 0.5,
+      "ast": 0.3,
+      "stl": 0,
+      "blk": 0,
+      "games": 22
+    }
+  },
+  "haskins_merion": {
+    "1973-74": {
+      "pts": 0,
+      "reb": 1.5,
+      "ast": 0,
+      "stl": 0,
+      "blk": 0,
+      "games": 2
     }
   },
   "blackmon_james": {
@@ -6569,6 +6751,24 @@ export const playerSeasonStatsById = {
       "stl": 2.2,
       "blk": 6.2,
       "games": 32
+    }
+  },
+  "miller_david": {
+    "1972-73": {
+      "pts": 0,
+      "reb": 0,
+      "ast": 0.5,
+      "stl": 0,
+      "blk": 0,
+      "games": 2
+    },
+    "1973-74": {
+      "pts": 0.9,
+      "reb": 1.8,
+      "ast": 0.1,
+      "stl": 0,
+      "blk": 0,
+      "games": 10
     }
   },
   "miller_derrick": {
