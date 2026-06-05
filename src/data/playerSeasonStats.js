@@ -4737,7 +4737,7 @@ export const playerSeasonStatsById = {
       "reb": 1.5,
       "ast": 2.7,
       "stl": 1.1,
-      "blk": 0.8,
+      "blk": 0.1,
       "games": 31
     },
     "1985-86": {
@@ -4779,7 +4779,7 @@ export const playerSeasonStatsById = {
       "reb": 5.3,
       "ast": 0.8,
       "stl": 0.8,
-      "blk": 0.3,
+      "blk": 0.2,
       "games": 30
     },
     "1985-86": {
@@ -4875,7 +4875,7 @@ export const playerSeasonStatsById = {
       "reb": 1.4,
       "ast": 2.2,
       "stl": 1.1,
-      "blk": 0.5,
+      "blk": 0.0,
       "games": 29
     },
     "1985-86": {
@@ -4951,7 +4951,7 @@ export const playerSeasonStatsById = {
       "reb": 1.5,
       "ast": 4.7,
       "stl": 0.9,
-      "blk": 0,
+      "blk": 0.0,
       "games": 30
     },
     "1985-86": {
@@ -4966,10 +4966,10 @@ export const playerSeasonStatsById = {
   "madison_richard": {
     "1984-85": {
       "pts": 5.1,
-      "reb": 3,
+      "reb": 3.0,
       "ast": 0.6,
       "stl": 0.3,
-      "blk": 1.8,
+      "blk": 0.2,
       "games": 24
     },
     "1985-86": {
@@ -6873,6 +6873,76 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 24
+    }
+  },
+  "bearup_bret": {
+    "1984-85": {
+      "pts": 6.3,
+      "reb": 5.6,
+      "ast": 1.0,
+      "stl": 0.4,
+      "blk": 0.5,
+      "games": 31
+    }
+  },
+  "mckinley_troy": {
+    "1984-85": {
+      "pts": 4.6,
+      "reb": 1.0,
+      "ast": 0.7,
+      "stl": 0.2,
+      "blk": 0.0,
+      "games": 27
+    }
+  },
+  "andrews_paul": {
+    "1984-85": {
+      "pts": 2.1,
+      "reb": 0.4,
+      "ast": 0.9,
+      "stl": 0.1,
+      "blk": 0.0,
+      "games": 20
+    }
+  },
+  "lock_rob": {
+    "1984-85": {
+      "pts": 1.1,
+      "reb": 2.0,
+      "ast": 0.2,
+      "stl": 0.1,
+      "blk": 0.3,
+      "games": 27
+    }
+  },
+  "jenkins_cedric": {
+    "1984-85": {
+      "pts": 0.7,
+      "reb": 1.4,
+      "ast": 0.0,
+      "stl": 0.1,
+      "blk": 0.1,
+      "games": 20
+    }
+  },
+  "byrd_leroy": {
+    "1984-85": {
+      "pts": 0.2,
+      "reb": 0.2,
+      "ast": 0.3,
+      "stl": 0.1,
+      "blk": 0.0,
+      "games": 10
+    }
+  },
+  "ziegler_todd": {
+    "1984-85": {
+      "pts": 0.2,
+      "reb": 0.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 10
     }
   }
 };
