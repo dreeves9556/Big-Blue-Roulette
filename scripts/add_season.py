@@ -106,12 +106,18 @@ def process_roster(season, xls_path):
         if pd.isna(row.get("Pos", "")):
             pos = ""
 
-        games = int(row["G"]) if not pd.isna(row["G"]) else 0
-        pts = float(row["PTS"]) if not pd.isna(row["PTS"]) else 0.0
-        trb = float(row["TRB"]) if not pd.isna(row["TRB"]) else 0.0
-        ast = float(row["AST"]) if not pd.isna(row["AST"]) else 0.0
-        stl = float(row["STL"]) if not pd.isna(row["STL"]) else 0.0
-        blk = float(row["BLK"]) if not pd.isna(row["BLK"]) else 0.0
+        def num(col):
+            v = row.get(col)
+            if pd.isna(v):
+                return 0.0
+            return float(v)
+
+        games = int(num("G")) if not pd.isna(row.get("G")) else 0
+        pts = num("PTS")
+        trb = num("TRB")
+        ast = num("AST")
+        stl = num("STL")
+        blk = num("BLK")
 
         # --- Update players.js ---
         if pid in existing_ids:

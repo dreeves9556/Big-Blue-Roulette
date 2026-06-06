@@ -1,0 +1,428 @@
+{
+  "John Pelphrey": {
+    "1990-91": {
+      "pos": "F",
+      "games": 28,
+      "pts": 14.4,
+      "reb": 5.2,
+      "ast": 3.1,
+      "stl": 1.5,
+      "blk": 0.3
+    },
+    "1991-92": {
+      "pos": "F",
+      "games": 36,
+      "pts": 12.5,
+      "reb": 4.2,
+      "ast": 4,
+      "stl": 1.8,
+      "blk": 0.6
+    }
+  },
+  "Reggie Hanson": {
+    "1990-91": {
+      "pos": "F",
+      "games": 28,
+      "pts": 14.4,
+      "reb": 7.2,
+      "ast": 1.6,
+      "stl": 1.5,
+      "blk": 1.9
+    }
+  },
+  "Jamal Mashburn": {
+    "1990-91": {
+      "pos": "F",
+      "games": 28,
+      "pts": 12.9,
+      "reb": 7,
+      "ast": 1.5,
+      "stl": 1.3,
+      "blk": 0.5
+    },
+    "1991-92": {
+      "pos": "F",
+      "games": 36,
+      "pts": 21.3,
+      "reb": 7.8,
+      "ast": 1.4,
+      "stl": 1.8,
+      "blk": 0.6
+    },
+    "1992-93": {
+      "pos": "F",
+      "games": 34,
+      "pts": 21,
+      "reb": 8.4,
+      "ast": 3.6,
+      "stl": 1.5,
+      "blk": 0.4
+    }
+  },
+  "Deron Feldhaus": {
+    "1990-91": {
+      "pos": "F",
+      "games": 28,
+      "pts": 10.8,
+      "reb": 4.1,
+      "ast": 1.6,
+      "stl": 0.9,
+      "blk": 0.3
+    },
+    "1991-92": {
+      "pos": "F",
+      "games": 36,
+      "pts": 11.4,
+      "reb": 3.8,
+      "ast": 2.3,
+      "stl": 1,
+      "blk": 0.1
+    }
+  },
+  "Richie Farmer": {
+    "1990-91": {
+      "pos": "G",
+      "games": 28,
+      "pts": 10.1,
+      "reb": 1.8,
+      "ast": 1.8,
+      "stl": 1,
+      "blk": 0.1
+    },
+    "1991-92": {
+      "pos": "G",
+      "games": 35,
+      "pts": 9.6,
+      "reb": 2,
+      "ast": 1.5,
+      "stl": 1.2,
+      "blk": 0.1
+    }
+  },
+  "Sean Woods": {
+    "1990-91": {
+      "pos": "G",
+      "games": 27,
+      "pts": 9.7,
+      "reb": 2.6,
+      "ast": 5.6,
+      "stl": 1.9,
+      "blk": 0.1
+    },
+    "1991-92": {
+      "pos": "G",
+      "games": 36,
+      "pts": 7.7,
+      "reb": 2.6,
+      "ast": 4.6,
+      "stl": 1.3,
+      "blk": 0.1
+    }
+  },
+  "Jeff Brassow": {
+    "1990-91": {
+      "pos": "F",
+      "games": 28,
+      "pts": 8.1,
+      "reb": 3.2,
+      "ast": 1.1,
+      "stl": 1.5,
+      "blk": 0.5
+    },
+    "1991-92": {
+      "pos": "F",
+      "games": 2,
+      "pts": 15,
+      "reb": 5,
+      "ast": 1,
+      "stl": 2.5,
+      "blk": 0.5
+    },
+    "1992-93": {
+      "pos": "F",
+      "games": 31,
+      "pts": 4.1,
+      "reb": 1.9,
+      "ast": 1.2,
+      "stl": 0.4,
+      "blk": 0.1
+    }
+  },
+  "Junior Braddy": {
+    "1990-91": {
+      "pos": "G",
+      "games": 23,
+      "pts": 3.3,
+      "reb": 1.2,
+      "ast": 0.5,
+      "stl": 0.6,
+      "blk": 0.1
+    },
+    "1991-92": {
+      "pos": "G",
+      "games": 35,
+      "pts": 2.7,
+      "reb": 1,
+      "ast": 0.4,
+      "stl": 0.3,
+      "blk": 0
+    },
+    "1992-93": {
+      "pos": "G",
+      "games": 33,
+      "pts": 3.8,
+      "reb": 1.3,
+      "ast": 1,
+      "stl": 0.7,
+      "blk": 0.1
+    }
+  },
+  "Gimel Martinez": {
+    "1990-91": {
+      "pos": "F",
+      "games": 26,
+      "pts": 1.6,
+      "reb": 1.2,
+      "ast": 0.2,
+      "stl": 0.1,
+      "blk": 0.2
+    },
+    "1991-92": {
+      "pos": "F",
+      "games": 36,
+      "pts": 6.9,
+      "reb": 3.2,
+      "ast": 1,
+      "stl": 0.4,
+      "blk": 0.7
+    },
+    "1992-93": {
+      "pos": "F",
+      "games": 32,
+      "pts": 6.2,
+      "reb": 3,
+      "ast": 1.3,
+      "stl": 0.3,
+      "blk": 0.4
+    }
+  },
+  "Todd Bearup": {
+    "1990-91": {
+      "pos": "G",
+      "games": 11,
+      "pts": 1.5,
+      "reb": 0.1,
+      "ast": 0.1,
+      "stl": 0,
+      "blk": 0
+    }
+  },
+  "Carlos Toomer": {
+    "1990-91": {
+      "pos": "F",
+      "games": 12,
+      "pts": 1,
+      "reb": 0.6,
+      "ast": 0.5,
+      "stl": 0.3,
+      "blk": 0.1
+    },
+    "1991-92": {
+      "pos": "F",
+      "games": 9,
+      "pts": 1.6,
+      "reb": 0.4,
+      "ast": 0.1,
+      "stl": 0,
+      "blk": 0
+    }
+  },
+  "Jody Thompson": {
+    "1990-91": {
+      "pos": "G",
+      "games": 5,
+      "pts": 0.8,
+      "reb": 0.4,
+      "ast": 0.2,
+      "stl": 0.2,
+      "blk": 0
+    }
+  },
+  "Johnathon Davis": {
+    "1990-91": {
+      "pos": "C",
+      "games": 9,
+      "pts": 0.7,
+      "reb": 0.9,
+      "ast": 0.2,
+      "stl": 0.1,
+      "blk": 0.6
+    }
+  },
+  "Henry Thomas": {
+    "1990-91": {
+      "pos": "G",
+      "games": 14,
+      "pts": 0.5,
+      "reb": 1.1,
+      "ast": 0.2,
+      "stl": 0.2,
+      "blk": 0.1
+    }
+  },
+  "Dale Brown": {
+    "1991-92": {
+      "pos": "G",
+      "games": 35,
+      "pts": 7,
+      "reb": 2.5,
+      "ast": 0.7,
+      "stl": 1.1,
+      "blk": 0.1
+    },
+    "1992-93": {
+      "pos": "G",
+      "games": 34,
+      "pts": 9.4,
+      "reb": 3.4,
+      "ast": 2.4,
+      "stl": 1.4,
+      "blk": 0.2
+    }
+  },
+  "Travis Ford": {
+    "1991-92": {
+      "pos": "G",
+      "games": 33,
+      "pts": 3.5,
+      "reb": 1.1,
+      "ast": 2.1,
+      "stl": 0.8,
+      "blk": 0
+    },
+    "1992-93": {
+      "pos": "G",
+      "games": 34,
+      "pts": 13.6,
+      "reb": 2.1,
+      "ast": 4.9,
+      "stl": 1.6,
+      "blk": 0
+    }
+  },
+  "Andre Riddick": {
+    "1991-92": {
+      "pos": "C",
+      "games": 28,
+      "pts": 1.9,
+      "reb": 2.4,
+      "ast": 0.3,
+      "stl": 0.2,
+      "blk": 1.2
+    },
+    "1992-93": {
+      "pos": "C",
+      "games": 31,
+      "pts": 4.5,
+      "reb": 3.1,
+      "ast": 0.2,
+      "stl": 0.6,
+      "blk": 1.7
+    }
+  },
+  "Aminu Timberlake": {
+    "1991-92": {
+      "pos": "C",
+      "games": 25,
+      "pts": 1.1,
+      "reb": 1.6,
+      "ast": 0.3,
+      "stl": 0.3,
+      "blk": 0.2
+    },
+    "1992-93": {
+      "pos": "C",
+      "games": 14,
+      "pts": 0.7,
+      "reb": 0.6,
+      "ast": 0.1,
+      "stl": 0.1,
+      "blk": 0.2
+    }
+  },
+  "Chris Harrison": {
+    "1991-92": {
+      "pos": "G",
+      "games": 20,
+      "pts": 1,
+      "reb": 0.4,
+      "ast": 0.2,
+      "stl": 0.3,
+      "blk": 0
+    },
+    "1992-93": {
+      "pos": "G",
+      "games": 12,
+      "pts": 1.5,
+      "reb": 0.4,
+      "ast": 1,
+      "stl": 0.1,
+      "blk": 0
+    }
+  },
+  "Rodrick Rhodes": {
+    "1992-93": {
+      "pos": "F",
+      "games": 33,
+      "pts": 9.1,
+      "reb": 2.4,
+      "ast": 1.8,
+      "stl": 1.1,
+      "blk": 0.4
+    }
+  },
+  "Rodney Dent": {
+    "1992-93": {
+      "pos": "C",
+      "games": 34,
+      "pts": 6.4,
+      "reb": 5.1,
+      "ast": 0.5,
+      "stl": 0.5,
+      "blk": 1.1
+    }
+  },
+  "Jared Prickett": {
+    "1992-93": {
+      "pos": "F",
+      "games": 34,
+      "pts": 5.5,
+      "reb": 4.6,
+      "ast": 1.6,
+      "stl": 1,
+      "blk": 0.3
+    }
+  },
+  "Tony Delk": {
+    "1992-93": {
+      "pos": "G",
+      "games": 30,
+      "pts": 4.5,
+      "reb": 1.9,
+      "ast": 0.7,
+      "stl": 0.6,
+      "blk": 0.1
+    }
+  },
+  "Todd Svoboda": {
+    "1992-93": {
+      "pos": "F",
+      "games": 13,
+      "pts": 1.8,
+      "reb": 1.3,
+      "ast": 0.5,
+      "stl": 0,
+      "blk": 0.2
+    }
+  }
+}

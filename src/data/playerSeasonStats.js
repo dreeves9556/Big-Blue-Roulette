@@ -1097,6 +1097,22 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 7
+    },
+    "1975-76": {
+      "pts": 6.5,
+      "reb": 1.1,
+      "ast": 2.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
+    },
+    "1974-75": {
+      "pts": 1.1,
+      "reb": 0.5,
+      "ast": 0.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
     }
   },
   "washington_pj": {
@@ -2567,6 +2583,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 26
+    },
+    "1974-75": {
+      "pts": 8.6,
+      "reb": 6.7,
+      "ast": 1.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
     }
   },
   "slone_landon": {
@@ -3239,6 +3263,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 26
+    },
+    "1974-75": {
+      "pts": 9.0,
+      "reb": 3.9,
+      "ast": 3.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
     }
   },
   "daniels_erik": {
@@ -4849,6 +4881,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 22
+    },
+    "1974-75": {
+      "pts": 1.0,
+      "reb": 0.6,
+      "ast": 0.9,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 23
     }
   },
   "haskins_merion": {
@@ -4859,6 +4899,30 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 2
+    },
+    "1976-71": {
+      "pts": 1.5,
+      "reb": 1.2,
+      "ast": 0.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 29
+    },
+    "1975-76": {
+      "pts": 2.3,
+      "reb": 1.5,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 29
+    },
+    "1974-75": {
+      "pts": 0.9,
+      "reb": 1.0,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 26
     }
   },
   "blackmon_james": {
@@ -5138,8 +5202,8 @@ export const playerSeasonStatsById = {
       "pts": 3.7,
       "reb": 0.8,
       "ast": 1.5,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     },
     "1978-79": {
@@ -5157,6 +5221,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 35
+    },
+    "1976-71": {
+      "pts": 7.8,
+      "reb": 1.9,
+      "ast": 2.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
     }
   },
   "cowan_fred": {
@@ -5164,8 +5236,8 @@ export const playerSeasonStatsById = {
       "pts": 1.9,
       "reb": 0.9,
       "ast": 0.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 19
     },
     "1978-79": {
@@ -5229,12 +5301,12 @@ export const playerSeasonStatsById = {
   },
   "macy_kyle": {
     "1977-78": {
-      "pts": 12.5,
-      "reb": 2.4,
-      "ast": 5.6,
-      "stl": 0,
-      "blk": 0,
-      "games": 32
+      "pts": 12.9,
+      "reb": 2.5,
+      "ast": 5.7,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
     },
     "1978-79": {
       "pts": 15.2,
@@ -5418,10 +5490,10 @@ export const playerSeasonStatsById = {
     },
     "1977-78": {
       "pts": 1.9,
-      "reb": 2,
+      "reb": 2.0,
       "ast": 0.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
     },
     "1978-79": {
@@ -5439,6 +5511,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 35
+    },
+    "1976-71": {
+      "pts": 1.9,
+      "reb": 1.6,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
     }
   },
   "gettelfinger_chris": {
@@ -5446,8 +5526,8 @@ export const playerSeasonStatsById = {
       "pts": 0.2,
       "reb": 0.1,
       "ast": 0.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 9
     },
     "1978-79": {
@@ -5506,16 +5586,16 @@ export const playerSeasonStatsById = {
       "pts": 9.4,
       "reb": 4.9,
       "ast": 0.9,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
     },
     "1975-76": {
       "pts": 20.1,
       "reb": 7.2,
       "ast": 2.7,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 30
     },
     "1976-77": {
@@ -5530,9 +5610,17 @@ export const playerSeasonStatsById = {
       "pts": 18.1,
       "reb": 6.8,
       "ast": 2.5,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 32
+    },
+    "1976-71": {
+      "pts": 18.9,
+      "reb": 6.9,
+      "ast": 2.7,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 30
     }
   },
   "robey_rick": {
@@ -5540,16 +5628,16 @@ export const playerSeasonStatsById = {
       "pts": 10.4,
       "reb": 6.9,
       "ast": 0.5,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
     },
     "1975-76": {
       "pts": 15.6,
       "reb": 7.5,
       "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 12
     },
     "1976-77": {
@@ -5564,9 +5652,17 @@ export const playerSeasonStatsById = {
       "pts": 14.4,
       "reb": 8.2,
       "ast": 1.9,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 32
+    },
+    "1976-71": {
+      "pts": 14.2,
+      "reb": 9.1,
+      "ast": 1.7,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 30
     }
   },
   "casey_dwane": {
@@ -5574,8 +5670,8 @@ export const playerSeasonStatsById = {
       "pts": 1.3,
       "reb": 0.7,
       "ast": 0.6,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 20
     },
     "1976-77": {
@@ -5590,8 +5686,8 @@ export const playerSeasonStatsById = {
       "pts": 1.2,
       "reb": 0.7,
       "ast": 0.8,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1978-79": {
@@ -5601,6 +5697,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 22
+    },
+    "1976-71": {
+      "pts": 1.8,
+      "reb": 0.4,
+      "ast": 0.8,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 27
     }
   },
   "grevey_kevin": {
@@ -5624,8 +5728,8 @@ export const playerSeasonStatsById = {
       "pts": 23.5,
       "reb": 6.4,
       "ast": 2.2,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
     }
   },
@@ -5642,16 +5746,16 @@ export const playerSeasonStatsById = {
       "pts": 26.6,
       "reb": 13.6,
       "ast": 1.8,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     },
     "1969-70": {
       "pts": 33.9,
-      "reb": 13.2,
+      "reb": 13.0,
       "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     }
   },
@@ -5668,16 +5772,16 @@ export const playerSeasonStatsById = {
       "pts": 16.9,
       "reb": 8.8,
       "ast": 3.8,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1969-70": {
       "pts": 19.3,
-      "reb": 9.5,
+      "reb": 9.4,
       "ast": 3.5,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     }
   },
@@ -5686,16 +5790,16 @@ export const playerSeasonStatsById = {
       "pts": 8.6,
       "reb": 6.9,
       "ast": 2.7,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     },
     "1969-70": {
       "pts": 9.8,
       "reb": 6.3,
       "ast": 2.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 23
     },
     "1970-71": {
@@ -5712,8 +5816,8 @@ export const playerSeasonStatsById = {
       "pts": 10.4,
       "reb": 6.4,
       "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1970-71": {
@@ -5738,16 +5842,16 @@ export const playerSeasonStatsById = {
       "pts": 3.2,
       "reb": 0.9,
       "ast": 0.3,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 15
     },
     "1969-70": {
       "pts": 9.1,
       "reb": 2.8,
       "ast": 1.2,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1970-71": {
@@ -5761,11 +5865,11 @@ export const playerSeasonStatsById = {
   },
   "hollenbeck_kent": {
     "1969-70": {
-      "pts": 4,
+      "pts": 4.0,
       "reb": 1.7,
       "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1970-71": {
@@ -5790,8 +5894,8 @@ export const playerSeasonStatsById = {
       "pts": 3.6,
       "reb": 1.3,
       "ast": 1.5,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1970-71": {
@@ -5823,19 +5927,19 @@ export const playerSeasonStatsById = {
   },
   "riley_pat": {
     "1964-65": {
-      "pts": 15,
+      "pts": 15.0,
       "reb": 8.5,
       "ast": 1.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1965-66": {
-      "pts": 22,
+      "pts": 22.0,
       "reb": 8.9,
       "ast": 2.2,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     },
     "1966-67": {
@@ -5849,19 +5953,19 @@ export const playerSeasonStatsById = {
   },
   "dampier_louie": {
     "1964-65": {
-      "pts": 17,
+      "pts": 17.0,
       "reb": 4.9,
-      "ast": 1.6,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1965-66": {
       "pts": 21.1,
-      "reb": 5,
+      "reb": 5.0,
       "ast": 1.3,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     },
     "1966-67": {
@@ -5902,26 +6006,26 @@ export const playerSeasonStatsById = {
   "conley_larry": {
     "1963-64": {
       "pts": 12.3,
-      "reb": 6,
+      "reb": 6.0,
       "ast": 4.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 27
     },
     "1964-65": {
       "pts": 11.6,
       "reb": 4.6,
-      "ast": 3.2,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1965-66": {
       "pts": 11.5,
       "reb": 5.6,
       "ast": 3.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     }
   },
@@ -5930,8 +6034,8 @@ export const playerSeasonStatsById = {
       "pts": 13.2,
       "reb": 7.5,
       "ast": 0.6,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     },
     "1966-67": {
@@ -5964,16 +6068,16 @@ export const playerSeasonStatsById = {
       "pts": 7.3,
       "reb": 2.2,
       "ast": 1.6,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 24
     },
     "1964-65": {
       "pts": 5.6,
       "reb": 1.4,
-      "ast": 0.3,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 22
     }
   },
@@ -5982,8 +6086,8 @@ export const playerSeasonStatsById = {
       "pts": 23.4,
       "reb": 13.3,
       "ast": 2.7,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1962-63": {
@@ -5995,21 +6099,21 @@ export const playerSeasonStatsById = {
       "games": 25
     },
     "1963-64": {
-      "pts": 24,
-      "reb": 11.8,
-      "ast": 2,
-      "stl": 0,
-      "blk": 0,
+      "pts": 24.0,
+      "reb": 11.7,
+      "ast": 2.3,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 27
     }
   },
   "hatton_vernon": {
     "1955-56": {
       "pts": 13.3,
-      "reb": 4,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "reb": 4.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1956-57": {
@@ -6022,20 +6126,20 @@ export const playerSeasonStatsById = {
     },
     "1957-58": {
       "pts": 17.1,
-      "reb": 5,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "reb": 5.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     }
   },
   "crigler_john": {
     "1955-56": {
-      "pts": 5.5,
-      "reb": 3.8,
-      "ast": 0.7,
-      "stl": 0,
-      "blk": 0,
+      "pts": 2.5,
+      "reb": 2.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 10
     },
     "1956-57": {
@@ -6047,21 +6151,21 @@ export const playerSeasonStatsById = {
       "games": 28
     },
     "1957-58": {
-      "pts": 15.8,
-      "reb": 8.1,
-      "ast": 1.6,
-      "stl": 0,
-      "blk": 0,
+      "pts": 13.6,
+      "reb": 9.9,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     }
   },
   "beck_ed": {
     "1955-56": {
       "pts": 1.7,
-      "reb": 3,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "reb": 3.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 22
     },
     "1956-57": {
@@ -6075,9 +6179,9 @@ export const playerSeasonStatsById = {
     "1957-58": {
       "pts": 5.6,
       "reb": 11.6,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     }
   },
@@ -6093,9 +6197,9 @@ export const playerSeasonStatsById = {
     "1957-58": {
       "pts": 14.9,
       "reb": 12.6,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     },
     "1958-59": {
@@ -6109,11 +6213,11 @@ export const playerSeasonStatsById = {
   },
   "mills_don": {
     "1957-58": {
-      "pts": 6.1,
-      "reb": 3.9,
-      "ast": 0.9,
-      "stl": 0,
-      "blk": 0,
+      "pts": 3.5,
+      "reb": 5.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 20
     },
     "1958-59": {
@@ -6169,11 +6273,11 @@ export const playerSeasonStatsById = {
       "games": 20
     },
     "1960-61": {
-      "pts": 11.7,
-      "reb": 4,
-      "ast": 1.8,
-      "stl": 0,
-      "blk": 0,
+      "pts": 16.1,
+      "reb": 7.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     }
   },
@@ -6195,11 +6299,11 @@ export const playerSeasonStatsById = {
       "games": 23
     },
     "1960-61": {
-      "pts": 9.2,
-      "reb": 4.8,
-      "ast": 1.3,
-      "stl": 0,
-      "blk": 0,
+      "pts": 5.6,
+      "reb": 2.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 24
     }
   },
@@ -6221,11 +6325,11 @@ export const playerSeasonStatsById = {
       "games": 22
     },
     "1960-61": {
-      "pts": 14.5,
-      "reb": 6.3,
-      "ast": 2,
-      "stl": 0,
-      "blk": 0,
+      "pts": 11.5,
+      "reb": 8.9,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     }
   },
@@ -6241,17 +6345,17 @@ export const playerSeasonStatsById = {
     "1960-61": {
       "pts": 13.4,
       "reb": 3.9,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     },
     "1961-62": {
       "pts": 19.1,
       "reb": 3.5,
       "ast": 2.7,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     }
   },
@@ -6266,18 +6370,18 @@ export const playerSeasonStatsById = {
     },
     "1960-61": {
       "pts": 5.8,
-      "reb": 5,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "reb": 5.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1961-62": {
-      "pts": 12.4,
-      "reb": 5.6,
-      "ast": 1.5,
-      "stl": 0,
-      "blk": 0,
+      "pts": 11.2,
+      "reb": 8.2,
+      "ast": 1.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     }
   },
@@ -6291,19 +6395,19 @@ export const playerSeasonStatsById = {
       "games": 20
     },
     "1960-61": {
-      "pts": 6.2,
-      "reb": 4.1,
-      "ast": 0.8,
-      "stl": 0,
-      "blk": 0,
+      "pts": 3.5,
+      "reb": 4.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     },
     "1961-62": {
-      "pts": 8.6,
-      "reb": 5.4,
-      "ast": 1.1,
-      "stl": 0,
-      "blk": 0,
+      "pts": 6.3,
+      "reb": 6.1,
+      "ast": 1.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     }
   },
@@ -6329,25 +6433,25 @@ export const playerSeasonStatsById = {
     "1950-51": {
       "pts": 9.2,
       "reb": 8.5,
-      "ast": 1,
-      "stl": 0,
-      "blk": 0,
+      "ast": 1.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 20
     },
     "1951-52": {
       "pts": 21.6,
       "reb": 16.5,
-      "ast": 4,
-      "stl": 0,
-      "blk": 0,
+      "ast": 4.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 32
     },
     "1953-54": {
-      "pts": 24,
+      "pts": 24.0,
       "reb": 13.5,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     }
   },
@@ -6356,24 +6460,24 @@ export const playerSeasonStatsById = {
       "pts": 10.1,
       "reb": 12.8,
       "ast": 2.7,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 34
     },
     "1951-52": {
       "pts": 15.9,
-      "reb": 12,
+      "reb": 12.0,
       "ast": 2.6,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 32
     },
     "1953-54": {
       "pts": 19.6,
       "reb": 8.8,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     }
   },
@@ -6382,24 +6486,24 @@ export const playerSeasonStatsById = {
       "pts": 3.4,
       "reb": 4.8,
       "ast": 0.8,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 27
     },
     "1951-52": {
       "pts": 7.9,
       "reb": 10.3,
       "ast": 1.6,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 32
     },
     "1953-54": {
       "pts": 14.5,
       "reb": 9.6,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     }
   },
@@ -6415,17 +6519,17 @@ export const playerSeasonStatsById = {
     "1950-51": {
       "pts": 10.4,
       "reb": 9.1,
-      "ast": 2,
-      "stl": 0,
-      "blk": 0,
+      "ast": 2.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 34
     },
     "1951-52": {
-      "pts": 7,
-      "reb": 6.5,
-      "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "pts": 5.4,
+      "reb": 4.8,
+      "ast": 1.2,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 29
     }
   },
@@ -6442,16 +6546,16 @@ export const playerSeasonStatsById = {
       "pts": 10.4,
       "reb": 2.5,
       "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 34
     },
     "1951-52": {
-      "pts": 11,
-      "reb": 2.7,
-      "ast": 1.5,
-      "stl": 0,
-      "blk": 0,
+      "pts": 13.2,
+      "reb": 2.5,
+      "ast": 1.6,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 32
     }
   },
@@ -6494,18 +6598,18 @@ export const playerSeasonStatsById = {
       "pts": 19.2,
       "reb": 17.2,
       "ast": 2.5,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 33
     }
   },
   "hirsch_walter": {
     "1950-51": {
       "pts": 9.1,
-      "reb": 8,
+      "reb": 8.0,
       "ast": 3.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 30
     }
   },
@@ -6524,8 +6628,8 @@ export const playerSeasonStatsById = {
       "pts": 2.1,
       "reb": 1.6,
       "ast": 0.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 14
     },
     "1962-63": {
@@ -6537,11 +6641,11 @@ export const playerSeasonStatsById = {
       "games": 24
     },
     "1963-64": {
-      "pts": 19,
+      "pts": 19.0,
       "reb": 10.2,
       "ast": 2.1,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     }
   },
@@ -6558,8 +6662,8 @@ export const playerSeasonStatsById = {
       "pts": 19.1,
       "reb": 7.3,
       "ast": 4.6,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 28
     },
     "1970-71": {
@@ -6628,16 +6732,16 @@ export const playerSeasonStatsById = {
       "pts": 7.8,
       "reb": 4.4,
       "ast": 0.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
     },
     "1975-76": {
       "pts": 15.6,
       "reb": 9.8,
       "ast": 0.7,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 30
     },
     "1976-77": {
@@ -6652,9 +6756,17 @@ export const playerSeasonStatsById = {
       "pts": 10.2,
       "reb": 4.7,
       "ast": 0.9,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
+    },
+    "1976-71": {
+      "pts": 12.2,
+      "reb": 6.4,
+      "ast": 0.9,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
     }
   },
   "johnson_larry": {
@@ -6669,17 +6781,17 @@ export const playerSeasonStatsById = {
     "1974-75": {
       "pts": 4.3,
       "reb": 2.2,
-      "ast": 2,
-      "stl": 0,
-      "blk": 0,
+      "ast": 2.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
     },
     "1975-76": {
       "pts": 11.2,
       "reb": 5.5,
       "ast": 3.3,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 30
     },
     "1976-77": {
@@ -6689,23 +6801,31 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 30
+    },
+    "1976-71": {
+      "pts": 10.7,
+      "reb": 4.1,
+      "ast": 4.8,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 30
     }
   },
   "lee_james": {
     "1974-75": {
-      "pts": 3,
+      "pts": 3.0,
       "reb": 1.9,
       "ast": 0.3,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     },
     "1975-76": {
       "pts": 9.3,
       "reb": 7.3,
       "ast": 1.4,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 30
     },
     "1976-77": {
@@ -6720,9 +6840,17 @@ export const playerSeasonStatsById = {
       "pts": 11.3,
       "reb": 5.3,
       "ast": 1.2,
-      "stl": 0,
-      "blk": 0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 31
+    },
+    "1976-71": {
+      "pts": 9.8,
+      "reb": 5.2,
+      "ast": 1.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 30
     }
   },
   "ellis_leron": {
@@ -6808,10 +6936,10 @@ export const playerSeasonStatsById = {
   "bird_jerry": {
     "1953-54": {
       "pts": 3.5,
-      "reb": 3,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "reb": 3.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 4
     },
     "1954-55": {
@@ -6825,9 +6953,9 @@ export const playerSeasonStatsById = {
     "1955-56": {
       "pts": 16.2,
       "reb": 11.3,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 26
     }
   },
@@ -6843,9 +6971,9 @@ export const playerSeasonStatsById = {
     "1955-56": {
       "pts": 21.1,
       "reb": 14.6,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
       "games": 25
     }
   },
@@ -6940,6 +7068,1174 @@ export const playerSeasonStatsById = {
       "pts": 0.2,
       "reb": 0.4,
       "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 10
+    }
+  },
+  "claytor_truman": {
+    "1977-78": {
+      "pts": 6.9,
+      "reb": 0.9,
+      "ast": 2.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 32
+    },
+    "1976-71": {
+      "pts": 6.6,
+      "reb": 1.3,
+      "ast": 2.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 26
+    },
+    "1975-76": {
+      "pts": 6.0,
+      "reb": 0.9,
+      "ast": 1.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
+    }
+  },
+  "aleksinas_chuck": {
+    "1977-78": {
+      "pts": 3.7,
+      "reb": 2.2,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 27
+    }
+  },
+  "stephens_tim": {
+    "1977-78": {
+      "pts": 1.2,
+      "reb": 0.6,
+      "ast": 0.7,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 19
+    },
+    "1976-71": {
+      "pts": 2.5,
+      "reb": 1.3,
+      "ast": 1.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 12
+    }
+  },
+  "courts_scott": {
+    "1977-78": {
+      "pts": 0.8,
+      "reb": 0.8,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 13
+    }
+  },
+  "lawless_brad": {
+    "1976-71": {
+      "pts": 0.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 1
+    }
+  },
+  "williams_steve": {
+    "1976-71": {
+      "pts": 0.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 1
+    }
+  },
+  "fowler_bob": {
+    "1975-76": {
+      "pts": 3.6,
+      "reb": 1.8,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    }
+  },
+  "hall_dan": {
+    "1975-76": {
+      "pts": 0.9,
+      "reb": 2.1,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 9
+    },
+    "1974-75": {
+      "pts": 1.8,
+      "reb": 1.7,
+      "ast": 0.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 17
+    }
+  },
+  "holland_joey": {
+    "1975-76": {
+      "pts": 0.6,
+      "reb": 0.1,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 9
+    },
+    "1974-75": {
+      "pts": 1.1,
+      "reb": 0.9,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 8
+    }
+  },
+  "ramsey_derrick": {
+    "1975-76": {
+      "pts": 0.0,
+      "reb": 1.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 2
+    }
+  },
+  "conner_jimmy": {
+    "1974-75": {
+      "pts": 12.4,
+      "reb": 3.3,
+      "ast": 3.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
+    }
+  },
+  "smith_g.j.": {
+    "1974-75": {
+      "pts": 1.9,
+      "reb": 1.2,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 18
+    }
+  },
+  "mccowan_bob": {
+    "1969-70": {
+      "pts": 7.6,
+      "reb": 2.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 16
+    },
+    "1968-69": {
+      "pts": 3.8,
+      "reb": 1.4,
+      "ast": 1.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 20
+    }
+  },
+  "dinwiddie_jim": {
+    "1969-70": {
+      "pts": 4.5,
+      "reb": 3.8,
+      "ast": 2.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
+    },
+    "1968-69": {
+      "pts": 1.2,
+      "reb": 1.1,
+      "ast": 0.6,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 20
+    }
+  },
+  "pool_randy": {
+    "1969-70": {
+      "pts": 3.0,
+      "reb": 0.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 4
+    },
+    "1968-69": {
+      "pts": 2.7,
+      "reb": 2.2,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 22
+    }
+  },
+  "soderberg_mark": {
+    "1969-70": {
+      "pts": 1.6,
+      "reb": 1.7,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    }
+  },
+  "noll_randy": {
+    "1969-70": {
+      "pts": 1.2,
+      "reb": 1.2,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 13
+    }
+  },
+  "laib_art": {
+    "1969-70": {
+      "pts": 0.8,
+      "reb": 0.8,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 5
+    },
+    "1968-69": {
+      "pts": 0.8,
+      "reb": 1.3,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 13
+    }
+  },
+  "wheeler_clint": {
+    "1969-70": {
+      "pts": 0.8,
+      "reb": 0.6,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 5
+    },
+    "1968-69": {
+      "pts": 2.0,
+      "reb": 2.1,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 12
+    }
+  },
+  "busey_bill": {
+    "1969-70": {
+      "pts": 0.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 1
+    },
+    "1968-69": {
+      "pts": 2.1,
+      "reb": 0.1,
+      "ast": 0.6,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 10
+    }
+  },
+  "argento_phil": {
+    "1968-69": {
+      "pts": 10.0,
+      "reb": 3.1,
+      "ast": 3.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
+    }
+  },
+  "starrick_greg": {
+    "1968-69": {
+      "pts": 5.3,
+      "reb": 1.3,
+      "ast": 0.9,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "harris_jim": {
+    "1968-69": {
+      "pts": 1.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 2
+    }
+  },
+  "kron_tom": {
+    "1965-66": {
+      "pts": 10.2,
+      "reb": 8.3,
+      "ast": 1.6,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 29
+    },
+    "1964-65": {
+      "pts": 12.3,
+      "reb": 7.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 23
+    },
+    "1963-64": {
+      "pts": 5.1,
+      "reb": 3.4,
+      "ast": 1.6,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 27
+    }
+  },
+  "berger_cliff": {
+    "1965-66": {
+      "pts": 3.4,
+      "reb": 3.4,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    }
+  },
+  "tallent_bob": {
+    "1965-66": {
+      "pts": 3.0,
+      "reb": 1.1,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 18
+    }
+  },
+  "clevenger_steve": {
+    "1965-66": {
+      "pts": 2.2,
+      "reb": 0.5,
+      "ast": 0.5,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 11
+    }
+  },
+  "bounds_brad": {
+    "1965-66": {
+      "pts": 2.1,
+      "reb": 1.5,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 12
+    },
+    "1964-65": {
+      "pts": 3.6,
+      "reb": 1.9,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "lemaster_jim": {
+    "1965-66": {
+      "pts": 1.4,
+      "reb": 0.6,
+      "ast": 0.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 19
+    }
+  },
+  "stewart_gene": {
+    "1965-66": {
+      "pts": 1.3,
+      "reb": 1.5,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 6
+    },
+    "1964-65": {
+      "pts": 1.4,
+      "reb": 0.9,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    }
+  },
+  "porter_tom": {
+    "1965-66": {
+      "pts": 1.3,
+      "reb": 0.9,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    }
+  },
+  "lentz_larry": {
+    "1965-66": {
+      "pts": 1.0,
+      "reb": 1.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 2
+    },
+    "1964-65": {
+      "pts": 2.9,
+      "reb": 3.8,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 9
+    },
+    "1963-64": {
+      "pts": 0.0,
+      "reb": 1.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 1
+    }
+  },
+  "gamble_gary": {
+    "1965-66": {
+      "pts": 0.9,
+      "reb": 1.1,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 17
+    }
+  },
+  "windsor_bob": {
+    "1965-66": {
+      "pts": 0.0,
+      "reb": 0.8,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 6
+    }
+  },
+  "adams_john": {
+    "1964-65": {
+      "pts": 11.8,
+      "reb": 8.6,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    },
+    "1963-64": {
+      "pts": 1.9,
+      "reb": 1.8,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 16
+    }
+  },
+  "mobley_terry": {
+    "1964-65": {
+      "pts": 9.0,
+      "reb": 3.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    },
+    "1963-64": {
+      "pts": 9.4,
+      "reb": 5.2,
+      "ast": 1.7,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 27
+    }
+  },
+  "kennett_ron": {
+    "1964-65": {
+      "pts": 2.3,
+      "reb": 0.9,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    },
+    "1963-64": {
+      "pts": 1.0,
+      "reb": 0.2,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 5
+    }
+  },
+  "tully_frank": {
+    "1964-65": {
+      "pts": 1.0,
+      "reb": 1.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 2
+    }
+  },
+  "ishmael_charles": {
+    "1963-64": {
+      "pts": 5.5,
+      "reb": 2.6,
+      "ast": 1.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    },
+    "1961-62": {
+      "pts": 2.0,
+      "reb": 1.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 8
+    }
+  },
+  "gibson_mickey": {
+    "1963-64": {
+      "pts": 5.1,
+      "reb": 4.4,
+      "ast": 0.5,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 17
+    }
+  },
+  "harper_tom": {
+    "1963-64": {
+      "pts": 2.0,
+      "reb": 0.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 2
+    },
+    "1961-62": {
+      "pts": 1.5,
+      "reb": 1.3,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 4
+    }
+  },
+  "harper_sam": {
+    "1963-64": {
+      "pts": 1.6,
+      "reb": 1.0,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    }
+  },
+  "critz_george": {
+    "1963-64": {
+      "pts": 0.0,
+      "reb": 1.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 1
+    },
+    "1961-62": {
+      "pts": 1.0,
+      "reb": 1.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 2
+    }
+  },
+  "baesler_scotty": {
+    "1961-62": {
+      "pts": 10.9,
+      "reb": 5.1,
+      "ast": 4.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 26
+    },
+    "1960-61": {
+      "pts": 0.8,
+      "reb": 0.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 13
+    }
+  },
+  "roberts_roy": {
+    "1961-62": {
+      "pts": 7.0,
+      "reb": 8.3,
+      "ast": 0.9,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 26
+    }
+  },
+  "mcdonald_jim": {
+    "1961-62": {
+      "pts": 2.3,
+      "reb": 2.0,
+      "ast": 0.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 21
+    },
+    "1960-61": {
+      "pts": 0.7,
+      "reb": 1.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 19
+    }
+  },
+  "hurd_harry": {
+    "1961-62": {
+      "pts": 1.3,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 3
+    }
+  },
+  "pendygraft_doug": {
+    "1961-62": {
+      "pts": 1.1,
+      "reb": 1.3,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 9
+    },
+    "1960-61": {
+      "pts": 1.0,
+      "reb": 0.6,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "atkins_george": {
+    "1961-62": {
+      "pts": 0.7,
+      "reb": 1.0,
+      "ast": 0.1,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "rupp_herky": {
+    "1961-62": {
+      "pts": 0.7,
+      "reb": 1.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 9
+    }
+  },
+  "doyle_pat": {
+    "1961-62": {
+      "pts": 0.3,
+      "reb": 0.3,
+      "ast": 0.5,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 6
+    }
+  },
+  "newman_roger": {
+    "1960-61": {
+      "pts": 14.2,
+      "reb": 9.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
+    }
+  },
+  "negro_vince": {
+    "1960-61": {
+      "pts": 5.1,
+      "reb": 5.1,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    }
+  },
+  "butts_bernie": {
+    "1960-61": {
+      "pts": 1.3,
+      "reb": 0.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 6
+    }
+  },
+  "smith_adrian": {
+    "1957-58": {
+      "pts": 12.4,
+      "reb": 3.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 29
+    }
+  },
+  "adkins_earl": {
+    "1957-58": {
+      "pts": 5.3,
+      "reb": 1.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 19
+    }
+  },
+  "johnson_phil": {
+    "1957-58": {
+      "pts": 3.4,
+      "reb": 5.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 22
+    },
+    "1955-56": {
+      "pts": 3.1,
+      "reb": 2.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 17
+    }
+  },
+  "hughes_lowell": {
+    "1957-58": {
+      "pts": 3.3,
+      "reb": 1.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "cassady_billy": {
+    "1957-58": {
+      "pts": 2.4,
+      "reb": 0.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    },
+    "1955-56": {
+      "pts": 3.5,
+      "reb": 1.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 22
+    }
+  },
+  "collinsworth_abe": {
+    "1957-58": {
+      "pts": 1.5,
+      "reb": 1.1,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 15
+    }
+  },
+  "ross_harold": {
+    "1957-58": {
+      "pts": 1.3,
+      "reb": 0.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 3
+    },
+    "1955-56": {
+      "pts": 1.7,
+      "reb": 0.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 10
+    }
+  },
+  "howe_dick": {
+    "1957-58": {
+      "pts": 0.5,
+      "reb": 2.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 4
+    }
+  },
+  "smith_bill": {
+    "1957-58": {
+      "pts": 0.4,
+      "reb": 1.8,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 5
+    },
+    "1955-56": {
+      "pts": 1.5,
+      "reb": 1.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 11
+    }
+  },
+  "collinsworth_lincoln": {
+    "1957-58": {
+      "pts": 0.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 0
+    },
+    "1955-56": {
+      "pts": 1.1,
+      "reb": 0.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 11
+    }
+  },
+  "calvert_gerry": {
+    "1955-56": {
+      "pts": 11.2,
+      "reb": 4.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 26
+    }
+  },
+  "grawemeyer_phil": {
+    "1955-56": {
+      "pts": 8.4,
+      "reb": 10.8,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 26
+    },
+    "1953-54": {
+      "pts": 5.9,
+      "reb": 6.1,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    }
+  },
+  "mills_ray": {
+    "1955-56": {
+      "pts": 3.9,
+      "reb": 4.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 23
+    }
+  },
+  "brewer_john": {
+    "1955-56": {
+      "pts": 2.8,
+      "reb": 2.5,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 24
+    }
+  },
+  "evans_bill": {
+    "1953-54": {
+      "pts": 8.8,
+      "reb": 7.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 25
+    },
+    "1951-52": {
+      "pts": 5.2,
+      "reb": 5.3,
+      "ast": 1.8,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
+    }
+  },
+  "rose_gayle": {
+    "1953-54": {
+      "pts": 6.7,
+      "reb": 1.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 23
+    },
+    "1951-52": {
+      "pts": 4.0,
+      "reb": 1.1,
+      "ast": 0.9,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 28
+    }
+  },
+  "puckett_linville": {
+    "1953-54": {
+      "pts": 5.1,
+      "reb": 2.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 24
+    }
+  },
+  "bibb_bill": {
+    "1953-54": {
+      "pts": 1.7,
+      "reb": 1.6,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 16
+    }
+  },
+  "coy_hugh": {
+    "1953-54": {
+      "pts": 1.4,
+      "reb": 1.1,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 10
+    }
+  },
+  "rouse_willie": {
+    "1953-54": {
+      "pts": 1.2,
+      "reb": 0.2,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 5
+    },
+    "1951-52": {
+      "pts": 1.4,
+      "reb": 1.0,
+      "ast": 0.3,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 20
+    }
+  },
+  "chandler_dan": {
+    "1953-54": {
+      "pts": 1.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "hurst_harold": {
+    "1953-54": {
+      "pts": 0.9,
+      "reb": 2.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "curry_jess": {
+    "1953-54": {
+      "pts": 0.9,
+      "reb": 0.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 9
+    }
+  },
+  "evans_clay": {
+    "1953-54": {
+      "pts": 0.6,
+      "reb": 0.3,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "grigsby_pete": {
+    "1953-54": {
+      "pts": 0.3,
+      "reb": 0.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 3
+    }
+  },
+  "whitaker_skippy": {
+    "1951-52": {
+      "pts": 7.8,
+      "reb": 2.9,
+      "ast": 1.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
+    },
+    "1950-51": {
+      "pts": 5.2,
+      "reb": 2.0,
+      "ast": 0.9,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 31
+    }
+  },
+  "swartz_dan": {
+    "1951-52": {
+      "pts": 2.7,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 7
+    }
+  },
+  "neff_gene": {
+    "1951-52": {
+      "pts": 1.2,
+      "reb": 1.4,
+      "ast": 0.5,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 21
+    }
+  },
+  "dwyer_cliff": {
+    "1951-52": {
+      "pts": 0.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 1
+    }
+  },
+  "clark_ronald": {
+    "1951-52": {
+      "pts": 0.0,
+      "reb": 0.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 0
+    }
+  },
+  "price_dwight": {
+    "1950-51": {
+      "pts": 1.7,
+      "reb": 2.2,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 20
+    }
+  },
+  "layne_roger": {
+    "1950-51": {
+      "pts": 1.6,
+      "reb": 1.1,
+      "ast": 0.4,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 12
+    }
+  },
+  "newton_c.m.": {
+    "1950-51": {
+      "pts": 1.1,
+      "reb": 0.7,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 18
+    }
+  },
+  "strong_guy": {
+    "1950-51": {
+      "pts": 1.0,
+      "reb": 0.4,
+      "ast": 0.1,
       "stl": 0.0,
       "blk": 0.0,
       "games": 10
