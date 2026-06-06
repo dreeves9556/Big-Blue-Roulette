@@ -9,7 +9,6 @@ export const players = [
     "jerseyNumber": "15",
     "fullName": "A.J. Stewart",
     "seasons": [
-      "2006-07",
       "2007-08",
       "2008-09"
     ],
@@ -64,7 +63,6 @@ export const players = [
     "jerseyNumber": "25",
     "fullName": "Adam Williams",
     "seasons": [
-      "2004-05",
       "2005-06"
     ],
     "primaryPosition": "SG"
@@ -138,8 +136,7 @@ export const players = [
       "1994-95",
       "1995-96",
       "1996-97",
-      "1997-98",
-      "1998-99"
+      "1997-98"
     ],
     "primaryPosition": "SG"
   },
@@ -281,7 +278,6 @@ export const players = [
     "jerseyNumber": "33",
     "fullName": "Antwain Barbour",
     "seasons": [
-      "2001-02",
       "2002-03",
       "2003-04"
     ],
@@ -721,8 +717,6 @@ export const players = [
     "jerseyNumber": "35",
     "fullName": "C.M. Newton",
     "seasons": [
-      "1948-49",
-      "1949-50",
       "1950-51"
     ],
     "primaryPosition": "SF"
@@ -752,8 +746,7 @@ export const players = [
       "1994-95",
       "1995-96",
       "1996-97",
-      "1997-98",
-      "1998-99"
+      "1997-98"
     ],
     "primaryPosition": "SG"
   },
@@ -1051,7 +1044,6 @@ export const players = [
     "jerseyNumber": "33",
     "fullName": "Cory Sears",
     "seasons": [
-      "1999-00",
       "2000-01",
       "2001-02"
     ],
@@ -1190,7 +1182,6 @@ export const players = [
     "jerseyNumber": "3",
     "fullName": "Darnell Dodson",
     "seasons": [
-      "2008-09",
       "2009-10"
     ],
     "primaryPosition": "SF"
@@ -1363,7 +1354,6 @@ export const players = [
     "jerseyNumber": "32",
     "fullName": "Desmond Allison",
     "seasons": [
-      "1997-98",
       "1998-99",
       "1999-00"
     ],
@@ -1716,9 +1706,7 @@ export const players = [
       "1977-78",
       "1978-79",
       "1979-80",
-      "1980-81",
-      "1981-82",
-      "1982-83"
+      "1980-81"
     ],
     "primaryPosition": "PF"
   },
@@ -1831,8 +1819,7 @@ export const players = [
       "1990-91",
       "1991-92",
       "1992-93",
-      "1993-94",
-      "1994-95"
+      "1993-94"
     ],
     "primaryPosition": "SF"
   },
@@ -1975,8 +1962,7 @@ export const players = [
     "jerseyNumber": "15",
     "fullName": "Isaac Humphries",
     "seasons": [
-      "2016-17",
-      "2017-18"
+      "2016-17"
     ],
     "primaryPosition": "C"
   },
@@ -2238,9 +2224,7 @@ export const players = [
       "1976-77",
       "1977-78",
       "1978-79",
-      "1979-80",
-      "1980-81",
-      "1981-82"
+      "1979-80"
     ],
     "primaryPosition": "SG"
   },
@@ -2764,8 +2748,7 @@ export const players = [
     "jerseyNumber": "31",
     "fullName": "Kellan Grady",
     "seasons": [
-      "2021-22",
-      "2022-23"
+      "2021-22"
     ],
     "primaryPosition": "SF"
   },
@@ -2798,7 +2781,6 @@ export const players = [
     "jerseyNumber": "32",
     "fullName": "Kent Hollenbeck",
     "seasons": [
-      "1968-69",
       "1969-70",
       "1970-71",
       "1971-72"
@@ -2829,7 +2811,6 @@ export const players = [
     "jerseyNumber": "3",
     "fullName": "Kevin Galloway",
     "seasons": [
-      "2007-08",
       "2008-09"
     ],
     "primaryPosition": "SF"
@@ -2920,7 +2901,6 @@ export const players = [
     "jerseyNumber": "10",
     "fullName": "Landon Slone",
     "seasons": [
-      "2007-08",
       "2008-09"
     ],
     "primaryPosition": "PG"
@@ -3009,8 +2989,7 @@ export const players = [
       "1976-77",
       "1977-78",
       "1978-79",
-      "1979-80",
-      "1980-81"
+      "1979-80"
     ],
     "primaryPosition": "PF"
   },
@@ -3155,8 +3134,7 @@ export const players = [
     "seasons": [
       "2013-14",
       "2014-15",
-      "2015-16",
-      "2016-17"
+      "2015-16"
     ],
     "primaryPosition": "C"
   },
@@ -3176,7 +3154,6 @@ export const players = [
     "jerseyNumber": "42",
     "fullName": "Mark Coury",
     "seasons": [
-      "2005-06",
       "2006-07",
       "2007-08"
     ],
@@ -3187,7 +3164,6 @@ export const players = [
     "jerseyNumber": "14",
     "fullName": "Mark Halsell",
     "seasons": [
-      "2007-08",
       "2008-09"
     ],
     "primaryPosition": "C"
@@ -3197,7 +3173,6 @@ export const players = [
     "jerseyNumber": "12",
     "fullName": "Mark Krebs",
     "seasons": [
-      "2006-07",
       "2007-08",
       "2008-09"
     ],
@@ -3306,8 +3281,7 @@ export const players = [
     "fullName": "Michael Bradley",
     "seasons": [
       "1997-98",
-      "1998-99",
-      "1999-00"
+      "1998-99"
     ],
     "primaryPosition": "C"
   },
@@ -3416,7 +3390,6 @@ export const players = [
     "jerseyNumber": "25",
     "fullName": "Morakinyo Williams",
     "seasons": [
-      "2006-07",
       "2007-08"
     ],
     "primaryPosition": "SF"
@@ -3449,8 +3422,7 @@ export const players = [
     "fullName": "Myron Anthony",
     "seasons": [
       "1997-98",
-      "1998-99",
-      "1999-00"
+      "1998-99"
     ],
     "primaryPosition": "SF"
   },
@@ -3581,7 +3553,6 @@ export const players = [
     "jerseyNumber": "42",
     "fullName": "Pat Riley",
     "seasons": [
-      "1963-64",
       "1964-65",
       "1965-66",
       "1966-67"
@@ -3789,8 +3760,7 @@ export const players = [
     "seasons": [
       "1962-63",
       "1963-64",
-      "1964-65",
-      "1965-66"
+      "1964-65"
     ],
     "primaryPosition": "PG"
   },
@@ -3861,9 +3831,7 @@ export const players = [
     "seasons": [
       "1954-55",
       "1955-56",
-      "1956-57",
-      "1957-58",
-      "1958-59"
+      "1956-57"
     ],
     "primaryPosition": "PF"
   },
@@ -3893,7 +3861,6 @@ export const players = [
     "jerseyNumber": "35",
     "fullName": "Reggie Hanson",
     "seasons": [
-      "1986-87",
       "1987-88",
       "1988-89",
       "1989-90",
@@ -3926,7 +3893,6 @@ export const players = [
     "jerseyNumber": "42",
     "fullName": "Rekalin Sims",
     "seasons": [
-      "2004-05",
       "2005-06"
     ],
     "primaryPosition": "SF"
@@ -3946,7 +3912,6 @@ export const players = [
     "jerseyNumber": "42",
     "fullName": "Richard Madison",
     "seasons": [
-      "1983-84",
       "1984-85",
       "1985-86",
       "1986-87",
@@ -4142,8 +4107,7 @@ export const players = [
     "fullName": "Ryan Hogan",
     "seasons": [
       "1997-98",
-      "1998-99",
-      "1999-00"
+      "1998-99"
     ],
     "primaryPosition": "PF"
   },
@@ -4216,8 +4180,7 @@ export const players = [
       "1997-98",
       "1998-99",
       "1999-00",
-      "2000-01",
-      "2001-02"
+      "2000-01"
     ],
     "primaryPosition": "PG"
   },
@@ -4235,7 +4198,6 @@ export const players = [
     "fullName": "Scott Padgett",
     "seasons": [
       "1994-95",
-      "1995-96",
       "1996-97",
       "1997-98",
       "1998-99"
@@ -4444,8 +4406,7 @@ export const players = [
       "1996-97",
       "1997-98",
       "1998-99",
-      "1999-00",
-      "2000-01"
+      "1999-00"
     ],
     "primaryPosition": "PG"
   },
@@ -4546,7 +4507,6 @@ export const players = [
     "jerseyNumber": "55",
     "fullName": "Thad Jaracz",
     "seasons": [
-      "1964-65",
       "1965-66",
       "1966-67",
       "1967-68"
@@ -4636,7 +4596,6 @@ export const players = [
     "fullName": "Tom Heitz",
     "seasons": [
       "1979-80",
-      "1980-81",
       "1981-82",
       "1982-83",
       "1983-84"
@@ -4658,7 +4617,6 @@ export const players = [
     "jerseyNumber": "12",
     "fullName": "Tom Parker",
     "seasons": [
-      "1968-69",
       "1969-70",
       "1970-71",
       "1971-72"
@@ -4743,7 +4701,6 @@ export const players = [
     "jerseyNumber": "4",
     "fullName": "Tre Mitchell",
     "seasons": [
-      "2022-23",
       "2023-24"
     ],
     "primaryPosition": "PF"
@@ -4912,7 +4869,6 @@ export const players = [
     "jerseyNumber": "19",
     "fullName": "Walter Hirsch",
     "seasons": [
-      "1949-50",
       "1950-51"
     ],
     "primaryPosition": "PF"
