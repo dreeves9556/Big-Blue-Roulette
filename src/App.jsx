@@ -1113,7 +1113,7 @@ function PlayingScreen({
             </div>
             <button
               onClick={spinRoulette}
-              disabled={spinning || openPositions.length === 0 || (currentSeason && roundNumber === 1)}
+              disabled={spinning || openPositions.length === 0 || currentSeason}
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-2.5 text-sm font-bold transition-all"
             >
               {spinning ? <Sparkles className="w-4 h-4 animate-pulse" /> : <Shuffle className="w-4 h-4" />}
@@ -1475,7 +1475,7 @@ export default function App() {
   }, [shareStatus]);
 
   const spinRoulette = useCallback(() => {
-    if (spinning || openPositions.length === 0) return;
+    if (spinning || openPositions.length === 0 || currentSeason) return;
 
     const danIsselSeasons = ['1967-68', '1968-69', '1969-70'];
     
@@ -1547,7 +1547,7 @@ export default function App() {
       ));
       setSpinning(false);
     }, 1400);
-  }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet, isMattJonesMode]);
+  }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet, isMattJonesMode, currentSeason]);
 
   const startGame = useCallback((mode = 'hoopIQ') => {
     clearShareQueryParam();
