@@ -15,15 +15,6 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
-    "id": "stewart_a.j.",
-    "fullName": "A.J. Stewart",
-    "seasons": [
-      "2007-08",
-      "2008-09"
-    ],
-    "primaryPosition": "F"
-  },
-  {
     "id": "bradshaw_aaron",
     "jerseyNumber": "2",
     "fullName": "Aaron Bradshaw",
@@ -459,14 +450,6 @@ export const players = [
     "jerseyNumber": "20",
     "fullName": "Billy Ray Cassady",
     "seasons": [
-      "1956-57"
-    ],
-    "primaryPosition": "SG"
-  },
-  {
-    "id": "cassady_billy",
-    "fullName": "Billy Ray Cassady",
-    "seasons": [
       "1955-56",
       "1956-57",
       "1957-58"
@@ -720,14 +703,6 @@ export const players = [
       "1950-51"
     ],
     "primaryPosition": "SF"
-  },
-  {
-    "id": "newton_c.m.",
-    "fullName": "C.M. Newton",
-    "seasons": [
-      "1950-51"
-    ],
-    "primaryPosition": "SG"
   },
   {
     "id": "fletcher_camron",
@@ -1225,14 +1200,6 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
-    "id": "fox_de'aaron",
-    "fullName": "De'Aaron Fox",
-    "seasons": [
-      "2016-17"
-    ],
-    "primaryPosition": "G"
-  },
-  {
     "id": "liggins_deandre",
     "jerseyNumber": "34",
     "fullName": "DeAndre Liggins",
@@ -1715,14 +1682,6 @@ export const players = [
     "jerseyNumber": "42",
     "fullName": "G.J. Smith",
     "seasons": [
-      "1972-73"
-    ],
-    "primaryPosition": "PF"
-  },
-  {
-    "id": "smith_g.j.",
-    "fullName": "G.J. Smith",
-    "seasons": [
       "1972-73",
       "1974-75"
     ],
@@ -1996,17 +1955,6 @@ export const players = [
       "2001-02"
     ],
     "primaryPosition": "PG"
-  },
-  {
-    "id": "blevins_j.p.",
-    "fullName": "J.P. Blevins",
-    "seasons": [
-      "1998-99",
-      "1999-00",
-      "2000-01",
-      "2001-02"
-    ],
-    "primaryPosition": "G"
   },
   {
     "id": "givens_jack",
@@ -2392,15 +2340,6 @@ export const players = [
       "1974-75"
     ],
     "primaryPosition": "PG"
-  },
-  {
-    "id": "conner_jimmy",
-    "fullName": "Jimmy Dan Conner",
-    "seasons": [
-      "1972-73",
-      "1974-75"
-    ],
-    "primaryPosition": "SF"
   },
   {
     "id": "meeks_jodie",
@@ -4122,15 +4061,6 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
-    "id": "killeya-jones_sacha",
-    "fullName": "Sacha Killeya-Jones",
-    "seasons": [
-      "2016-17",
-      "2017-18"
-    ],
-    "primaryPosition": "F"
-  },
-  {
     "id": "wheeler_sahvir",
     "jerseyNumber": "2",
     "fullName": "Sahvir Wheeler",
@@ -4262,14 +4192,6 @@ export const players = [
       "2017-18"
     ],
     "primaryPosition": "SG"
-  },
-  {
-    "id": "gilgeous-alexander_shai",
-    "fullName": "Shai Gilgeous-Alexander",
-    "seasons": [
-      "2017-18"
-    ],
-    "primaryPosition": "G"
   },
   {
     "id": "linville_shelby",

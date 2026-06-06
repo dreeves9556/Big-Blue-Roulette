@@ -3633,6 +3633,14 @@ export const playerSeasonStatsById = {
       "stl": 0,
       "blk": 0,
       "games": 25
+    },
+    "1974-75": {
+      "pts": 1.9,
+      "reb": 1.2,
+      "ast": 0.2,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 18
     }
   },
   "smith_saul": {
@@ -7437,42 +7445,6 @@ export const playerSeasonStatsById = {
       "games": 2
     }
   },
-  "conner_jimmy": {
-    "1974-75": {
-      "pts": 12.4,
-      "reb": 3.3,
-      "ast": 3.4,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 31
-    },
-    "1972-73": {
-      "pts": 11.2,
-      "reb": 4.6,
-      "ast": 3.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 28
-    }
-  },
-  "smith_g.j.": {
-    "1974-75": {
-      "pts": 1.9,
-      "reb": 1.2,
-      "ast": 0.2,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 18
-    },
-    "1972-73": {
-      "pts": 2.0,
-      "reb": 1.2,
-      "ast": 0.2,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 6
-    }
-  },
   "mccowan_bob": {
     "1969-70": {
       "pts": 7.6,
@@ -8381,32 +8353,6 @@ export const playerSeasonStatsById = {
       "games": 9
     }
   },
-  "cassady_billy": {
-    "1957-58": {
-      "pts": 2.4,
-      "reb": 0.7,
-      "ast": 0.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 14
-    },
-    "1955-56": {
-      "pts": 3.5,
-      "reb": 1.4,
-      "ast": 0.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 22
-    },
-    "1956-57": {
-      "pts": 3.2,
-      "reb": 1.0,
-      "ast": 0.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 18
-    }
-  },
   "collinsworth_abe": {
     "1957-58": {
       "pts": 1.5,
@@ -8869,16 +8815,6 @@ export const playerSeasonStatsById = {
       "games": 12
     }
   },
-  "newton_c.m.": {
-    "1950-51": {
-      "pts": 1.1,
-      "reb": 0.7,
-      "ast": 0.2,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 18
-    }
-  },
   "strong_guy": {
     "1950-51": {
       "pts": 1.0,
@@ -9195,40 +9131,6 @@ export const playerSeasonStatsById = {
       "games": 13
     }
   },
-  "blevins_j.p.": {
-    "2000-01": {
-      "pts": 94.0,
-      "reb": 29.0,
-      "ast": 19.0,
-      "stl": 7.0,
-      "blk": 0.0,
-      "games": 33
-    },
-    "2001-02": {
-      "pts": 2.1,
-      "reb": 1.1,
-      "ast": 0.8,
-      "stl": 0.6,
-      "blk": 0.0,
-      "games": 20
-    },
-    "1998-99": {
-      "pts": 0.8,
-      "reb": 0.5,
-      "ast": 0.2,
-      "stl": 0.1,
-      "blk": 0.0,
-      "games": 13
-    },
-    "1999-00": {
-      "pts": 4.2,
-      "reb": 1.2,
-      "ast": 1.3,
-      "stl": 0.5,
-      "blk": 0.0,
-      "games": 33
-    }
-  },
   "camara_jules": {
     "2001-02": {
       "pts": 6.1,
@@ -9283,24 +9185,6 @@ export const playerSeasonStatsById = {
       "games": 16
     }
   },
-  "stewart_a.j.": {
-    "2007-08": {
-      "pts": 2.1,
-      "reb": 1.8,
-      "ast": 0.3,
-      "stl": 0.3,
-      "blk": 0.4,
-      "games": 22
-    },
-    "2008-09": {
-      "pts": 2.0,
-      "reb": 1.2,
-      "ast": 0.2,
-      "stl": 0.2,
-      "blk": 0.5,
-      "games": 29
-    }
-  },
   "mills_dusty": {
     "2007-08": {
       "pts": 0.0,
@@ -9309,44 +9193,6 @@ export const playerSeasonStatsById = {
       "stl": 0.0,
       "blk": 0.0,
       "games": 4
-    }
-  },
-  "fox_de'aaron": {
-    "2016-17": {
-      "pts": 16.7,
-      "reb": 4.0,
-      "ast": 4.6,
-      "stl": 1.5,
-      "blk": 0.2,
-      "games": 36
-    }
-  },
-  "killeya-jones_sacha": {
-    "2016-17": {
-      "pts": 2.9,
-      "reb": 2.2,
-      "ast": 0.1,
-      "stl": 0.1,
-      "blk": 0.7,
-      "games": 14
-    },
-    "2017-18": {
-      "pts": 3.3,
-      "reb": 2.9,
-      "ast": 0.2,
-      "stl": 0.2,
-      "blk": 0.6,
-      "games": 34
-    }
-  },
-  "gilgeous-alexander_shai": {
-    "2017-18": {
-      "pts": 14.4,
-      "reb": 4.1,
-      "ast": 5.1,
-      "stl": 1.6,
-      "blk": 0.5,
-      "games": 37
     }
   },
   "corum_paul": {
@@ -9585,6 +9431,32 @@ export const playerSeasonStatsById = {
       "stl": 0.3,
       "blk": 0.4,
       "games": 9
+    }
+  },
+  "cassady_billyray": {
+    "1957-58": {
+      "pts": 2.4,
+      "reb": 0.7,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 14
+    },
+    "1955-56": {
+      "pts": 3.5,
+      "reb": 1.4,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 22
+    },
+    "1956-57": {
+      "pts": 3.2,
+      "reb": 1.0,
+      "ast": 0.0,
+      "stl": 0.0,
+      "blk": 0.0,
+      "games": 18
     }
   }
 };
