@@ -498,7 +498,7 @@ export const players = [
     "seasons": [
       "1965-66"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PF"
   },
   {
     "id": "perry_bobby",
@@ -551,7 +551,7 @@ export const players = [
     "seasons": [
       "1976-71"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "SG"
   },
   {
     "id": "boston_brandon",
@@ -874,7 +874,7 @@ export const players = [
     "seasons": [
       "1953-54"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PG"
   },
   {
     "id": "barker_cliff",
@@ -905,7 +905,7 @@ export const players = [
     "seasons": [
       "1951-52"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "C"
   },
   {
     "id": "hagan_cliff",
@@ -1244,7 +1244,7 @@ export const players = [
     "seasons": [
       "1975-76"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PF"
   },
   {
     "id": "allison_desmond",
@@ -1802,7 +1802,7 @@ export const players = [
     "seasons": [
       "1953-54"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "SF"
   },
   {
     "id": "quickley_immanuel",
@@ -2137,7 +2137,7 @@ export const players = [
     "seasons": [
       "1953-54"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PG"
   },
   {
     "id": "andrews_jim",
@@ -2165,7 +2165,7 @@ export const players = [
     "seasons": [
       "1968-69"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PF"
   },
   {
     "id": "lemaster_jim",
@@ -3397,7 +3397,7 @@ export const players = [
     "seasons": [
       "1953-54"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PG"
   },
   {
     "id": "argento_phil",
@@ -3824,7 +3824,7 @@ export const players = [
     "seasons": [
       "1951-52"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "SG"
   },
   {
     "id": "lyons_ronnie",
@@ -3937,7 +3937,7 @@ export const players = [
     "seasons": [
       "1977-78"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "C"
   },
   {
     "id": "padgett_scott",
@@ -4131,7 +4131,7 @@ export const players = [
     "seasons": [
       "1976-71"
     ],
-    "primaryPosition": ""
+    "primaryPosition": "PG"
   },
   {
     "id": "wynyard_tai",
