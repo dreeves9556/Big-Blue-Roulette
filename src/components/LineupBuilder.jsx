@@ -89,18 +89,20 @@ function estimatePlayerMetrics(player, season) {
       };
     }
     const positionEstimates = {
-      PG: { stl: 1.2, blk: 0.1 },
-      SG: { stl: 1.0, blk: 0.2 },
-      SF: { stl: 0.8, blk: 0.4 },
-      PF: { stl: 0.5, blk: 0.8 },
-      C:  { stl: 0.4, blk: 1.5 },
+      PG: { ast: 3.5, stl: 1.2, blk: 0.1 },
+      SG: { ast: 2.0, stl: 1.0, blk: 0.2 },
+      SF: { ast: 1.5, stl: 0.8, blk: 0.4 },
+      PF: { ast: 1.0, stl: 0.5, blk: 0.8 },
+      C:  { ast: 0.5, stl: 0.4, blk: 1.5 },
     };
-    const estimates = positionEstimates[player.primaryPosition] || { stl: 0.5, blk: 0.3 };
+    const estimates = positionEstimates[player.primaryPosition] || { ast: 1.0, stl: 0.5, blk: 0.3 };
     const era = getEraAdjustment(year);
+    const rawAst = realStats.ast ?? 0;
+    const ast = rawAst > 0 ? rawAst * era.ast : estimates.ast * era.ast;
     return {
       pts: (realStats.pts ?? 0) * era.pts,
       reb: (realStats.reb ?? 0) * era.reb,
-      ast: (realStats.ast ?? 0) * era.ast,
+      ast: roundToTenths(ast),
       stl: estimates.stl * era.stl,
       blk: estimates.blk * era.blk,
     };
@@ -249,7 +251,7 @@ function buildProjection(lineup) {
     )
   );
 
-  const PERFECT_TARGET = 110;
+  const PERFECT_TARGET = 106.7;
   const wins = Math.max(0, Math.min(40, Math.round(40 * Math.pow(Math.min(teamOvr / PERFECT_TARGET, 1), 1.15))));
   const losses = 40 - wins;
 
