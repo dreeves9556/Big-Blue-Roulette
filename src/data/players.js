@@ -40,7 +40,7 @@ export const players = [
     "seasons": [
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "williams_adam",
@@ -70,7 +70,7 @@ export const players = [
       "1956-57",
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "groza_alex",
@@ -310,7 +310,7 @@ export const players = [
     "seasons": [
       "1967-68"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "cote_bernard",
@@ -338,7 +338,7 @@ export const players = [
     "seasons": [
       "1960-61"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "bibb_bill",
@@ -348,7 +348,7 @@ export const players = [
       "1953-54",
       "1954-55"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PF"
   },
   {
     "id": "busey_bill",
@@ -359,7 +359,7 @@ export const players = [
       "1968-69",
       "1969-70"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "evans_bill",
@@ -368,7 +368,7 @@ export const players = [
       "1951-52",
       "1953-54"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "lickert_bill",
@@ -390,7 +390,7 @@ export const players = [
       "1956-57",
       "1957-58"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "spivey_bill",
@@ -410,7 +410,7 @@ export const players = [
       "1953-54",
       "1954-55"
     ],
-    "primaryPosition": "G",
+    "primaryPosition": "SG",
     "height": 73
   },
   {
@@ -420,7 +420,7 @@ export const players = [
     "seasons": [
       "1956-57"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "cassady_billy",
@@ -429,7 +429,7 @@ export const players = [
       "1955-56",
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "lanter_bo",
@@ -458,7 +458,7 @@ export const players = [
     "seasons": [
       "1975-76"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "guyette_bob",
@@ -469,7 +469,7 @@ export const players = [
       "1973-74",
       "1974-75"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "C"
   },
   {
     "id": "mccowan_bob",
@@ -480,7 +480,7 @@ export const players = [
       "1969-70",
       "1971-72"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "tallent_bob",
@@ -490,7 +490,7 @@ export const players = [
       "1965-66",
       "1966-67"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "windsor_bob",
@@ -532,7 +532,7 @@ export const players = [
       "1965-66",
       "1966-67"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "calipari_brad",
@@ -675,7 +675,7 @@ export const players = [
     "seasons": [
       "1950-51"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "fletcher_camron",
@@ -777,7 +777,7 @@ export const players = [
       "1962-63",
       "1963-64"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "matthews_charles",
@@ -823,7 +823,7 @@ export const players = [
     "seasons": [
       "1988-89"
     ],
-    "primaryPosition": "F",
+    "primaryPosition": "SF",
     "height": 79
   },
   {
@@ -936,7 +936,7 @@ export const players = [
       "1968-69",
       "1969-70"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "chandler_collin",
@@ -1021,7 +1021,7 @@ export const players = [
       "1953-54",
       "1954-55"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "hall_dan",
@@ -1050,7 +1050,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "swartz_dan",
@@ -1098,7 +1098,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "miller_david",
@@ -1108,7 +1108,7 @@ export const players = [
       "1972-73",
       "1973-74"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "mintz_davion",
@@ -1156,7 +1156,7 @@ export const players = [
     "seasons": [
       "1962-63"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PF"
   },
   {
     "id": "aberdeen_denzel",
@@ -1235,7 +1235,7 @@ export const players = [
       "1988-89",
       "1989-90"
     ],
-    "primaryPosition": "G",
+    "primaryPosition": "SG",
     "height": 78
   },
   {
@@ -1361,7 +1361,7 @@ export const players = [
     "seasons": [
       "1962-63"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "C"
   },
   {
     "id": "allen_dontaie",
@@ -1391,7 +1391,7 @@ export const players = [
       "1960-61",
       "1961-62"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "casey_dwane",
@@ -1433,7 +1433,7 @@ export const players = [
     "seasons": [
       "1950-51"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "floreal_ej",
@@ -1465,7 +1465,7 @@ export const players = [
       "1956-57",
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "beck_ed",
@@ -1497,7 +1497,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SF"
   },
   {
     "id": "vargas_eloy",
@@ -1578,7 +1578,7 @@ export const players = [
     "seasons": [
       "1964-65"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "cowan_fred",
@@ -1601,7 +1601,7 @@ export const players = [
     "seasons": [
       "1972-73"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "smith_g.j.",
@@ -1609,7 +1609,7 @@ export const players = [
     "seasons": [
       "1974-75"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "gamble_gary",
@@ -1620,7 +1620,7 @@ export const players = [
       "1966-67",
       "1967-68"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "rose_gayle",
@@ -1631,7 +1631,7 @@ export const players = [
       "1953-54",
       "1954-55"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "neff_gene",
@@ -1639,7 +1639,7 @@ export const players = [
     "seasons": [
       "1951-52"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "stewart_gene",
@@ -1650,7 +1650,7 @@ export const players = [
       "1965-66",
       "1966-67"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "atkins_george",
@@ -1669,7 +1669,7 @@ export const players = [
       "1962-63",
       "1963-64"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "fitch_gerald",
@@ -1692,7 +1692,7 @@ export const players = [
       "1955-56",
       "1956-57"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "martinez_gimel",
@@ -1721,7 +1721,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "starrick_greg",
@@ -1729,7 +1729,7 @@ export const players = [
     "seasons": [
       "1968-69"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "strong_guy",
@@ -1737,7 +1737,7 @@ export const players = [
     "seasons": [
       "1950-51"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "diallo_hamidou",
@@ -1768,7 +1768,7 @@ export const players = [
       "1956-57",
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "hurd_harry",
@@ -1784,7 +1784,7 @@ export const players = [
     "seasons": [
       "1961-62"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "evans_heshimu",
@@ -1955,7 +1955,7 @@ export const players = [
       "1976-77",
       "1977-78"
     ],
-    "primaryPosition": "F",
+    "primaryPosition": "PF",
     "height": 77
   },
   {
@@ -2049,7 +2049,7 @@ export const players = [
     "seasons": [
       "1956-57"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "shidler_jay",
@@ -2118,7 +2118,7 @@ export const players = [
       "1954-55",
       "1955-56"
     ],
-    "primaryPosition": "F",
+    "primaryPosition": "PF",
     "height": 78
   },
   {
@@ -2129,7 +2129,7 @@ export const players = [
       "1972-73",
       "1974-75"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "curry_jess",
@@ -2157,7 +2157,7 @@ export const players = [
       "1968-69",
       "1969-70"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "harris_jim",
@@ -2176,7 +2176,7 @@ export const players = [
       "1966-67",
       "1967-68"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "line_jim",
@@ -2208,7 +2208,7 @@ export const players = [
       "1960-61",
       "1961-62"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "conner_jimmydan",
@@ -2227,7 +2227,7 @@ export const players = [
     "seasons": [
       "1974-75"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SF"
   },
   {
     "id": "meeks_jodie",
@@ -2268,7 +2268,7 @@ export const players = [
       "1974-75",
       "1975-76"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "adams_john",
@@ -2290,7 +2290,7 @@ export const players = [
       "1955-56",
       "1956-57"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SG"
   },
   {
     "id": "crigler_john",
@@ -2310,7 +2310,7 @@ export const players = [
     "seasons": [
       "1956-57"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SG"
   },
   {
     "id": "pelphrey_john",
@@ -2633,7 +2633,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "brea_koby",
@@ -2718,7 +2718,7 @@ export const players = [
       "1976-71",
       "1976-77"
     ],
-    "primaryPosition": "F",
+    "primaryPosition": "PF",
     "height": 74
   },
   {
@@ -2738,7 +2738,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "pursiful_larry",
@@ -2759,7 +2759,7 @@ export const players = [
       "1971-72",
       "1972-73"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "steele_larry",
@@ -2812,7 +2812,7 @@ export const players = [
       "1987-88",
       "1988-89"
     ],
-    "primaryPosition": "F",
+    "primaryPosition": "PF",
     "height": 82
   },
   {
@@ -2821,7 +2821,7 @@ export const players = [
     "seasons": [
       "1984-85"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "collinsworth_lincoln",
@@ -2832,7 +2832,7 @@ export const players = [
       "1956-57",
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "puckett_linville",
@@ -2840,7 +2840,7 @@ export const players = [
     "seasons": [
       "1953-54"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "tsioropoulos_lou",
@@ -2870,7 +2870,7 @@ export const players = [
     "seasons": [
       "1957-58"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "whitaker_lucian",
@@ -3064,7 +3064,7 @@ export const players = [
       "1975-76",
       "1976-71"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "bradley_michael",
@@ -3103,7 +3103,7 @@ export const players = [
     "seasons": [
       "1963-64"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "casey_mike",
@@ -3113,7 +3113,7 @@ export const players = [
       "1968-69",
       "1970-71"
     ],
-    "primaryPosition": "G",
+    "primaryPosition": "SG",
     "height": 76
   },
   {
@@ -3125,7 +3125,7 @@ export const players = [
       "1973-74",
       "1974-75"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "phillips_mike",
@@ -3305,7 +3305,7 @@ export const players = [
       "1961-62",
       "1962-63"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SG"
   },
   {
     "id": "riley_pat",
@@ -3346,7 +3346,7 @@ export const players = [
     "seasons": [
       "1984-85"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "corum_paul",
@@ -3355,7 +3355,7 @@ export const players = [
     "seasons": [
       "1954-55"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "mcbrayer_paul",
@@ -3408,7 +3408,7 @@ export const players = [
       "1967-68",
       "1968-69"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "grawemeyer_phil",
@@ -3419,7 +3419,7 @@ export const players = [
       "1954-55",
       "1955-56"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "johnson_phil",
@@ -3527,7 +3527,7 @@ export const players = [
     "seasons": [
       "1969-70"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "pool_randy",
@@ -3538,7 +3538,7 @@ export const players = [
       "1968-69",
       "1969-70"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "carruth_rashaad",
@@ -3570,7 +3570,7 @@ export const players = [
       "1972-73",
       "1973-74"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "frudenberger_ray",
@@ -3579,7 +3579,7 @@ export const players = [
     "seasons": [
       "1962-63"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "mills_ray",
@@ -3592,7 +3592,7 @@ export const players = [
       "1957-58",
       "1958-59"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "potter_reece",
@@ -3635,7 +3635,7 @@ export const players = [
       "1974-75",
       "1975-76"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "travis_reid",
@@ -3698,7 +3698,7 @@ export const players = [
       "1971-72",
       "1972-73"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "C"
   },
   {
     "id": "robey_rick",
@@ -3737,7 +3737,7 @@ export const players = [
     "seasons": [
       "1984-85"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "C"
   },
   {
     "id": "dent_rodney",
@@ -3785,7 +3785,7 @@ export const players = [
     "seasons": [
       "1960-61"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "wood_roger",
@@ -3795,7 +3795,7 @@ export const players = [
       "1972-73",
       "1973-74"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "C"
   },
   {
     "id": "kennett_ron",
@@ -3806,7 +3806,7 @@ export const players = [
       "1963-64",
       "1964-65"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "mercer_ron",
@@ -3834,7 +3834,7 @@ export const players = [
       "1972-73",
       "1973-74"
     ],
-    "primaryPosition": "G",
+    "primaryPosition": "PG",
     "height": 70
   },
   {
@@ -3845,7 +3845,7 @@ export const players = [
       "1961-62",
       "1962-63"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "harrow_ryan",
@@ -3906,7 +3906,7 @@ export const players = [
       "1962-63",
       "1963-64"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "malone_sam",
@@ -3960,7 +3960,7 @@ export const players = [
       "1961-62",
       "1962-63"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "woods_sean",
@@ -4050,7 +4050,7 @@ export const players = [
       "1950-51",
       "1951-52"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "camara_souleymane",
@@ -4092,7 +4092,7 @@ export const players = [
       "1966-67",
       "1967-68"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "green_steve",
@@ -4101,7 +4101,7 @@ export const players = [
     "seasons": [
       "1973-74"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SF"
   },
   {
     "id": "lochmueller_steve",
@@ -4110,7 +4110,7 @@ export const players = [
     "seasons": [
       "1972-73"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "C"
   },
   {
     "id": "masiello_steve",
@@ -4164,7 +4164,7 @@ export const players = [
       "1962-63",
       "1963-64"
     ],
-    "primaryPosition": "G",
+    "primaryPosition": "SF",
     "height": 75
   },
   {
@@ -4206,7 +4206,7 @@ export const players = [
       "1963-64",
       "1964-65"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "jaracz_thad",
@@ -4258,7 +4258,7 @@ export const players = [
     "seasons": [
       "1984-85"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "harper_tom",
@@ -4269,7 +4269,7 @@ export const players = [
       "1962-63",
       "1963-64"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SG"
   },
   {
     "id": "heitz_tom",
@@ -4289,7 +4289,7 @@ export const players = [
       "1964-65",
       "1965-66"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "SF"
   },
   {
     "id": "parker_tom",
@@ -4321,7 +4321,7 @@ export const players = [
       "1966-67",
       "1967-68"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "SF"
   },
   {
     "id": "kron_tommy",
@@ -4572,7 +4572,7 @@ export const players = [
     "seasons": [
       "1971-72"
     ],
-    "primaryPosition": "F"
+    "primaryPosition": "PF"
   },
   {
     "id": "gabriel_wenyen",
@@ -4602,7 +4602,7 @@ export const players = [
       "1951-52",
       "1953-54"
     ],
-    "primaryPosition": "G"
+    "primaryPosition": "PG"
   },
   {
     "id": "bennett_winston",
