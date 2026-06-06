@@ -16,6 +16,15 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "stewart_a.j.",
+    "fullName": "A.J. Stewart",
+    "seasons": [
+      "2007-08",
+      "2008-09"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "bradshaw_aaron",
     "jerseyNumber": "2",
     "fullName": "Aaron Bradshaw",
@@ -41,6 +50,14 @@ export const players = [
       "1957-58"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "chiles_adam",
+    "fullName": "Adam Chiles",
+    "seasons": [
+      "2001-02"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "williams_adam",
@@ -71,6 +88,14 @@ export const players = [
       "1957-58"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "robinson_al",
+    "fullName": "Al Robinson",
+    "seasons": [
+      "1958-59"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "groza_alex",
@@ -110,6 +135,7 @@ export const players = [
     "jerseyNumber": "3",
     "fullName": "Allen Edwards",
     "seasons": [
+      "1994-95",
       "1995-96",
       "1996-97",
       "1997-98",
@@ -139,10 +165,20 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "timberlake_aminu",
+    "fullName": "Aminu Timberlake",
+    "seasons": [
+      "1991-92",
+      "1992-93"
+    ],
+    "primaryPosition": "C"
+  },
+  {
     "id": "riddick_andre",
     "jerseyNumber": "10",
     "fullName": "Andre Riddick",
     "seasons": [
+      "1991-92",
       "1992-93",
       "1993-94",
       "1994-95"
@@ -211,6 +247,14 @@ export const players = [
       "1996-97"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "mathis_anthony",
+    "fullName": "Anthony Mathis",
+    "seasons": [
+      "1988-89"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "walker_antoine",
@@ -366,7 +410,8 @@ export const players = [
     "fullName": "Bill Evans",
     "seasons": [
       "1951-52",
-      "1953-54"
+      "1953-54",
+      "1954-55"
     ],
     "primaryPosition": "SG"
   },
@@ -427,6 +472,7 @@ export const players = [
     "fullName": "Billy Ray Cassady",
     "seasons": [
       "1955-56",
+      "1956-57",
       "1957-58"
     ],
     "primaryPosition": "SG"
@@ -513,6 +559,14 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "slusher_bobby",
+    "fullName": "Bobby Slusher",
+    "seasons": [
+      "1958-59"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "watson_bobby",
     "jerseyNumber": "38",
     "fullName": "Bobby Watson",
@@ -549,7 +603,8 @@ export const players = [
     "id": "lawless_brad",
     "fullName": "Brad Lawless",
     "seasons": [
-      "1976-71"
+      "1976-71",
+      "1976-77"
     ],
     "primaryPosition": "SG"
   },
@@ -624,6 +679,9 @@ export const players = [
     "id": "bearup_bret",
     "fullName": "Bret Bearup",
     "seasons": [
+      "1980-81",
+      "1982-83",
+      "1983-84",
       "1984-85"
     ],
     "primaryPosition": "C"
@@ -691,6 +749,7 @@ export const players = [
     "jerseyNumber": "21",
     "fullName": "Cameron Mills",
     "seasons": [
+      "1994-95",
       "1995-96",
       "1996-97",
       "1997-98",
@@ -730,6 +789,15 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "toomer_carlos",
+    "fullName": "Carlos Toomer",
+    "seasons": [
+      "1990-91",
+      "1991-92"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "burchett_carroll",
     "jerseyNumber": "40",
     "fullName": "Carroll Burchett",
@@ -753,7 +821,10 @@ export const players = [
     "id": "jenkins_cedric",
     "fullName": "Cedric Jenkins",
     "seasons": [
-      "1984-85"
+      "1984-85",
+      "1985-86",
+      "1986-87",
+      "1987-88"
     ],
     "primaryPosition": "C"
   },
@@ -764,7 +835,8 @@ export const players = [
     "seasons": [
       "1979-80",
       "1980-81",
-      "1981-82"
+      "1981-82",
+      "1982-83"
     ],
     "primaryPosition": "PF"
   },
@@ -795,7 +867,8 @@ export const players = [
     "seasons": [
       "1977-78",
       "1978-79",
-      "1979-80"
+      "1979-80",
+      "1980-81"
     ],
     "primaryPosition": "SF"
   },
@@ -804,9 +877,20 @@ export const players = [
     "jerseyNumber": "3",
     "fullName": "Chris Harrison",
     "seasons": [
-      "1993-94"
+      "1991-92",
+      "1992-93",
+      "1993-94",
+      "1994-95"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "jones_chris",
+    "fullName": "Chris Jones",
+    "seasons": [
+      "1988-89"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "livingston_chris",
@@ -849,13 +933,23 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "jr_chuck",
+    "fullName": "Chuck Hayes Jr",
+    "seasons": [
+      "2001-02",
+      "2004-05"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "verderber_chuck",
     "jerseyNumber": "34",
     "fullName": "Chuck Verderber",
     "seasons": [
       "1978-79",
       "1979-80",
-      "1980-81"
+      "1980-81",
+      "1981-82"
     ],
     "primaryPosition": "PF"
   },
@@ -923,6 +1017,7 @@ export const players = [
     "jerseyNumber": "1",
     "fullName": "Cliff Hawkins",
     "seasons": [
+      "2000-01",
       "2001-02",
       "2002-03",
       "2003-04"
@@ -1012,6 +1107,15 @@ export const players = [
       "1949-50"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "brown_dale",
+    "fullName": "Dale Brown",
+    "seasons": [
+      "1991-92",
+      "1992-93"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "chandler_dan",
@@ -1128,6 +1232,14 @@ export const players = [
       "2016-17"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "fox_de'aaron",
+    "fullName": "De'Aaron Fox",
+    "seasons": [
+      "2016-17"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "liggins_deandre",
@@ -1394,6 +1506,14 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "mills_dusty",
+    "fullName": "Dusty Mills",
+    "seasons": [
+      "2007-08"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "casey_dwane",
     "jerseyNumber": "20",
     "fullName": "Dwane Casey",
@@ -1528,6 +1648,14 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "manuel_eric",
+    "fullName": "Eric Manuel",
+    "seasons": [
+      "1987-88"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "daniels_erik",
     "jerseyNumber": "14",
     "fullName": "Erik Daniels",
@@ -1607,6 +1735,7 @@ export const players = [
     "id": "smith_g.j.",
     "fullName": "G.J. Smith",
     "seasons": [
+      "1972-73",
       "1974-75"
     ],
     "primaryPosition": "PF"
@@ -1699,6 +1828,8 @@ export const players = [
     "jerseyNumber": "44",
     "fullName": "Gimel Martinez",
     "seasons": [
+      "1990-91",
+      "1991-92",
       "1992-93",
       "1993-94",
       "1994-95"
@@ -1779,6 +1910,14 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "thomas_henry",
+    "fullName": "Henry Thomas",
+    "seasons": [
+      "1990-91"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "rupp_herky",
     "fullName": "Herky Rupp",
     "seasons": [
@@ -1797,6 +1936,14 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "dardeen_howard",
+    "fullName": "Howard Dardeen",
+    "seasons": [
+      "1958-59"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "coy_hugh",
     "fullName": "Hugh Coy",
     "seasons": [
@@ -1813,6 +1960,15 @@ export const players = [
       "2019-20"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "thomas_irving",
+    "fullName": "Irving Thomas",
+    "seasons": [
+      "1985-86",
+      "1986-87"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "humphries_isaac",
@@ -1854,6 +2010,17 @@ export const players = [
       "2001-02"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "blevins_j.p.",
+    "fullName": "J.P. Blevins",
+    "seasons": [
+      "1998-99",
+      "1999-00",
+      "2000-01",
+      "2001-02"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "givens_jack",
@@ -1928,6 +2095,7 @@ export const players = [
     "jerseyNumber": "10",
     "fullName": "James Blackmon",
     "seasons": [
+      "1983-84",
       "1984-85",
       "1985-86",
       "1986-87"
@@ -1974,7 +2142,8 @@ export const players = [
     "seasons": [
       "2005-06",
       "2006-07",
-      "2007-08"
+      "2007-08",
+      "2008-09"
     ],
     "primaryPosition": "PF"
   },
@@ -1983,6 +2152,7 @@ export const players = [
     "jerseyNumber": "32",
     "fullName": "Jared Prickett",
     "seasons": [
+      "1992-93",
       "1993-94",
       "1994-95",
       "1995-96",
@@ -2010,6 +2180,14 @@ export const players = [
       "2013-14"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "lathrem_jason",
+    "fullName": "Jason Lathrem",
+    "seasons": [
+      "1995-96"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "parker_jason",
@@ -2057,6 +2235,7 @@ export const players = [
     "fullName": "Jay Shidler",
     "seasons": [
       "1976-71",
+      "1976-77",
       "1977-78",
       "1978-79",
       "1979-80",
@@ -2082,12 +2261,21 @@ export const players = [
     "jerseyNumber": "14",
     "fullName": "Jeff Brassow",
     "seasons": [
+      "1989-90",
       "1990-91",
       "1991-92",
       "1992-93",
       "1993-94"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "ginnan_jeff",
+    "fullName": "Jeff Ginnan",
+    "seasons": [
+      "1988-89"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "sheppard_jeff",
@@ -2225,6 +2413,7 @@ export const players = [
     "id": "conner_jimmy",
     "fullName": "Jimmy Dan Conner",
     "seasons": [
+      "1972-73",
       "1974-75"
     ],
     "primaryPosition": "SF"
@@ -2239,6 +2428,14 @@ export const players = [
       "2008-09"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "thompson_jody",
+    "fullName": "Jody Thompson",
+    "seasons": [
+      "1990-91"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "crawford_joe",
@@ -2334,6 +2531,16 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "davis_johnathon",
+    "fullName": "Johnathon Davis",
+    "seasons": [
+      "1988-89",
+      "1989-90",
+      "1990-91"
+    ],
+    "primaryPosition": "C"
+  },
+  {
     "id": "cox_johnny",
     "jerseyNumber": "24",
     "fullName": "Johnny Cox",
@@ -2410,6 +2617,16 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "camara_jules",
+    "fullName": "Jules Camara",
+    "seasons": [
+      "1998-99",
+      "1999-00",
+      "2001-02"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "mays_julius",
     "jerseyNumber": "34",
     "fullName": "Julius Mays",
@@ -2426,6 +2643,17 @@ export const players = [
       "2013-14"
     ],
     "primaryPosition": "PF"
+  },
+  {
+    "id": "braddy_junior",
+    "fullName": "Junior Braddy",
+    "seasons": [
+      "1989-90",
+      "1990-91",
+      "1991-92",
+      "1992-93"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "edwards_justin",
@@ -2778,6 +3006,7 @@ export const players = [
     "fullName": "Lavon Williams",
     "seasons": [
       "1976-71",
+      "1976-77",
       "1977-78",
       "1978-79",
       "1979-80",
@@ -2819,7 +3048,9 @@ export const players = [
     "id": "byrd_leroy",
     "fullName": "Leroy Byrd",
     "seasons": [
-      "1984-85"
+      "1983-84",
+      "1984-85",
+      "1985-86"
     ],
     "primaryPosition": "PG"
   },
@@ -2868,7 +3099,8 @@ export const players = [
     "id": "hughes_lowell",
     "fullName": "Lowell Hughes",
     "seasons": [
-      "1957-58"
+      "1957-58",
+      "1958-59"
     ],
     "primaryPosition": "PG"
   },
@@ -3015,6 +3247,7 @@ export const players = [
     "jerseyNumber": "24",
     "fullName": "Marvin Stone",
     "seasons": [
+      "1999-00",
       "2000-01",
       "2001-02"
     ],
@@ -3062,7 +3295,8 @@ export const players = [
       "1973-74",
       "1974-75",
       "1975-76",
-      "1976-71"
+      "1976-71",
+      "1976-77"
     ],
     "primaryPosition": "PF"
   },
@@ -3087,6 +3321,14 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "parks_michael",
+    "fullName": "Michael Parks",
+    "seasons": [
+      "1989-90"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "porter_michael",
     "jerseyNumber": "13",
     "fullName": "Michael Porter",
@@ -3104,6 +3346,14 @@ export const players = [
       "1963-64"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "ballenger_mike",
+    "fullName": "Mike Ballenger",
+    "seasons": [
+      "1981-82"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "casey_mike",
@@ -3152,6 +3402,16 @@ export const players = [
     "primaryPosition": "SF"
   },
   {
+    "id": "scott_mike",
+    "fullName": "Mike Scott",
+    "seasons": [
+      "1986-87",
+      "1987-88",
+      "1988-89"
+    ],
+    "primaryPosition": "C"
+  },
+  {
     "id": "williams_morakinyo",
     "jerseyNumber": "25",
     "fullName": "Morakinyo Williams",
@@ -3193,6 +3453,14 @@ export const players = [
       "1999-00"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "knight_nate",
+    "fullName": "Nate Knight",
+    "seasons": [
+      "1999-00"
+    ],
+    "primaryPosition": "F"
   },
   {
     "id": "sestina_nate",
@@ -3250,6 +3518,7 @@ export const players = [
     "jerseyNumber": "51",
     "fullName": "Oliver Simmons",
     "seasons": [
+      "1995-96",
       "1996-97"
     ],
     "primaryPosition": "PF"
@@ -3344,7 +3613,10 @@ export const players = [
     "id": "andrews_paul",
     "fullName": "Paul Andrews",
     "seasons": [
-      "1984-85"
+      "1983-84",
+      "1984-85",
+      "1985-86",
+      "1986-87"
     ],
     "primaryPosition": "SG"
   },
@@ -3426,7 +3698,8 @@ export const players = [
     "fullName": "Phil Johnson",
     "seasons": [
       "1955-56",
-      "1957-58"
+      "1957-58",
+      "1958-59"
     ],
     "primaryPosition": "C"
   },
@@ -3622,7 +3895,9 @@ export const players = [
     "seasons": [
       "1986-87",
       "1987-88",
-      "1988-89"
+      "1988-89",
+      "1989-90",
+      "1990-91"
     ],
     "primaryPosition": "C"
   },
@@ -3674,7 +3949,8 @@ export const players = [
       "1983-84",
       "1984-85",
       "1985-86",
-      "1986-87"
+      "1986-87",
+      "1987-88"
     ],
     "primaryPosition": "PF"
   },
@@ -3735,7 +4011,10 @@ export const players = [
     "id": "lock_rob",
     "fullName": "Rob Lock",
     "seasons": [
-      "1984-85"
+      "1984-85",
+      "1985-86",
+      "1986-87",
+      "1987-88"
     ],
     "primaryPosition": "C"
   },
@@ -3744,6 +4023,7 @@ export const players = [
     "jerseyNumber": "4",
     "fullName": "Rodney Dent",
     "seasons": [
+      "1992-93",
       "1993-94"
     ],
     "primaryPosition": "C"
@@ -3878,6 +4158,15 @@ export const players = [
     "primaryPosition": "PF"
   },
   {
+    "id": "killeya-jones_sacha",
+    "fullName": "Sacha Killeya-Jones",
+    "seasons": [
+      "2016-17",
+      "2017-18"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "wheeler_sahvir",
     "jerseyNumber": "2",
     "fullName": "Sahvir Wheeler",
@@ -3924,6 +4213,7 @@ export const players = [
     "jerseyNumber": "11",
     "fullName": "Saul Smith",
     "seasons": [
+      "1997-98",
       "1998-99",
       "1999-00",
       "2000-01",
@@ -3944,6 +4234,7 @@ export const players = [
     "jerseyNumber": "34",
     "fullName": "Scott Padgett",
     "seasons": [
+      "1994-95",
       "1995-96",
       "1996-97",
       "1997-98",
@@ -3961,6 +4252,15 @@ export const players = [
       "1962-63"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "sutton_sean",
+    "fullName": "Sean Sutton",
+    "seasons": [
+      "1987-88",
+      "1988-89"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "woods_sean",
@@ -4000,6 +4300,14 @@ export const players = [
       "2017-18"
     ],
     "primaryPosition": "SG"
+  },
+  {
+    "id": "gilgeous-alexander_shai",
+    "fullName": "Shai Gilgeous-Alexander",
+    "seasons": [
+      "2017-18"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "linville_shelby",
@@ -4044,6 +4352,14 @@ export const players = [
     "primaryPosition": "C"
   },
   {
+    "id": "mcgaw_skip",
+    "fullName": "Skip McGaw",
+    "seasons": [
+      "1989-90"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "whitaker_skippy",
     "fullName": "Skippy Whitaker",
     "seasons": [
@@ -4082,6 +4398,14 @@ export const players = [
       "1971-72"
     ],
     "primaryPosition": "SF"
+  },
+  {
+    "id": "bruce_steve",
+    "fullName": "Steve Bruce",
+    "seasons": [
+      "1986-87"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "clevenger_steve",
@@ -4129,7 +4453,8 @@ export const players = [
     "id": "williams_steve",
     "fullName": "Steve Williams",
     "seasons": [
-      "1976-71"
+      "1976-71",
+      "1976-77"
     ],
     "primaryPosition": "PG"
   },
@@ -4209,6 +4534,14 @@ export const players = [
     "primaryPosition": "SG"
   },
   {
+    "id": "shigg_terry",
+    "fullName": "Terry Shigg",
+    "seasons": [
+      "1986-87"
+    ],
+    "primaryPosition": "G"
+  },
+  {
     "id": "jaracz_thad",
     "jerseyNumber": "55",
     "fullName": "Thad Jaracz",
@@ -4226,6 +4559,7 @@ export const players = [
     "fullName": "Tim Stephens",
     "seasons": [
       "1976-71",
+      "1976-77",
       "1977-78",
       "1978-79"
     ],
@@ -4242,6 +4576,30 @@ export const players = [
     "primaryPosition": "PG"
   },
   {
+    "id": "bearup_todd",
+    "fullName": "Todd Bearup",
+    "seasons": [
+      "1990-91"
+    ],
+    "primaryPosition": "G"
+  },
+  {
+    "id": "may_todd",
+    "fullName": "Todd May",
+    "seasons": [
+      "1982-83"
+    ],
+    "primaryPosition": "F"
+  },
+  {
+    "id": "svoboda_todd",
+    "fullName": "Todd Svoboda",
+    "seasons": [
+      "1992-93"
+    ],
+    "primaryPosition": "F"
+  },
+  {
     "id": "tackett_todd",
     "jerseyNumber": "12",
     "fullName": "Todd Tackett",
@@ -4256,7 +4614,8 @@ export const players = [
     "id": "ziegler_todd",
     "fullName": "Todd Ziegler",
     "seasons": [
-      "1984-85"
+      "1984-85",
+      "1985-86"
     ],
     "primaryPosition": "PF"
   },
@@ -4277,7 +4636,10 @@ export const players = [
     "fullName": "Tom Heitz",
     "seasons": [
       "1979-80",
-      "1980-81"
+      "1980-81",
+      "1981-82",
+      "1982-83",
+      "1983-84"
     ],
     "primaryPosition": "C"
   },
@@ -4333,6 +4695,14 @@ export const players = [
       "1965-66"
     ],
     "primaryPosition": "PG"
+  },
+  {
+    "id": "cooper_tony",
+    "fullName": "Tony Cooper",
+    "seasons": [
+      "1989-90"
+    ],
+    "primaryPosition": "G"
   },
   {
     "id": "delk_tony",
@@ -4404,6 +4774,9 @@ export const players = [
     "id": "mckinley_troy",
     "fullName": "Troy McKinley",
     "seasons": [
+      "1981-82",
+      "1982-83",
+      "1983-84",
       "1984-85"
     ],
     "primaryPosition": "C"
@@ -4415,6 +4788,7 @@ export const players = [
     "seasons": [
       "1975-76",
       "1976-71",
+      "1976-77",
       "1977-78",
       "1978-79"
     ],
@@ -4502,6 +4876,7 @@ export const players = [
     "jerseyNumber": "21",
     "fullName": "Walker Horn",
     "seasons": [
+      "2022-23",
       "2023-24",
       "2025-26"
     ],
