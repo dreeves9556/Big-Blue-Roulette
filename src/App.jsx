@@ -695,7 +695,7 @@ const POSITION_COLORS_HEX = {
   C: '#ef4444',
 };
 
-function generateShareImage(lineup, projection, isMattJonesMode = false) {
+function generateShareImage(lineup, projection, isMattJonesMode = false, isStatsHidden = false) {
   const W = 640;
   const H = 760;
   const canvas = document.createElement('canvas');
@@ -740,6 +740,23 @@ function generateShareImage(lineup, projection, isMattJonesMode = false) {
     ctx.fillStyle = '#dc2626';
     ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
     const badgeText = 'MATT JONES MODE';
+    const badgeW = ctx.measureText(badgeText).width + 16;
+    const badgeX = W - badgeW - 20;
+    const badgeY = 70;
+    ctx.beginPath();
+    ctx.roundRect(badgeX, badgeY, badgeW, 20, 4);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.fillText(badgeText, badgeX + badgeW / 2, badgeY + 14);
+    ctx.textAlign = 'left';
+  }
+
+  // Stats Hidden badge
+  if (isStatsHidden) {
+    ctx.fillStyle = '#2563eb';
+    ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+    const badgeText = 'STATS HIDDEN';
     const badgeW = ctx.measureText(badgeText).width + 16;
     const badgeX = W - badgeW - 20;
     const badgeY = 70;
@@ -955,11 +972,11 @@ function TeamAnalysis({ totals }) {
   );
 }
 
-function FinalLineup({ lineup, projection, onRestart, onCopyShare, shareStatus, isMattJonesMode }) {
+function FinalLineup({ lineup, projection, onRestart, onCopyShare, shareStatus, isMattJonesMode, isStatsHidden }) {
   const [imageStatus, setImageStatus] = useState('');
 
   const handleShareImage = useCallback(() => {
-    const canvas = generateShareImage(lineup, projection, isMattJonesMode);
+    const canvas = generateShareImage(lineup, projection, isMattJonesMode, isStatsHidden);
     canvas.toBlob((blob) => {
       if (!blob) { setImageStatus('Could not generate image.'); return; }
       const shareData = {
@@ -1744,6 +1761,7 @@ export default function App() {
             onCopyShare={copyShareLink}
             shareStatus={shareStatus}
             isMattJonesMode={isMattJonesMode}
+            isStatsHidden={gameMode === 'hoopIQ'}
           />
         )}
       </main>
