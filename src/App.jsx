@@ -1666,7 +1666,12 @@ export default function App() {
     <div className="min-h-screen bg-[#0a0c14] text-white">
       <header className="sticky top-0 z-50 bg-[#0a0c14]/90 backdrop-blur border-b border-white/10">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div
+            className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={restartGame}
+            role="button"
+            aria-label="Go to home"
+          >
             <img src="/logo.png" alt="Big Blue Roulette" className="h-8 w-8 object-contain" />
             <span className="font-black text-white tracking-tight">BIG BLUE ROULETTE</span>
           </div>
