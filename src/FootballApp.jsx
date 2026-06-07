@@ -140,6 +140,146 @@ function StatGrid({ stats, position }) {
   );
 }
 
+// Position scoring benchmarks calibrated from dataset percentiles
+const POSITION_BENCHMARKS = {
+  QB: 90,
+  RB: 60,
+  WR: 70,
+  TE: 50,
+};
+
+const PERFECT_TARGET = 450; // sum of all 5 benchmarks + margin
+
+function getPositionValue(stats, position) {
+  if (!stats) return 0;
+  if (position === 'QB') {
+    return (stats.Yds || 0) * 0.5 + (stats.TD || 0) * 10 + (stats.Rate || 0) * 0.25 + (stats.RushYds || 0) * 0.3;
+  }
+  if (position === 'RB') {
+    return (stats.RushYds || 0) * 0.8 + (stats.RushTD || 0) * 20 + (stats.RushYA || 0) * 5 + (stats.RecYds || 0) * 0.5;
+  }
+  if (position === 'WR' || position === 'TE') {
+    return (stats.RecYds || 0) * 0.9 + (stats.RecTD || 0) * 25 + (stats.YPR || 0) * 2 + (stats.Rec || 0) * 6 + (stats.RushYds || 0) * 0.5;
+  }
+  return 0;
+}
+
+function getFootballProjection(lineup) {
+  const picks = FOOTBALL_POSITIONS.map((pos) => lineup[pos]).filter(Boolean);
+  if (picks.length !== 5) return null;
+
+  let totalValue = 0;
+  const positionValues = {};
+
+  for (const pick of picks) {
+    const value = getPositionValue(pick.stats, pick.primaryPosition);
+    totalValue += value;
+    positionValues[pick.primaryPosition] = value;
+  }
+
+  const wins = Math.max(
+    0,
+    Math.min(12, Math.round(12 * Math.pow(Math.min(totalValue / PERFECT_TARGET, 1), 1.15)))
+  );
+  const losses = 12 - wins;
+
+  const tier = (() => {
+    if (wins >= 12) return { label: 'NATIONAL CHAMPIONS', color: 'text-yellow-300' };
+    if (wins >= 10) return { label: 'PLAYOFF BOUND', color: 'text-green-300' };
+    if (wins >= 8) return { label: 'BOWL ELIGIBLE', color: 'text-blue-300' };
+    if (wins >= 6) return { label: 'BUBBLE TEAM', color: 'text-purple-300' };
+    if (wins >= 4) return { label: 'REBUILDING', color: 'text-orange-400' };
+    return { label: 'COACH ON HOT SEAT', color: 'text-red-400' };
+  })();
+
+  const analysis = Object.entries(POSITION_BENCHMARKS).map(([pos, bench]) => {
+    const val = positionValues[pos] || 0;
+    const ratio = val / bench;
+    return { position: pos, value: val, benchmark: bench, ratio };
+  }).sort((a, b) => b.ratio - a.ratio);
+
+  const strengths = analysis.slice(0, 2).filter((a) => a.ratio >= 0.85);
+  const weaknesses = analysis.slice(-2).filter((a) => a.ratio <= 0.65);
+
+  return {
+    wins,
+    losses,
+    strength: Math.round(totalValue),
+    tier,
+    positionValues,
+    strengths,
+    weaknesses,
+  };
+}
+
+function FootballMetricBar({ projection }) {
+  const positions = ['QB', 'RB', 'WR', 'TE'];
+  const labels = { QB: 'QB Val', RB: 'RB Val', WR: 'WR Val', TE: 'TE Val' };
+  return (
+    <div className="grid grid-cols-4 gap-1.5">
+      {positions.map((pos) => (
+        <div key={pos} className="rounded-xl bg-black/25 border border-white/10 p-1.5 text-center">
+          <div className="text-[9px] tracking-widest text-gray-500 uppercase">{labels[pos]}</div>
+          <div className="text-xs font-semibold text-white mt-0.5">{(projection.positionValues[pos] || 0).toFixed(1)}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function FootballTeamAnalysis({ projection }) {
+  const items = [
+    { pos: 'QB', label: 'Quarterback Play', high: 'Elite QB Play', mid: 'Solid QB Play', weak: 'QB Needs Work' },
+    { pos: 'RB', label: 'Ground Game', high: 'Dominant Rushing', mid: 'Adequate Rushing', weak: 'Rushing Struggles' },
+    { pos: 'WR', label: 'Passing Attack', high: 'Explosive Receiving', mid: 'Adequate Receiving', weak: 'Receiving Needs Work' },
+    { pos: 'TE', label: 'Tight End Threat', high: 'Elite TE Play', mid: 'Serviceable TE', weak: 'TE Is a Liability' },
+  ];
+
+  const scored = items.map((item) => ({
+    ...item,
+    ratio: projection.positionValues[item.pos] / POSITION_BENCHMARKS[item.pos],
+  })).sort((a, b) => b.ratio - a.ratio);
+
+  const strengths = scored.slice(0, 2);
+  const weaknesses = scored.slice(-2);
+
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Team Analysis</div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <div className="text-xs font-semibold text-green-400 uppercase tracking-wide mb-1.5">Strengths</div>
+          <ul className="space-y-1.5">
+            {strengths.map((s) => (
+              <li key={s.pos} className="text-sm text-gray-300 flex items-start gap-2">
+                <span className="text-green-400 mt-0.5">+</span>
+                <span>
+                  {s.ratio >= 1.0 ? s.high : s.mid}
+                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[s.pos] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[s.pos]})</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <div className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-1.5">Weaknesses</div>
+          <ul className="space-y-1.5">
+            {weaknesses.map((w) => (
+              <li key={w.pos} className="text-sm text-gray-300 flex items-start gap-2">
+                <span className="text-red-400 mt-0.5">−</span>
+                <span>
+                  {w.weak}
+                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[w.pos] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[w.pos]})</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function FootballIntroScreen({ onStart }) {
   return (
     <div className="w-full max-w-md mx-auto flex flex-col items-center gap-6 text-center animate-fadeIn">
@@ -396,7 +536,7 @@ function FootballPlayingScreen({
   );
 }
 
-function FootballFinalLineup({ lineup, onRestart, gameMode }) {
+function FootballFinalLineup({ lineup, onRestart, gameMode, projection }) {
   const picks = FOOTBALL_POSITIONS.map((pos) => lineup[pos]).filter(Boolean);
   const uniqueSeasons = new Set(picks.map((p) => p.season)).size;
   return (
@@ -407,17 +547,23 @@ function FootballFinalLineup({ lineup, onRestart, gameMode }) {
             <Trophy className="w-8 h-8 text-yellow-400" />
           </div>
         </div>
-        <div className="text-2xl font-black tracking-tight text-yellow-300">LINEUP COMPLETE</div>
-        <div className="text-gray-400 text-sm mt-1">You drafted 5 players from {uniqueSeasons} unique season{uniqueSeasons === 1 ? '' : 's'}.</div>
+        <div className={`text-2xl font-black tracking-tight ${projection.tier.color}`}>{projection.tier.label}</div>
+        <div className="text-gray-400 text-sm mt-1">Projected Record: <span className="text-white font-semibold">{projection.wins}-{projection.losses}</span> <span className="text-gray-500">(of 12)</span></div>
+        <div className="text-xs text-gray-500 mt-1">Team Strength: {projection.strength}</div>
         {gameMode === 'ballknower' && (
           <div className="text-xs text-blue-300 mt-1">Ball-Knower Mode &bull; No stats shown during draft</div>
         )}
       </div>
 
+      <FootballMetricBar projection={projection} />
+
+      <FootballTeamAnalysis projection={projection} />
+
       <div className="bg-white/5 border border-white/10 rounded-2xl p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
         {FOOTBALL_POSITIONS.map((position) => {
           const pick = lineup[position];
           if (!pick) return null;
+          const posVal = projection.positionValues[pick.primaryPosition] || 0;
           return (
             <div key={position} className="rounded-xl border border-white/10 bg-black/20 p-3">
               <div className="flex items-center gap-2 mb-2">
@@ -429,6 +575,7 @@ function FootballFinalLineup({ lineup, onRestart, gameMode }) {
               {pick.stats && gameMode === 'classic' && (
                 <StatGrid stats={pick.stats} position={pick.primaryPosition} />
               )}
+              <div className="mt-2 text-[11px] text-gray-500">Value: {posVal.toFixed(1)} vs {POSITION_BENCHMARKS[pick.primaryPosition]} benchmark</div>
             </div>
           );
         })}
@@ -476,6 +623,8 @@ export default function FootballApp() {
   );
 
   const roundNumber = FOOTBALL_POSITIONS.length - openPositions.length + 1;
+
+  const projection = useMemo(() => getFootballProjection(lineup), [lineup]);
 
   const selectedPlayerOpenPositions = useMemo(() => {
     if (!selectedPlayer) return [];
@@ -653,8 +802,8 @@ export default function FootballApp() {
             roundNumber={roundNumber}
           />
         )}
-        {phase === 'done' && (
-          <FootballFinalLineup lineup={lineup} onRestart={restartGame} gameMode={gameMode} />
+        {phase === 'done' && projection && (
+          <FootballFinalLineup lineup={lineup} onRestart={restartGame} gameMode={gameMode} projection={projection} />
         )}
       </main>
 
