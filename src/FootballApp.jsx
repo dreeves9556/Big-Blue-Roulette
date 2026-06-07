@@ -658,7 +658,7 @@ function FootballFinalLineup({ lineup, onRestart, gameMode, projection }) {
   );
 }
 
-export default function FootballApp() {
+export default function FootballApp({ onUnlockFootball }) {
   const [phase, setPhase] = useState('intro');
   const [gameMode, setGameMode] = useState('ballknower');
   const [lineup, setLineup] = useState({ ...EMPTY_LINEUP });
@@ -878,7 +878,12 @@ export default function FootballApp() {
 
       <footer className="mt-8 pb-8 text-center text-xs text-gray-600">
         Kentucky Football Stats sourced from Sports-Reference
-        <div className="mt-2 text-gray-500">Created by Daniel Reeves</div>
+        <button
+          onClick={onUnlockFootball}
+          className="mt-2 text-gray-500 hover:text-gray-300 transition-colors cursor-pointer bg-transparent border-0"
+        >
+          Created by Daniel Reeves
+        </button>
         <div className="mt-4">
           <a
             href="https://www.buymeacoffee.com/danielt279y"

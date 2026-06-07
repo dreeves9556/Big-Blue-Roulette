@@ -1,12 +1,25 @@
-import { StrictMode, useState } from 'react'
+import { StrictMode, useState, useCallback } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Analytics } from '@vercel/analytics/react'
 import './index.css'
 import App from './App.jsx'
 import FootballApp from './FootballApp.jsx'
 
+const FOOTBALL_PASSWORD = 'Asher20!';
+
 function SportWrapper() {
   const [sport, setSport] = useState('basketball');
+  const [showFootball, setShowFootball] = useState(false);
+
+  const unlockFootball = useCallback(() => {
+    const input = window.prompt('Enter password to unlock football mode:');
+    if (input === FOOTBALL_PASSWORD) {
+      setShowFootball(true);
+      setSport('football');
+    } else if (input !== null) {
+      window.alert('Incorrect password.');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#0a0c14] text-white">
@@ -23,21 +36,29 @@ function SportWrapper() {
             >
               🏀 Basketball
             </button>
-            <button
-              onClick={() => setSport('football')}
-              className={`flex-1 py-2 rounded-t-lg text-xs font-bold tracking-widest uppercase transition-all ${
-                sport === 'football'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-gray-200'
-              }`}
-            >
-              🏈 Football
-            </button>
+            {showFootball && (
+              <button
+                onClick={() => setSport('football')}
+                className={`flex-1 py-2 rounded-t-lg text-xs font-bold tracking-widest uppercase transition-all ${
+                  sport === 'football'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-gray-200'
+                }`}
+              >
+                🏈 Football
+              </button>
+            )}
           </div>
         </div>
       </div>
-      <div className={sport === 'basketball' ? '' : 'hidden'}><App /></div>
-      <div className={sport === 'football' ? '' : 'hidden'}><FootballApp /></div>
+      <div className={sport === 'basketball' ? '' : 'hidden'}>
+        <App onUnlockFootball={unlockFootball} />
+      </div>
+      {showFootball && (
+        <div className={sport === 'football' ? '' : 'hidden'}>
+          <FootballApp onUnlockFootball={unlockFootball} />
+        </div>
+      )}
     </div>
   );
 }
