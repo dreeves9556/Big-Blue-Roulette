@@ -93,6 +93,7 @@ const STAT_KEYS_BY_POSITION = {
 
 const SORT_OPTIONS = [
   { key: 'name', label: 'Name' },
+  { key: 'position', label: 'Position' },
   { key: 'Yds', label: 'Pass Yds' }, { key: 'TD', label: 'Pass TD' },
   { key: 'RushYds', label: 'Rush Yds' }, { key: 'RushTD', label: 'Rush TD' },
   { key: 'Rec', label: 'Rec' }, { key: 'RecYds', label: 'Rec Yds' }, { key: 'RecTD', label: 'Rec TD' },
@@ -716,6 +717,9 @@ export default function FootballApp() {
       let comparison = 0;
       if (activeSortMetric === 'name') {
         comparison = a.player.fullName.split(' ').pop().localeCompare(b.player.fullName.split(' ').pop());
+      } else if (activeSortMetric === 'position') {
+        const posOrder = { QB: 0, RB: 1, WR: 2, TE: 3 };
+        comparison = (posOrder[a.player.primaryPosition] ?? 99) - (posOrder[b.player.primaryPosition] ?? 99);
       } else {
         const aStats = getStatsForDisplay(a.player, currentSeason);
         const bStats = getStatsForDisplay(b.player, currentSeason);
