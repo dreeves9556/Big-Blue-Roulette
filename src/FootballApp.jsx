@@ -7,7 +7,7 @@ import {
   footballSeasonPlayersMap,
 } from './data/footballPlayers.js';
 import { footballPlayerSeasonStatsById } from './data/footballPlayerSeasonStats.js';
-import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw } from 'lucide-react';
+import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw, Link2, Download } from 'lucide-react';
 import './App.css';
 
 const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, FLEX: null };
@@ -239,6 +239,233 @@ function getFootballProjection(lineup) {
     strengths,
     weaknesses,
   };
+}
+
+function encodeSharePayload(payload) {
+  return btoa(encodeURIComponent(JSON.stringify(payload)))
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/g, '');
+}
+
+function decodeSharePayload(encoded) {
+  try {
+    const normalized = encoded.replace(/-/g, '+').replace(/_/g, '/');
+    const padded = normalized.padEnd(normalized.length + ((4 - normalized.length % 4) % 4), '=');
+    const decoded = atob(padded);
+    return JSON.parse(decodeURIComponent(decoded));
+  } catch {
+    return null;
+  }
+}
+
+function clearShareQueryParam() {
+  if (typeof window === 'undefined') return;
+  const url = new URL(window.location.href);
+  if (!url.searchParams.has('share')) return;
+  url.searchParams.delete('share');
+  const newSearch = url.searchParams.toString();
+  const newUrl = `${url.pathname}${newSearch ? `?${newSearch}` : ''}${url.hash}`;
+  window.history.replaceState({}, '', newUrl);
+}
+
+function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
+  const W = 640;
+  const H = 760;
+  const canvas = document.createElement('canvas');
+  canvas.width = W * 2;
+  canvas.height = H * 2;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(2, 2);
+
+  // Background
+  ctx.fillStyle = '#0a0c14';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle grid lines
+  ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+  ctx.lineWidth = 1;
+  for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+  for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+  // Top accent bar
+  const grad = ctx.createLinearGradient(0, 0, W, 0);
+  grad.addColorStop(0, '#1d4ed8');
+  grad.addColorStop(1, '#3b82f6');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, 4);
+
+  // Header
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 22px system-ui, -apple-system, sans-serif';
+  ctx.fillText('🏈 BIG BLUE ROULETTE', 24, 40);
+
+  ctx.fillStyle = '#6b7280';
+  ctx.font = '12px system-ui, -apple-system, sans-serif';
+  ctx.fillText('Kentucky Football Draft', 24, 58);
+
+  // Ball-Knower badge
+  if (gameMode === 'ballknower') {
+    ctx.fillStyle = '#2563eb';
+    ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+    const badgeText = 'BALL-KNOWER';
+    const badgeW = ctx.measureText(badgeText).width + 16;
+    const badgeX = W - badgeW - 20;
+    const badgeY = 70;
+    ctx.beginPath();
+    ctx.roundRect(badgeX, badgeY, badgeW, 20, 4);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.fillText(badgeText, badgeX + badgeW / 2, badgeY + 14);
+    ctx.textAlign = 'left';
+  }
+
+  // Tier badge
+  const tierColors = {
+    'NATIONAL CHAMPIONS': ['#854d0e', '#fde047'],
+    'PLAYOFF BOUND': ['#14532d', '#86efac'],
+    'BOWL ELIGIBLE': ['#1e3a5f', '#93c5fd'],
+    'BUBBLE TEAM': ['#3b0764', '#d8b4fe'],
+    'REBUILDING': ['#431407', '#fb923c'],
+    'COACH ON HOT SEAT': ['#450a0a', '#fca5a5'],
+  };
+  const [bgHex, textHex] = tierColors[projection.tier.label] ?? ['#1f2937', '#9ca3af'];
+
+  const tierLabel = projection.tier.label;
+  ctx.font = 'bold 13px system-ui, -apple-system, sans-serif';
+  const tierW = ctx.measureText(tierLabel).width + 24;
+  const tierX = W - tierW - 20;
+  const tierY = 22;
+  ctx.fillStyle = bgHex;
+  ctx.beginPath();
+  ctx.roundRect(tierX, tierY, tierW, 26, 6);
+  ctx.fill();
+  ctx.fillStyle = textHex;
+  ctx.textAlign = 'center';
+  ctx.fillText(tierLabel, tierX + tierW / 2, tierY + 17);
+  ctx.textAlign = 'left';
+
+  // Record
+  ctx.fillStyle = '#ffffff';
+  ctx.font = 'bold 36px system-ui, -apple-system, sans-serif';
+  ctx.fillText(`${projection.wins}-${projection.losses}`, 24, 108);
+  ctx.fillStyle = '#6b7280';
+  ctx.font = '13px system-ui, -apple-system, sans-serif';
+  ctx.fillText('Projected Record (of 12)', 24, 124);
+
+  // Position values bar
+  const slots = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
+  const slotLabels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', FLEX: 'Flex' };
+  const colW = (W - 48) / 5;
+  slots.forEach((key, i) => {
+    const bx = 24 + i * colW;
+    const by = 140;
+    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+    ctx.beginPath();
+    ctx.roundRect(bx, by, colW - 6, 44, 6);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.roundRect(bx, by, colW - 6, 44, 6);
+    ctx.stroke();
+    ctx.fillStyle = '#6b7280';
+    ctx.font = '9px system-ui, -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(slotLabels[key], bx + (colW - 6) / 2, by + 13);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 15px system-ui, -apple-system, sans-serif';
+    ctx.fillText((projection.positionValues[key] || 0).toFixed(1), bx + (colW - 6) / 2, by + 33);
+    ctx.textAlign = 'left';
+  });
+
+  // Divider
+  ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(24, 200);
+  ctx.lineTo(W - 24, 200);
+  ctx.stroke();
+
+  // Player cards
+  slots.forEach((pos, i) => {
+    const pick = lineup[pos];
+    if (!pick) return;
+    const cx = 24;
+    const cy = 212 + i * 104;
+    const cardH = 94;
+    const cardW = W - 48;
+
+    // Card bg
+    ctx.fillStyle = 'rgba(255,255,255,0.04)';
+    ctx.beginPath();
+    ctx.roundRect(cx, cy, cardW, cardH, 10);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.roundRect(cx, cy, cardW, cardH, 10);
+    ctx.stroke();
+
+    // Position color accent left bar
+    const posColor = POSITION_COLORS_HEX[pos] ?? '#6b7280';
+    ctx.fillStyle = posColor;
+    ctx.beginPath();
+    ctx.roundRect(cx, cy, 4, cardH, [10, 0, 0, 10]);
+    ctx.fill();
+
+    // Position pill
+    ctx.fillStyle = posColor + '33';
+    ctx.beginPath();
+    ctx.roundRect(cx + 14, cy + 12, 32, 18, 4);
+    ctx.fill();
+    ctx.fillStyle = posColor;
+    ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(pos, cx + 30, cy + 25);
+    ctx.textAlign = 'left';
+
+    // Season label
+    ctx.fillStyle = '#6b7280';
+    ctx.font = '10px system-ui, -apple-system, sans-serif';
+    ctx.fillText(pick.season, cx + 52, cy + 25);
+
+    // Player name
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 16px system-ui, -apple-system, sans-serif';
+    ctx.fillText(pick.playerName, cx + 14, cy + 52);
+
+    // Stats row
+    const statMap = {
+      QB: [{ k: 'Yds', l: 'Pass Yds' }, { k: 'TD', l: 'Pass TD' }, { k: 'Int', l: 'Int' }, { k: 'Rate', l: 'Rate' }],
+      RB: [{ k: 'RushYds', l: 'Rush Yds' }, { k: 'RushTD', l: 'Rush TD' }, { k: 'RecYds', l: 'Rec Yds' }, { k: 'RecTD', l: 'Rec TD' }],
+      WR: [{ k: 'Rec', l: 'Rec' }, { k: 'RecYds', l: 'Rec Yds' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD' }],
+      TE: [{ k: 'Rec', l: 'Rec' }, { k: 'RecYds', l: 'Rec Yds' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD' }],
+    };
+    const statKeys = statMap[pick.primaryPosition] || statMap.WR;
+    const statW = (cardW - 28) / statKeys.length;
+    statKeys.forEach((sk, si) => {
+      const sx = cx + 14 + si * statW;
+      const sy = cy + 66;
+      ctx.fillStyle = '#4b5563';
+      ctx.font = '9px system-ui, -apple-system, sans-serif';
+      ctx.fillText(sk.l, sx, sy);
+      ctx.fillStyle = '#e5e7eb';
+      ctx.font = 'bold 13px system-ui, -apple-system, sans-serif';
+      const val = typeof pick.stats?.[sk.k] === 'number' ? pick.stats[sk.k].toFixed(1) : (pick.stats?.[sk.k] ?? '-');
+      ctx.fillText(val, sx, sy + 15);
+    });
+  });
+
+  // Footer
+  ctx.fillStyle = '#374151';
+  ctx.font = '11px system-ui, -apple-system, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('bigbluehistory.net • Kentucky Football Draft', W / 2, H - 14);
+  ctx.textAlign = 'left';
+
+  return canvas;
 }
 
 function FootballMetricBar({ projection }) {
@@ -615,9 +842,37 @@ function FootballPlayingScreen({
   );
 }
 
-function FootballFinalLineup({ lineup, onRestart, gameMode, projection }) {
-  const picks = FOOTBALL_POSITIONS.map((pos) => lineup[pos]).filter(Boolean);
-  const uniqueSeasons = new Set(picks.map((p) => p.season)).size;
+function FootballFinalLineup({ lineup, onRestart, onCopyShare, shareStatus, gameMode, projection }) {
+  const [imageStatus, setImageStatus] = useState('');
+
+  const handleShareImage = useCallback(() => {
+    const canvas = generateFootballShareImage(lineup, projection, gameMode);
+    canvas.toBlob((blob) => {
+      if (!blob) { setImageStatus('Could not generate image.'); return; }
+      const shareData = {
+        files: [new File([blob], 'big-blue-roulette-football.png', { type: 'image/png' })],
+        title: 'Big Blue Roulette Football',
+        text: `My Kentucky football draft went ${projection.wins}-${projection.losses}! ${projection.tier.label}`,
+      };
+      if (navigator.canShare && navigator.canShare(shareData)) {
+        navigator.share(shareData).catch(() => {
+          downloadImage(canvas);
+        });
+      } else {
+        downloadImage(canvas);
+      }
+    }, 'image/png');
+  }, [lineup, projection, gameMode]);
+
+  function downloadImage(canvas) {
+    const link = document.createElement('a');
+    link.download = 'big-blue-roulette-football.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    setImageStatus('Image saved!');
+    setTimeout(() => setImageStatus(''), 2500);
+  }
+
   return (
     <div className="w-full max-w-xl mx-auto flex flex-col gap-6 animate-fadeIn">
       <div className="text-center">
@@ -660,12 +915,77 @@ function FootballFinalLineup({ lineup, onRestart, gameMode, projection }) {
         })}
       </div>
 
+      <div className="flex gap-2">
+        <button
+          onClick={onCopyShare}
+          className="flex items-center justify-center gap-2 flex-1 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold rounded-xl transition-all duration-150"
+        >
+          <Link2 className="w-4 h-4" />
+          Copy Link
+        </button>
+        <button
+          onClick={handleShareImage}
+          className="flex items-center justify-center gap-2 flex-1 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/15 text-white font-semibold rounded-xl transition-all duration-150"
+        >
+          <Download className="w-4 h-4" />
+          Share Graphic
+        </button>
+      </div>
+      {(shareStatus || imageStatus) && (
+        <div className="text-center text-xs text-green-300">{shareStatus || imageStatus}</div>
+      )}
+
       <button
         onClick={onRestart}
         className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150"
       >
         <RotateCcw className="w-4 h-4" />
         Draft Again
+      </button>
+    </div>
+  );
+}
+
+function FootballSharedLineup({ payload, onStartNew }) {
+  const { lineup, projection, mode } = payload;
+
+  return (
+    <div className="w-full max-w-xl mx-auto flex flex-col gap-6 animate-fadeIn">
+      <div className="text-center">
+        <div className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4">
+          Shared Kentucky Football Lineup
+        </div>
+        <div className={`text-2xl font-black tracking-tight ${projection.tier.color}`}>{projection.tier.label}</div>
+        <div className="text-gray-400 text-sm mt-1">Projected Record: <span className="text-white font-semibold">{projection.wins}-{projection.losses}</span> <span className="text-gray-500">(of 12)</span></div>
+      </div>
+
+      <FootballMetricBar projection={projection} />
+
+      <FootballTeamAnalysis projection={projection} />
+
+      <div className="bg-white/5 border border-white/10 rounded-2xl p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {FOOTBALL_POSITIONS.map((position) => {
+          const pick = lineup[position];
+          if (!pick) return null;
+          return (
+            <div key={position} className="rounded-xl border border-white/10 bg-black/20 p-3">
+              <div className="flex items-center gap-2 mb-2">
+                <PositionBadge position={position} />
+                <span className="text-xs text-gray-500">{FOOTBALL_POSITION_LABELS[position]}</span>
+              </div>
+              <div className="text-sm font-semibold text-white">{pick.playerName}</div>
+              <div className="text-xs text-gray-400 mt-1">{pick.season} &bull; {pick.primaryPosition}</div>
+            </div>
+          );
+        })}
+      </div>
+
+      <button
+        onClick={onStartNew}
+        className="flex items-center justify-center gap-2 w-full py-3 px-6 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150"
+      >
+        <ChevronRight className="w-4 h-4" />
+        Start Your Own Draft
       </button>
     </div>
   );
@@ -683,6 +1003,8 @@ export default function FootballApp({ onUnlockFootball }) {
   const [usedSeasons, setUsedSeasons] = useState([]);
   const [sortMetric, setSortMetric] = useState('name');
   const [sortDirection, setSortDirection] = useState('desc');
+  const [shareStatus, setShareStatus] = useState('');
+  const [sharedPayload, setSharedPayload] = useState(null);
 
   const playerIdSet = useMemo(() => new Set(footballPlayers.map((p) => p.id)), []);
 
@@ -795,6 +1117,8 @@ export default function FootballApp({ onUnlockFootball }) {
   }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet, currentSeason, seasonHasUsablePlayers]);
 
   const startGame = useCallback((mode) => {
+    clearShareQueryParam();
+    setSharedPayload(null);
     setGameMode(mode);
     setLineup({ ...EMPTY_LINEUP });
     setCurrentSeason(null);
@@ -806,8 +1130,54 @@ export default function FootballApp({ onUnlockFootball }) {
   }, []);
 
   const restartGame = useCallback(() => {
+    clearShareQueryParam();
+    setSharedPayload(null);
     setPhase('intro');
   }, []);
+
+  const copyShareLink = useCallback(async () => {
+    if (!projection) return;
+
+    const payload = {
+      lineup,
+      projection,
+      mode: gameMode,
+      createdAt: new Date().toISOString(),
+      version: 1,
+    };
+
+    const encoded = encodeSharePayload(payload);
+    const shareUrl = `${window.location.origin}${window.location.pathname}?share=${encoded}`;
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareStatus('Share link copied.');
+    } catch {
+      setShareStatus('Could not access clipboard. Copy the URL from your browser bar.');
+    }
+  }, [lineup, projection, gameMode]);
+
+  useEffect(() => {
+    const shareEncoded = new URLSearchParams(window.location.search).get('share');
+    if (!shareEncoded) return;
+
+    const decoded = decodeSharePayload(shareEncoded);
+    const hasValidLineup = decoded?.lineup && FOOTBALL_POSITIONS.every((position) => decoded.lineup[position]);
+    const hasProjection = decoded?.projection?.wins !== undefined && decoded?.projection?.losses !== undefined;
+
+    if (hasValidLineup && hasProjection) {
+      setGameMode(decoded.mode === 'classic' ? 'classic' : 'ballknower');
+      setSharedPayload(decoded);
+      setPhase('shared');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!shareStatus) return undefined;
+
+    const timeoutId = window.setTimeout(() => setShareStatus(''), 2500);
+    return () => window.clearTimeout(timeoutId);
+  }, [shareStatus]);
 
   const placePlayer = useCallback(() => {
     if (!selectedPlayer || !selectedPosition || !currentSeason) return;
@@ -884,8 +1254,11 @@ export default function FootballApp({ onUnlockFootball }) {
             roundNumber={roundNumber}
           />
         )}
+        {phase === 'shared' && sharedPayload && (
+          <FootballSharedLineup payload={sharedPayload} onStartNew={startGame} />
+        )}
         {phase === 'done' && projection && (
-          <FootballFinalLineup lineup={lineup} onRestart={restartGame} gameMode={gameMode} projection={projection} />
+          <FootballFinalLineup lineup={lineup} onRestart={restartGame} onCopyShare={copyShareLink} shareStatus={shareStatus} gameMode={gameMode} projection={projection} />
         )}
       </main>
 
