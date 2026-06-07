@@ -16,13 +16,21 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function getPlayablePositions(player) {
+function getPlayablePositions(player, season) {
   const pos = player.primaryPosition;
-  if (pos === 'WR') return ['WR1', 'WR2', 'FLEX'];
-  if (pos === 'QB') return ['QB'];
-  if (pos === 'RB') return ['RB', 'FLEX'];
-  if (pos === 'TE') return ['FLEX'];
-  return [];
+  const base = [];
+  if (pos === 'WR') base.push('WR1', 'WR2', 'FLEX');
+  if (pos === 'QB') base.push('QB');
+  if (pos === 'RB') base.push('RB', 'FLEX');
+  if (pos === 'TE') base.push('FLEX');
+  // Lynn Bowden Jr. played QB in the 2019 season
+  if (player.id === 'lynn_bowden_jr' && season === '2019') {
+    if (!base.includes('QB')) base.push('QB');
+    if (!base.includes('WR1')) base.push('WR1');
+    if (!base.includes('WR2')) base.push('WR2');
+    if (!base.includes('FLEX')) base.push('FLEX');
+  }
+  return base;
 }
 
 function getStatsForDisplay(player, season) {
@@ -482,7 +490,7 @@ function FootballPlayingScreen({
                     >
                       <div className="text-sm font-semibold">{player.fullName}</div>
                       <div className="mt-1 flex flex-wrap gap-1">
-                        {getPlayablePositions(player).map((position) => (
+                        {getPlayablePositions(player, currentSeason).map((position) => (
                           <PositionBadge key={`${player.id}-${position}`} position={position} />
                         ))}
                       </div>
@@ -680,15 +688,15 @@ export default function FootballApp() {
 
   const selectedPlayerOpenPositions = useMemo(() => {
     if (!selectedPlayer) return [];
-    return getPlayablePositions(selectedPlayer).filter((position) => openPositions.includes(position));
-  }, [selectedPlayer, openPositions]);
+    return getPlayablePositions(selectedPlayer, currentSeason).filter((position) => openPositions.includes(position));
+  }, [selectedPlayer, openPositions, currentSeason]);
 
   const sortedRoster = useMemo(() => {
     const rows = roster
       .filter((player) => playerIdSet.has(player.id))
       .map((player) => {
         const stats = getStatsForDisplay(player, currentSeason);
-        const availableForPlayer = getPlayablePositions(player).filter((position) => openPositions.includes(position));
+        const availableForPlayer = getPlayablePositions(player, currentSeason).filter((position) => openPositions.includes(position));
         const alreadyDrafted = draftedPlayerIds.has(player.id);
         const canPlace = availableForPlayer.length > 0 && !alreadyDrafted;
         return { player, stats, availableForPlayer, alreadyDrafted, canPlace };
@@ -722,7 +730,7 @@ export default function FootballApp() {
     for (const player of seasonRoster) {
       if (!playerIdSet.has(player.id)) continue;
       if (draftedPlayerIds.has(player.id)) continue;
-      const playable = getPlayablePositions(player);
+      const playable = getPlayablePositions(player, season);
       if (!playable.some((pos) => openPositions.includes(pos))) continue;
       return true;
     }
@@ -783,7 +791,7 @@ export default function FootballApp() {
     if (!selectedPlayer || !selectedPosition || !currentSeason) return;
     if (!openPositions.includes(selectedPosition)) return;
     const stats = getStatsForDisplay(selectedPlayer, currentSeason);
-    const playablePositions = getPlayablePositions(selectedPlayer);
+    const playablePositions = getPlayablePositions(selectedPlayer, currentSeason);
     setLineup((prev) => ({
       ...prev,
       [selectedPosition]: {
