@@ -18,9 +18,9 @@ function getRandom(arr) {
 
 function getPlayablePositions(player) {
   const pos = player.primaryPosition;
-  if (pos === 'WR') return ['WR1', 'WR2'];
+  if (pos === 'WR') return ['WR1', 'WR2', 'TE'];
   if (pos === 'QB') return ['QB'];
-  if (pos === 'RB') return ['RB'];
+  if (pos === 'RB') return ['RB', 'TE'];
   if (pos === 'TE') return ['TE'];
   return [];
 }
@@ -164,6 +164,8 @@ function getPositionValue(stats, position) {
   return 0;
 }
 
+const TE_BONUS = 1.4;
+
 function getFootballProjection(lineup) {
   const picks = FOOTBALL_POSITIONS.map((pos) => lineup[pos]).filter(Boolean);
   if (picks.length !== 5) return null;
@@ -172,10 +174,13 @@ function getFootballProjection(lineup) {
   const positionValues = {};
 
   for (const pick of picks) {
-    const value = getPositionValue(pick.stats, pick.primaryPosition);
-    totalValue += value;
-    // Key by lineup slot so WR1 and WR2 don't overwrite each other
+    let value = getPositionValue(pick.stats, pick.primaryPosition);
     const slot = Object.entries(lineup).find(([_, p]) => p === pick)?.[0];
+    // Boost actual TE players when they slot at TE
+    if (slot === 'TE' && pick.primaryPosition === 'TE') {
+      value *= TE_BONUS;
+    }
+    totalValue += value;
     if (slot) positionValues[slot] = value;
   }
 
@@ -310,7 +315,8 @@ function FootballIntroScreen({ onStart }) {
         <div className="text-sm text-gray-300">1. Spin the year roulette.</div>
         <div className="text-sm text-gray-300">2. Pick any player on that season's roster.</div>
         <div className="text-sm text-gray-300">3. Place him into one open position he can play.</div>
-        <div className="text-sm text-gray-300">4. Fill all five slots to finish your lineup.</div>
+        <div className="text-sm text-gray-300">4. TE is a flex spot — WRs and RBs can slot there too.</div>
+        <div className="text-sm text-gray-300">5. Fill all five slots to finish your lineup.</div>
       </div>
 
       <div className="w-full flex flex-col gap-3">
