@@ -164,7 +164,7 @@ const POSITION_BENCHMARKS = {
   FLEX: 70,
 };
 
-const PERFECT_TARGET = 550; // hard to reach; requires near-p95 at every position
+const PERFECT_TARGET = 700; // requires near-elite at every position
 
 function getPositionValue(stats, position) {
   if (!stats) return 0;
@@ -175,7 +175,7 @@ function getPositionValue(stats, position) {
     return (stats.RushYds || 0) * 0.8 + (stats.RushTD || 0) * 20 + (stats.RushYA || 0) * 5 + (stats.RecYds || 0) * 0.5;
   }
   if (position === 'WR' || position === 'TE') {
-    return (stats.RecYds || 0) * 0.9 + (stats.RecTD || 0) * 25 + (stats.YPR || 0) * 2 + (stats.Rec || 0) * 6 + (stats.RushYds || 0) * 0.5;
+    return (stats.RecYds || 0) * 0.9 + (stats.RecTD || 0) * 25 + (stats.YPR || 0) * 1 + (stats.Rec || 0) * 6 + (stats.RushYds || 0) * 0.5;
   }
   return 0;
 }
@@ -203,7 +203,7 @@ function getFootballProjection(lineup) {
   const rawRatio = totalValue / PERFECT_TARGET;
   const wins = Math.max(
     0,
-    Math.min(12, Math.round(12 * Math.pow(rawRatio, 1.5)))
+    Math.min(12, Math.round(12 * Math.pow(Math.min(rawRatio, 1), 2.0)))
   );
   const losses = 12 - wins;
 
