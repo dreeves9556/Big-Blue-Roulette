@@ -3178,14 +3178,14 @@ export const footballPlayers = [
   }
 ];
 
-export const FOOTBALL_POSITIONS = ['QB', 'RB', 'WR1', 'WR2', 'TE'];
+export const FOOTBALL_POSITIONS = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
 
 export const FOOTBALL_POSITION_LABELS = {
   QB: 'Quarterback',
   RB: 'Running Back',
   WR1: 'Wide Receiver 1',
   WR2: 'Wide Receiver 2',
-  TE: 'Tight End',
+  FLEX: 'Flex',
 };
 
 // All unique seasons across all players, sorted

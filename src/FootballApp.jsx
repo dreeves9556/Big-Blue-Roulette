@@ -10,7 +10,7 @@ import { footballPlayerSeasonStatsById } from './data/footballPlayerSeasonStats.
 import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw } from 'lucide-react';
 import './App.css';
 
-const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, TE: null };
+const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, FLEX: null };
 
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -18,10 +18,10 @@ function getRandom(arr) {
 
 function getPlayablePositions(player) {
   const pos = player.primaryPosition;
-  if (pos === 'WR') return ['WR1', 'WR2', 'TE'];
+  if (pos === 'WR') return ['WR1', 'WR2', 'FLEX'];
   if (pos === 'QB') return ['QB'];
-  if (pos === 'RB') return ['RB', 'TE'];
-  if (pos === 'TE') return ['TE'];
+  if (pos === 'RB') return ['RB', 'FLEX'];
+  if (pos === 'TE') return ['FLEX'];
   return [];
 }
 
@@ -88,11 +88,11 @@ const POSITION_COLORS = {
   RB: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
   WR1: 'bg-green-500/20 text-green-300 border-green-500/40',
   WR2: 'bg-teal-500/20 text-teal-300 border-teal-500/40',
-  TE: 'bg-orange-500/20 text-orange-300 border-orange-500/40',
+  FLEX: 'bg-orange-500/20 text-orange-300 border-orange-500/40',
 };
 
 const POSITION_COLORS_HEX = {
-  QB: '#3b82f6', RB: '#a855f7', WR1: '#22c55e', WR2: '#14b8a6', TE: '#f97316',
+  QB: '#3b82f6', RB: '#a855f7', WR1: '#22c55e', WR2: '#14b8a6', FLEX: '#f97316',
 };
 
 function PositionBadge({ position }) {
@@ -145,7 +145,7 @@ const POSITION_BENCHMARKS = {
   QB: 120,
   RB: 85,
   WR: 100,
-  TE: 70,
+  FLEX: 70,
 };
 
 const PERFECT_TARGET = 550; // hard to reach; requires near-p95 at every position
@@ -177,7 +177,7 @@ function getFootballProjection(lineup) {
     let value = getPositionValue(pick.stats, pick.primaryPosition);
     const slot = Object.entries(lineup).find(([_, p]) => p === pick)?.[0];
     // Boost actual TE players when they slot at TE
-    if (slot === 'TE' && pick.primaryPosition === 'TE') {
+    if (slot === 'FLEX' && pick.primaryPosition === 'TE') {
       value *= TE_BONUS;
     }
     totalValue += value;
@@ -226,8 +226,8 @@ function getFootballProjection(lineup) {
 }
 
 function FootballMetricBar({ projection }) {
-  const slots = ['QB', 'RB', 'WR1', 'WR2', 'TE'];
-  const labels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', TE: 'TE' };
+  const slots = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
+  const labels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', FLEX: 'Flex' };
   return (
     <div className="grid grid-cols-5 gap-1.5">
       {slots.map((slot) => (
@@ -246,7 +246,7 @@ function FootballTeamAnalysis({ projection }) {
     { slot: 'RB', pos: 'RB', label: 'Ground Game', high: 'Dominant Rushing', mid: 'Adequate Rushing', weak: 'Rushing Struggles' },
     { slot: 'WR1', pos: 'WR', label: 'WR1 Threat', high: 'Explosive WR1', mid: 'Solid WR1', weak: 'WR1 Needs Work' },
     { slot: 'WR2', pos: 'WR', label: 'WR2 Threat', high: 'Explosive WR2', mid: 'Solid WR2', weak: 'WR2 Needs Work' },
-    { slot: 'TE', pos: 'TE', label: 'Tight End Threat', high: 'Elite TE Play', mid: 'Serviceable TE', weak: 'TE Is a Liability' },
+    { slot: 'FLEX', pos: 'TE', label: 'Flex Threat', high: 'Elite Flex Play', mid: 'Solid Flex', weak: 'Flex Is a Liability' },
   ];
 
   const scored = items.map((item) => ({
@@ -315,7 +315,7 @@ function FootballIntroScreen({ onStart }) {
         <div className="text-sm text-gray-300">1. Spin the year roulette.</div>
         <div className="text-sm text-gray-300">2. Pick any player on that season's roster.</div>
         <div className="text-sm text-gray-300">3. Place him into one open position he can play.</div>
-        <div className="text-sm text-gray-300">4. TE is a flex spot — WRs and RBs can slot there too.</div>
+        <div className="text-sm text-gray-300">4. FLEX is a flex spot — WRs, RBs, and TEs can slot there.</div>
         <div className="text-sm text-gray-300">5. Fill all five slots to finish your lineup.</div>
       </div>
 
