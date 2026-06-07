@@ -69,34 +69,34 @@ function getStatsForDisplay(player, season) {
 
 const STAT_KEYS_BY_POSITION = {
   QB: [
-    { key: 'Yds', label: 'Pass Yds' }, { key: 'TD', label: 'Pass TD' },
-    { key: 'Int', label: 'Int' }, { key: 'Cmp%', label: 'Cmp%' },
-    { key: 'Rate', label: 'Rate' }, { key: 'RushYds', label: 'Rush Yds' }, { key: 'RushTD', label: 'Rush TD' },
+    { key: 'Yds', label: 'Pass Yds/G' }, { key: 'TD', label: 'Pass TD/G' },
+    { key: 'Int', label: 'Int/G' }, { key: 'Cmp%', label: 'Cmp%/G' },
+    { key: 'Rate', label: 'Rate' }, { key: 'RushYds', label: 'Rush Yds/G' }, { key: 'RushTD', label: 'Rush TD/G' },
   ],
   RB: [
-    { key: 'RushAtt', label: 'Att' }, { key: 'RushYds', label: 'Rush Yds' },
-    { key: 'RushYA', label: 'Y/A' }, { key: 'RushTD', label: 'Rush TD' },
-    { key: 'Rec', label: 'Rec' }, { key: 'RecYds', label: 'Rec Yds' },
-    { key: 'YPR', label: 'Y/R' }, { key: 'RecTD', label: 'Rec TD' },
+    { key: 'RushAtt', label: 'Att/G' }, { key: 'RushYds', label: 'Rush Yds/G' },
+    { key: 'RushYA', label: 'Y/A' }, { key: 'RushTD', label: 'Rush TD/G' },
+    { key: 'Rec', label: 'Rec/G' }, { key: 'RecYds', label: 'Rec Yds/G' },
+    { key: 'YPR', label: 'Y/R' }, { key: 'RecTD', label: 'Rec TD/G' },
   ],
   WR: [
-    { key: 'Rec', label: 'Rec' }, { key: 'RecYds', label: 'Rec Yds' },
-    { key: 'YPR', label: 'Y/R' }, { key: 'RecTD', label: 'Rec TD' },
-    { key: 'RushAtt', label: 'Rush Att' }, { key: 'RushYds', label: 'Rush Yds' },
+    { key: 'Rec', label: 'Rec/G' }, { key: 'RecYds', label: 'Rec Yds/G' },
+    { key: 'YPR', label: 'Y/R' }, { key: 'RecTD', label: 'Rec TD/G' },
+    { key: 'RushAtt', label: 'Rush Att/G' }, { key: 'RushYds', label: 'Rush Yds/G' },
   ],
   TE: [
-    { key: 'Rec', label: 'Rec' }, { key: 'RecYds', label: 'Rec Yds' },
-    { key: 'YPR', label: 'Y/R' }, { key: 'RecTD', label: 'Rec TD' },
-    { key: 'RushAtt', label: 'Rush Att' }, { key: 'RushYds', label: 'Rush Yds' },
+    { key: 'Rec', label: 'Rec/G' }, { key: 'RecYds', label: 'Rec Yds/G' },
+    { key: 'YPR', label: 'Y/R' }, { key: 'RecTD', label: 'Rec TD/G' },
+    { key: 'RushAtt', label: 'Rush Att/G' }, { key: 'RushYds', label: 'Rush Yds/G' },
   ],
 };
 
 const SORT_OPTIONS = [
   { key: 'name', label: 'Name' },
   { key: 'position', label: 'Position' },
-  { key: 'Yds', label: 'Pass Yds' }, { key: 'TD', label: 'Pass TD' },
-  { key: 'RushYds', label: 'Rush Yds' }, { key: 'RushTD', label: 'Rush TD' },
-  { key: 'Rec', label: 'Rec' }, { key: 'RecYds', label: 'Rec Yds' }, { key: 'RecTD', label: 'Rec TD' },
+  { key: 'Yds', label: 'Pass Yds/G' }, { key: 'TD', label: 'Pass TD/G' },
+  { key: 'RushYds', label: 'Rush Yds/G' }, { key: 'RushTD', label: 'Rush TD/G' },
+  { key: 'Rec', label: 'Rec/G' }, { key: 'RecYds', label: 'Rec Yds/G' }, { key: 'RecTD', label: 'Rec TD/G' },
 ];
 
 const POSITION_COLORS = {
@@ -455,10 +455,10 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
 
     // Stats row
     const statMap = {
-      QB: [{ k: 'Yds', l: 'Pass Yds' }, { k: 'TD', l: 'Pass TD' }, { k: 'Int', l: 'Int' }, { k: 'Rate', l: 'Rate' }],
-      RB: [{ k: 'RushYds', l: 'Rush Yds' }, { k: 'RushTD', l: 'Rush TD' }, { k: 'RecYds', l: 'Rec Yds' }, { k: 'RecTD', l: 'Rec TD' }],
-      WR: [{ k: 'Rec', l: 'Rec' }, { k: 'RecYds', l: 'Rec Yds' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD' }],
-      TE: [{ k: 'Rec', l: 'Rec' }, { k: 'RecYds', l: 'Rec Yds' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD' }],
+      QB: [{ k: 'Yds', l: 'Pass Yds/G' }, { k: 'TD', l: 'Pass TD/G' }, { k: 'Int', l: 'Int/G' }, { k: 'Rate', l: 'Rate' }],
+      RB: [{ k: 'RushYds', l: 'Rush Yds/G' }, { k: 'RushTD', l: 'Rush TD/G' }, { k: 'RecYds', l: 'Rec Yds/G' }, { k: 'RecTD', l: 'Rec TD/G' }],
+      WR: [{ k: 'Rec', l: 'Rec/G' }, { k: 'RecYds', l: 'Rec Yds/G' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD/G' }],
+      TE: [{ k: 'Rec', l: 'Rec/G' }, { k: 'RecYds', l: 'Rec Yds/G' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD/G' }],
     };
     const statKeys = statMap[pick.primaryPosition] || statMap.WR;
     const statW = (cardW - 28) / statKeys.length;
@@ -906,6 +906,7 @@ function FootballFinalLineup({ lineup, onRestart, onCopyShare, shareStatus, game
         <div className={`text-2xl font-black tracking-tight ${projection.tier.color}`}>{projection.tier.label}</div>
         <div className="text-gray-400 text-sm mt-1">Projected Record: <span className="text-white font-semibold">{projection.wins}-{projection.losses}</span> <span className="text-gray-500">(of 12)</span></div>
         <div className="text-xs text-gray-500 mt-1">Team Strength: {projection.strength}</div>
+        <div className="text-[11px] text-orange-400 mt-1 uppercase tracking-wider font-semibold">⚠ All Stats Per Game</div>
         {gameMode === 'ballknower' && (
           <div className="text-xs text-blue-300 mt-1">Ball-Knower Mode &bull; No stats shown during draft</div>
         )}
@@ -979,6 +980,7 @@ function FootballSharedLineup({ payload, onStartNew }) {
         </div>
         <div className={`text-2xl font-black tracking-tight ${projection.tier.color}`}>{projection.tier.label}</div>
         <div className="text-gray-400 text-sm mt-1">Projected Record: <span className="text-white font-semibold">{projection.wins}-{projection.losses}</span> <span className="text-gray-500">(of 12)</span></div>
+        <div className="text-[11px] text-orange-400 mt-1 uppercase tracking-wider font-semibold">⚠ All Stats Per Game</div>
       </div>
 
       <FootballMetricBar projection={projection} />
