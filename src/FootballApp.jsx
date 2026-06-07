@@ -269,6 +269,22 @@ function clearShareQueryParam() {
   window.history.replaceState({}, '', newUrl);
 }
 
+function roundRectPolyfill(ctx, x, y, w, h, r) {
+  const radius = Array.isArray(r) ? r : [r, r, r, r];
+  const [tl, tr, br, bl] = radius.map((v) => Math.min(v, w / 2, h / 2));
+  ctx.beginPath();
+  ctx.moveTo(x + tl, y);
+  ctx.lineTo(x + w - tr, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + tr);
+  ctx.lineTo(x + w, y + h - br);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - br, y + h);
+  ctx.lineTo(x + bl, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - bl);
+  ctx.lineTo(x, y + tl);
+  ctx.quadraticCurveTo(x, y, x + tl, y);
+  ctx.closePath();
+}
+
 function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   const W = 640;
   const H = 760;
@@ -277,6 +293,15 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   canvas.height = H * 2;
   const ctx = canvas.getContext('2d');
   ctx.scale(2, 2);
+
+  const rr = (x, y, w, h, r) => {
+    if (typeof ctx.roundRect === 'function') {
+      ctx.beginPath();
+      ctx.roundRect(x, y, w, h, r);
+    } else {
+      roundRectPolyfill(ctx, x, y, w, h, r);
+    }
+  };
 
   // Background
   ctx.fillStyle = '#0a0c14';
@@ -312,8 +337,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
     const badgeW = ctx.measureText(badgeText).width + 16;
     const badgeX = W - badgeW - 20;
     const badgeY = 70;
-    ctx.beginPath();
-    ctx.roundRect(badgeX, badgeY, badgeW, 20, 4);
+    rr(badgeX, badgeY, badgeW, 20, 4);
     ctx.fill();
     ctx.fillStyle = '#ffffff';
     ctx.textAlign = 'center';
@@ -338,8 +362,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   const tierX = W - tierW - 20;
   const tierY = 22;
   ctx.fillStyle = bgHex;
-  ctx.beginPath();
-  ctx.roundRect(tierX, tierY, tierW, 26, 6);
+  rr(tierX, tierY, tierW, 26, 6);
   ctx.fill();
   ctx.fillStyle = textHex;
   ctx.textAlign = 'center';
@@ -362,13 +385,11 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
     const bx = 24 + i * colW;
     const by = 140;
     ctx.fillStyle = 'rgba(255,255,255,0.05)';
-    ctx.beginPath();
-    ctx.roundRect(bx, by, colW - 6, 44, 6);
+    rr(bx, by, colW - 6, 44, 6);
     ctx.fill();
     ctx.strokeStyle = 'rgba(255,255,255,0.08)';
     ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.roundRect(bx, by, colW - 6, 44, 6);
+    rr(bx, by, colW - 6, 44, 6);
     ctx.stroke();
     ctx.fillStyle = '#6b7280';
     ctx.font = '9px system-ui, -apple-system, sans-serif';
@@ -399,26 +420,22 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
 
     // Card bg
     ctx.fillStyle = 'rgba(255,255,255,0.04)';
-    ctx.beginPath();
-    ctx.roundRect(cx, cy, cardW, cardH, 10);
+    rr(cx, cy, cardW, cardH, 10);
     ctx.fill();
     ctx.strokeStyle = 'rgba(255,255,255,0.08)';
     ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.roundRect(cx, cy, cardW, cardH, 10);
+    rr(cx, cy, cardW, cardH, 10);
     ctx.stroke();
 
     // Position color accent left bar
     const posColor = POSITION_COLORS_HEX[pos] ?? '#6b7280';
     ctx.fillStyle = posColor;
-    ctx.beginPath();
-    ctx.roundRect(cx, cy, 4, cardH, [10, 0, 0, 10]);
+    rr(cx, cy, 4, cardH, [10, 0, 0, 10]);
     ctx.fill();
 
     // Position pill
     ctx.fillStyle = posColor + '33';
-    ctx.beginPath();
-    ctx.roundRect(cx + 14, cy + 12, 32, 18, 4);
+    rr(cx + 14, cy + 12, 32, 18, 4);
     ctx.fill();
     ctx.fillStyle = posColor;
     ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
@@ -846,22 +863,27 @@ function FootballFinalLineup({ lineup, onRestart, onCopyShare, shareStatus, game
   const [imageStatus, setImageStatus] = useState('');
 
   const handleShareImage = useCallback(() => {
-    const canvas = generateFootballShareImage(lineup, projection, gameMode);
-    canvas.toBlob((blob) => {
-      if (!blob) { setImageStatus('Could not generate image.'); return; }
-      const shareData = {
-        files: [new File([blob], 'big-blue-roulette-football.png', { type: 'image/png' })],
-        title: 'Big Blue Roulette Football',
-        text: `My Kentucky football draft went ${projection.wins}-${projection.losses}! ${projection.tier.label}`,
-      };
-      if (navigator.canShare && navigator.canShare(shareData)) {
-        navigator.share(shareData).catch(() => {
+    try {
+      const canvas = generateFootballShareImage(lineup, projection, gameMode);
+      canvas.toBlob((blob) => {
+        if (!blob) { setImageStatus('Could not generate image.'); return; }
+        const shareData = {
+          files: [new File([blob], 'big-blue-roulette-football.png', { type: 'image/png' })],
+          title: 'Big Blue Roulette Football',
+          text: `My Kentucky football draft went ${projection.wins}-${projection.losses}! ${projection.tier.label}`,
+        };
+        if (navigator.canShare && navigator.canShare(shareData)) {
+          navigator.share(shareData).catch(() => {
+            downloadImage(canvas);
+          });
+        } else {
           downloadImage(canvas);
-        });
-      } else {
-        downloadImage(canvas);
-      }
-    }, 'image/png');
+        }
+      }, 'image/png');
+    } catch (err) {
+      setImageStatus('Could not generate image.');
+      console.error('Share image error:', err);
+    }
   }, [lineup, projection, gameMode]);
 
   function downloadImage(canvas) {
