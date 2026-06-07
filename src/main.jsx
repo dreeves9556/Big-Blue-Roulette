@@ -36,7 +36,8 @@ function SportWrapper() {
           </div>
         </div>
       </div>
-      {sport === 'basketball' ? <App /> : <FootballApp />}
+      <div className={sport === 'basketball' ? '' : 'hidden'}><App /></div>
+      <div className={sport === 'football' ? '' : 'hidden'}><FootballApp /></div>
     </div>
   );
 }

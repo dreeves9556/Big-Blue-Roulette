@@ -8,6 +8,7 @@ import {
 } from './data/footballPlayers.js';
 import { footballPlayerSeasonStatsById } from './data/footballPlayerSeasonStats.js';
 import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw } from 'lucide-react';
+import './App.css';
 
 const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, TE: null };
 
@@ -397,6 +398,7 @@ function FootballPlayingScreen({
 
 function FootballFinalLineup({ lineup, onRestart, gameMode }) {
   const picks = FOOTBALL_POSITIONS.map((pos) => lineup[pos]).filter(Boolean);
+  const uniqueSeasons = new Set(picks.map((p) => p.season)).size;
   return (
     <div className="w-full max-w-xl mx-auto flex flex-col gap-6 animate-fadeIn">
       <div className="text-center">
@@ -406,7 +408,7 @@ function FootballFinalLineup({ lineup, onRestart, gameMode }) {
           </div>
         </div>
         <div className="text-2xl font-black tracking-tight text-yellow-300">LINEUP COMPLETE</div>
-        <div className="text-gray-400 text-sm mt-1">You drafted 5 players across {picks.length} different seasons.</div>
+        <div className="text-gray-400 text-sm mt-1">You drafted 5 players from {uniqueSeasons} unique season{uniqueSeasons === 1 ? '' : 's'}.</div>
         {gameMode === 'ballknower' && (
           <div className="text-xs text-blue-300 mt-1">Ball-Knower Mode &bull; No stats shown during draft</div>
         )}
