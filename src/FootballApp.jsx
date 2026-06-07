@@ -7,7 +7,8 @@ import {
   footballSeasonPlayersMap,
 } from './data/footballPlayers.js';
 import { footballPlayerSeasonStatsById } from './data/footballPlayerSeasonStats.js';
-import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw, Link2, Download } from 'lucide-react';
+import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw, Link2, Download, Users } from 'lucide-react';
+import FootballLineupBuilder from './components/FootballLineupBuilder.jsx';
 import './App.css';
 
 const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, FLEX: null };
@@ -590,6 +591,13 @@ function FootballIntroScreen({ onStart }) {
         >
           Play Ball-Knower (Stats Hidden) <ChevronRight className="w-4 h-4" />
         </button>
+        <button
+          onClick={() => onStart('lineupbuilder')}
+          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-teal-600/20 hover:bg-teal-600/30 border border-teal-500/30 active:scale-95 text-teal-200 font-bold rounded-xl transition-all duration-150"
+        >
+          <Users className="w-4 h-4" />
+          Dream Lineup Builder
+        </button>
       </div>
     </div>
   );
@@ -1143,6 +1151,10 @@ export default function FootballApp({ onUnlockFootball }) {
   const startGame = useCallback((mode) => {
     clearShareQueryParam();
     setSharedPayload(null);
+    if (mode === 'lineupbuilder') {
+      setPhase('lineupbuilder');
+      return;
+    }
     setGameMode(mode);
     setLineup({ ...EMPTY_LINEUP });
     setCurrentSeason(null);
@@ -1254,6 +1266,7 @@ export default function FootballApp({ onUnlockFootball }) {
 
       <main className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
         {phase === 'intro' && <FootballIntroScreen onStart={startGame} />}
+        {phase === 'lineupbuilder' && <FootballLineupBuilder onBack={() => setPhase('intro')} />}
         {phase === 'playing' && (
           <FootballPlayingScreen
             gameMode={gameMode}
