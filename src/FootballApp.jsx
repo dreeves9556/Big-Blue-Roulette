@@ -365,6 +365,19 @@ function FootballPlayingScreen({
     setPositionFilter(null);
   }, [currentSeason]);
 
+  useEffect(() => {
+    if (positionFilter === 'QB') {
+      setSortMetric('Yds');
+      setSortDirection('desc');
+    } else if (positionFilter === 'RB') {
+      setSortMetric('RushYds');
+      setSortDirection('desc');
+    } else if (positionFilter === 'WR') {
+      setSortMetric('RecYds');
+      setSortDirection('desc');
+    }
+  }, [positionFilter, setSortMetric, setSortDirection]);
+
   const filteredRoster = useMemo(() => {
     if (!positionFilter) return sortedRoster;
     return sortedRoster.filter(({ player }) => player.primaryPosition === positionFilter);

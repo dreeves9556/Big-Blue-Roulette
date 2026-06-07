@@ -1776,6 +1776,7 @@ export default function App({ onUnlockFootball }) {
         >
           bigbluehistory.net
         </a>
+        <br />
         <button
           onClick={onUnlockFootball}
           className="mt-2 text-gray-500 hover:text-gray-300 transition-colors cursor-pointer bg-transparent border-0"
