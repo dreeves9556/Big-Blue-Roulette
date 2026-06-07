@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   footballPlayers,
   FOOTBALL_POSITIONS,
@@ -345,6 +345,24 @@ function FootballPlayingScreen({
   lineup, usedSeasons, roundNumber,
 }) {
   const [mobileTab, setMobileTab] = useState('draft');
+  const [positionFilter, setPositionFilter] = useState(null);
+
+  useEffect(() => {
+    setPositionFilter(null);
+  }, [currentSeason]);
+
+  const filteredRoster = useMemo(() => {
+    if (!positionFilter) return sortedRoster;
+    return sortedRoster.filter(({ player }) => player.primaryPosition === positionFilter);
+  }, [sortedRoster, positionFilter]);
+
+  const POSITION_FILTERS = [
+    { key: null, label: 'All' },
+    { key: 'QB', label: 'QB' },
+    { key: 'RB', label: 'RB' },
+    { key: 'WR', label: 'WR' },
+    { key: 'TE', label: 'TE' },
+  ];
 
   return (
     <>
@@ -394,6 +412,25 @@ function FootballPlayingScreen({
             <>
               <div className="mb-3 text-sm text-gray-400">Choose any player from this roster:</div>
 
+              <div className="mb-3 rounded-xl border border-white/10 bg-black/20 p-3 animate-fadeIn">
+                <div className="text-[11px] text-gray-500 uppercase tracking-widest mb-2">Filter By Position <span className="text-gray-600 normal-case">({filteredRoster.length} shown)</span></div>
+                <div className="flex flex-wrap gap-2">
+                  {POSITION_FILTERS.map((filter) => {
+                    const isActive = positionFilter === filter.key;
+                    return (
+                      <button
+                        key={filter.label}
+                        type="button"
+                        onClick={() => setPositionFilter(filter.key)}
+                        className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all ${isActive ? 'bg-blue-500/20 border-blue-400/60 text-blue-200' : 'bg-white/5 border-white/15 text-gray-300 hover:bg-white/10'}`}
+                      >
+                        {filter.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
               {gameMode === 'classic' && (
                 <div className="mb-3 rounded-xl border border-white/10 bg-black/20 p-3 animate-fadeIn">
                   <div className="text-[11px] text-gray-500 uppercase tracking-widest mb-2">Sort By</div>
@@ -424,7 +461,7 @@ function FootballPlayingScreen({
               )}
 
               <div className={`grid grid-cols-1 gap-2 overflow-y-auto pr-1 ${selectedPlayer ? 'max-h-[300px]' : 'max-h-[400px]'}`}>
-                {sortedRoster.map(({ player, stats, alreadyDrafted, availableForPlayer, canPlace }) => {
+                {filteredRoster.map(({ player, stats, alreadyDrafted, availableForPlayer, canPlace }) => {
                   const selected = selectedPlayer?.id === player.id;
                   return (
                     <button
