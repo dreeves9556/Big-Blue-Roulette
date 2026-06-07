@@ -23,20 +23,20 @@ function SportWrapper() {
 
   return (
     <div className="min-h-screen bg-[#0a0c14] text-white">
-      <div className="bg-[#0a0c14]/95 backdrop-blur border-b border-white/10">
-        <div className="max-w-4xl mx-auto px-4 pt-2">
-          <div className="flex gap-1">
-            <button
-              onClick={() => setSport('basketball')}
-              className={`flex-1 py-2 rounded-t-lg text-xs font-bold tracking-widest uppercase transition-all ${
-                sport === 'basketball'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-gray-200'
-              }`}
-            >
-              🏀 Basketball
-            </button>
-            {showFootball && (
+      {showFootball && (
+        <div className="bg-[#0a0c14]/95 backdrop-blur border-b border-white/10">
+          <div className="max-w-4xl mx-auto px-4 pt-2">
+            <div className="flex gap-1">
+              <button
+                onClick={() => setSport('basketball')}
+                className={`flex-1 py-2 rounded-t-lg text-xs font-bold tracking-widest uppercase transition-all ${
+                  sport === 'basketball'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-gray-200'
+                }`}
+              >
+                🏀 Basketball
+              </button>
               <button
                 onClick={() => setSport('football')}
                 className={`flex-1 py-2 rounded-t-lg text-xs font-bold tracking-widest uppercase transition-all ${
@@ -47,10 +47,10 @@ function SportWrapper() {
               >
                 🏈 Football
               </button>
-            )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div className={sport === 'basketball' ? '' : 'hidden'}>
         <App onUnlockFootball={unlockFootball} />
       </div>
