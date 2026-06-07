@@ -140,15 +140,15 @@ function StatGrid({ stats, position }) {
   );
 }
 
-// Position scoring benchmarks calibrated from dataset percentiles
+// Position scoring benchmarks calibrated from dataset p90 percentiles
 const POSITION_BENCHMARKS = {
-  QB: 90,
-  RB: 60,
-  WR: 70,
-  TE: 50,
+  QB: 120,
+  RB: 85,
+  WR: 100,
+  TE: 70,
 };
 
-const PERFECT_TARGET = 450; // sum of all 5 benchmarks + margin
+const PERFECT_TARGET = 550; // hard to reach; requires near-p95 at every position
 
 function getPositionValue(stats, position) {
   if (!stats) return 0;
@@ -174,12 +174,15 @@ function getFootballProjection(lineup) {
   for (const pick of picks) {
     const value = getPositionValue(pick.stats, pick.primaryPosition);
     totalValue += value;
-    positionValues[pick.primaryPosition] = value;
+    // Key by lineup slot so WR1 and WR2 don't overwrite each other
+    const slot = Object.entries(lineup).find(([_, p]) => p === pick)?.[0];
+    if (slot) positionValues[slot] = value;
   }
 
+  const rawRatio = totalValue / PERFECT_TARGET;
   const wins = Math.max(
     0,
-    Math.min(12, Math.round(12 * Math.pow(Math.min(totalValue / PERFECT_TARGET, 1), 1.15)))
+    Math.min(12, Math.round(12 * Math.pow(rawRatio, 1.5)))
   );
   const losses = 12 - wins;
 
@@ -193,7 +196,12 @@ function getFootballProjection(lineup) {
   })();
 
   const analysis = Object.entries(POSITION_BENCHMARKS).map(([pos, bench]) => {
-    const val = positionValues[pos] || 0;
+    let val = 0;
+    if (pos === 'WR') {
+      val = (positionValues.WR1 || 0) + (positionValues.WR2 || 0);
+    } else {
+      val = positionValues[pos] || 0;
+    }
     const ratio = val / bench;
     return { position: pos, value: val, benchmark: bench, ratio };
   }).sort((a, b) => b.ratio - a.ratio);
@@ -213,14 +221,14 @@ function getFootballProjection(lineup) {
 }
 
 function FootballMetricBar({ projection }) {
-  const positions = ['QB', 'RB', 'WR', 'TE'];
-  const labels = { QB: 'QB Val', RB: 'RB Val', WR: 'WR Val', TE: 'TE Val' };
+  const slots = ['QB', 'RB', 'WR1', 'WR2', 'TE'];
+  const labels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', TE: 'TE' };
   return (
-    <div className="grid grid-cols-4 gap-1.5">
-      {positions.map((pos) => (
-        <div key={pos} className="rounded-xl bg-black/25 border border-white/10 p-1.5 text-center">
-          <div className="text-[9px] tracking-widest text-gray-500 uppercase">{labels[pos]}</div>
-          <div className="text-xs font-semibold text-white mt-0.5">{(projection.positionValues[pos] || 0).toFixed(1)}</div>
+    <div className="grid grid-cols-5 gap-1.5">
+      {slots.map((slot) => (
+        <div key={slot} className="rounded-xl bg-black/25 border border-white/10 p-1.5 text-center">
+          <div className="text-[9px] tracking-widest text-gray-500 uppercase">{labels[slot]}</div>
+          <div className="text-xs font-semibold text-white mt-0.5">{(projection.positionValues[slot] || 0).toFixed(1)}</div>
         </div>
       ))}
     </div>
@@ -229,15 +237,16 @@ function FootballMetricBar({ projection }) {
 
 function FootballTeamAnalysis({ projection }) {
   const items = [
-    { pos: 'QB', label: 'Quarterback Play', high: 'Elite QB Play', mid: 'Solid QB Play', weak: 'QB Needs Work' },
-    { pos: 'RB', label: 'Ground Game', high: 'Dominant Rushing', mid: 'Adequate Rushing', weak: 'Rushing Struggles' },
-    { pos: 'WR', label: 'Passing Attack', high: 'Explosive Receiving', mid: 'Adequate Receiving', weak: 'Receiving Needs Work' },
-    { pos: 'TE', label: 'Tight End Threat', high: 'Elite TE Play', mid: 'Serviceable TE', weak: 'TE Is a Liability' },
+    { slot: 'QB', pos: 'QB', label: 'Quarterback Play', high: 'Elite QB Play', mid: 'Solid QB Play', weak: 'QB Needs Work' },
+    { slot: 'RB', pos: 'RB', label: 'Ground Game', high: 'Dominant Rushing', mid: 'Adequate Rushing', weak: 'Rushing Struggles' },
+    { slot: 'WR1', pos: 'WR', label: 'WR1 Threat', high: 'Explosive WR1', mid: 'Solid WR1', weak: 'WR1 Needs Work' },
+    { slot: 'WR2', pos: 'WR', label: 'WR2 Threat', high: 'Explosive WR2', mid: 'Solid WR2', weak: 'WR2 Needs Work' },
+    { slot: 'TE', pos: 'TE', label: 'Tight End Threat', high: 'Elite TE Play', mid: 'Serviceable TE', weak: 'TE Is a Liability' },
   ];
 
   const scored = items.map((item) => ({
     ...item,
-    ratio: projection.positionValues[item.pos] / POSITION_BENCHMARKS[item.pos],
+    ratio: (projection.positionValues[item.slot] || 0) / POSITION_BENCHMARKS[item.pos],
   })).sort((a, b) => b.ratio - a.ratio);
 
   const strengths = scored.slice(0, 2);
@@ -251,11 +260,11 @@ function FootballTeamAnalysis({ projection }) {
           <div className="text-xs font-semibold text-green-400 uppercase tracking-wide mb-1.5">Strengths</div>
           <ul className="space-y-1.5">
             {strengths.map((s) => (
-              <li key={s.pos} className="text-sm text-gray-300 flex items-start gap-2">
+              <li key={s.slot} className="text-sm text-gray-300 flex items-start gap-2">
                 <span className="text-green-400 mt-0.5">+</span>
                 <span>
                   {s.ratio >= 1.0 ? s.high : s.mid}
-                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[s.pos] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[s.pos]})</span>
+                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[s.slot] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[s.pos]})</span>
                 </span>
               </li>
             ))}
@@ -265,11 +274,11 @@ function FootballTeamAnalysis({ projection }) {
           <div className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-1.5">Weaknesses</div>
           <ul className="space-y-1.5">
             {weaknesses.map((w) => (
-              <li key={w.pos} className="text-sm text-gray-300 flex items-start gap-2">
+              <li key={w.slot} className="text-sm text-gray-300 flex items-start gap-2">
                 <span className="text-red-400 mt-0.5">−</span>
                 <span>
                   {w.weak}
-                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[w.pos] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[w.pos]})</span>
+                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[w.slot] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[w.pos]})</span>
                 </span>
               </li>
             ))}
@@ -563,7 +572,7 @@ function FootballFinalLineup({ lineup, onRestart, gameMode, projection }) {
         {FOOTBALL_POSITIONS.map((position) => {
           const pick = lineup[position];
           if (!pick) return null;
-          const posVal = projection.positionValues[pick.primaryPosition] || 0;
+          const posVal = projection.positionValues[position] || 0;
           return (
             <div key={position} className="rounded-xl border border-white/10 bg-black/20 p-3">
               <div className="flex items-center gap-2 mb-2">
