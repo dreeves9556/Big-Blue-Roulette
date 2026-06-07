@@ -12,7 +12,7 @@ function SportWrapper() {
   const [showFootball, setShowFootball] = useState(false);
 
   const unlockFootball = useCallback(() => {
-    const input = window.prompt('Enter password to unlock football mode:');
+    const input = window.prompt('');
     if (input === FOOTBALL_PASSWORD) {
       setShowFootball(true);
       setSport('football');
