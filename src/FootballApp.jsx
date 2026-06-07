@@ -285,7 +285,6 @@ function FootballTeamAnalysis({ projection }) {
                 <span className="text-green-400 mt-0.5">+</span>
                 <span>
                   {s.ratio >= 1.0 ? s.high : s.mid}
-                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[s.slot] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[s.pos]})</span>
                 </span>
               </li>
             ))}
@@ -299,7 +298,6 @@ function FootballTeamAnalysis({ projection }) {
                 <span className="text-red-400 mt-0.5">−</span>
                 <span>
                   {w.weak}
-                  <span className="text-gray-500 text-xs ml-1">({(projection.positionValues[w.slot] || 0).toFixed(1)} vs {POSITION_BENCHMARKS[w.pos]})</span>
                 </span>
               </li>
             ))}
