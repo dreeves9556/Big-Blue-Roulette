@@ -30,6 +30,13 @@ function getPlayablePositions(player, season) {
     if (!base.includes('WR2')) base.push('WR2');
     if (!base.includes('FLEX')) base.push('FLEX');
   }
+  // Matt Roark played QB in the 2011 season
+  if (player.id === 'matt_roark' && season === '2011') {
+    if (!base.includes('QB')) base.push('QB');
+    if (!base.includes('WR1')) base.push('WR1');
+    if (!base.includes('WR2')) base.push('WR2');
+    if (!base.includes('FLEX')) base.push('FLEX');
+  }
   return base;
 }
 
