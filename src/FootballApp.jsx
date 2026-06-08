@@ -39,16 +39,35 @@ function getPlayablePositions(player, season) {
   return base;
 }
 
-const ALL_FOOTBALL_ERAS = ['Pre-1980 (-79)', "80's", "90's", "00's", "10's", "20's"];
+const ALL_FOOTBALL_ERAS = [
+  'Collier (1954-1961)',
+  'Bradshaw (1962-1968)',
+  'Ray (1969-1972)',
+  'Curci (1973-1981)',
+  'Claiborne (1982-1989)',
+  'Curry (1990-1996)',
+  'Mumme (1997-2000)',
+  'Morriss (2001-2002)',
+  'Brooks (2003-2009)',
+  'Phillips (2010-2012)',
+  'Stoops (2013-2025)',
+  'Stein (2026+)',
+];
 
 function getFootballEraLabel(season) {
   const year = parseInt(season, 10);
-  if (year <= 1979) return 'Pre-1980 (-79)';
-  if (year <= 1989) return "80's";
-  if (year <= 1999) return "90's";
-  if (year <= 2009) return "00's";
-  if (year <= 2019) return "10's";
-  return "20's";
+  if (year <= 1961) return 'Collier (1954-1961)';
+  if (year <= 1968) return 'Bradshaw (1962-1968)';
+  if (year <= 1972) return 'Ray (1969-1972)';
+  if (year <= 1981) return 'Curci (1973-1981)';
+  if (year <= 1989) return 'Claiborne (1982-1989)';
+  if (year <= 1996) return 'Curry (1990-1996)';
+  if (year <= 2000) return 'Mumme (1997-2000)';
+  if (year <= 2002) return 'Morriss (2001-2002)';
+  if (year <= 2009) return 'Brooks (2003-2009)';
+  if (year <= 2012) return 'Phillips (2010-2012)';
+  if (year <= 2025) return 'Stoops (2013-2025)';
+  return 'Stein (2026+)';
 }
 
 function getBestFootballSeasonInEra(player, eraLabel) {
@@ -624,15 +643,15 @@ function FootballIntroScreen({ onStart }) {
           BIG BLUE <span className="text-blue-400">ROULETTE</span>
         </h1>
         <p className="mt-3 text-gray-400 text-sm leading-relaxed max-w-sm mx-auto">
-          Spin a random Kentucky football era, pick any player from that era,
+          Spin a random Kentucky coaching era, pick any player from that coach's tenure,
           and fill your five-man skill position lineup.
         </p>
       </div>
 
       <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-left flex flex-col gap-3">
         <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">How It Works</div>
-        <div className="text-sm text-gray-300">1. Spin the era roulette.</div>
-        <div className="text-sm text-gray-300">2. Pick any player from that era.</div>
+        <div className="text-sm text-gray-300">1. Spin the coaching era roulette.</div>
+        <div className="text-sm text-gray-300">2. Pick any player from that coach's era.</div>
         <div className="text-sm text-gray-300">3. Place him into one open position he can play.</div>
         <div className="text-sm text-gray-300">4. FLEX is a flex spot — WRs, RBs, and TEs can slot there.</div>
         <div className="text-sm text-gray-300">5. Fill all five slots to finish your lineup.</div>
@@ -726,9 +745,9 @@ function FootballPlayingScreen({
         <section className={`bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 animate-fadeIn ${mobileTab === 'lineup' ? 'hidden lg:block' : ''}`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <div className="text-xs uppercase tracking-widest text-blue-300 font-semibold">Era Roulette</div>
+              <div className="text-xs uppercase tracking-widest text-blue-300 font-semibold">Coaching Era Roulette</div>
               <div className="text-xl sm:text-2xl font-black text-white mt-1 min-h-[2.2rem]">
-                {rouletteEra ? `${rouletteEra} Wildcats` : 'Spin for an era'}
+                {rouletteEra ? `${rouletteEra} Wildcats` : 'Spin for a coach'}
               </div>
             </div>
             <button
