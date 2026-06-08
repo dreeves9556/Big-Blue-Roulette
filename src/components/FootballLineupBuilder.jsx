@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   footballPlayers,
   footballAllSeasons,
@@ -420,6 +420,13 @@ export default function FootballLineupBuilder({ onBack }) {
   const [sortKey, setSortKey] = useState('year');
   const [sortDir, setSortDir] = useState('desc');
   const [imageStatus, setImageStatus] = useState('');
+
+  useEffect(() => {
+    if (activeSlot === 'TE') {
+      setSortKey('RecYds');
+      setSortDir('desc');
+    }
+  }, [activeSlot]);
 
   const filledCount = useMemo(() => SLOTS.filter((s) => lineup[s]).length, [lineup]);
   const projection = useMemo(() => getFootballProjection(lineup), [lineup]);

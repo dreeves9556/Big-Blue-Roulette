@@ -125,12 +125,22 @@ function getStatsForDisplay(player, season) {
   const stats = footballPlayerSeasonStatsById[player.id]?.[season];
   if (!stats) return null;
   const pos = player.primaryPosition;
+
+  // Multi-position players need cross-position stats for proper sorting
+  const isMultiPosition =
+    player.id === 'randall_cobb' ||
+    (player.id === 'lynn_bowden_jr' && season === '2019') ||
+    (player.id === 'matt_roark' && season === '2011');
+
   if (pos === 'QB') {
     return {
       Cmp: stats.Cmp ?? 0, Att: stats.Att ?? 0, 'Cmp%': stats['Cmp%'] ?? 0,
       Yds: stats.Yds ?? 0, TD: stats.TD ?? 0, Int: stats.Int ?? 0,
       'Y/A': stats['Y/A'] ?? 0, Rate: stats.Rate ?? 0,
-      RushAtt: stats.RushAtt ?? 0, RushYds: stats.RushYds ?? 0, RushTD: stats.RushTD ?? 0,
+      RushAtt: stats.RushAtt ?? 0, RushYds: stats.RushYds ?? 0, RushYA: stats.RushYA ?? 0, RushTD: stats.RushTD ?? 0,
+      ...(isMultiPosition ? {
+        Rec: stats.Rec ?? 0, RecYds: stats.RecYds ?? 0, YPR: stats.YPR ?? 0, RecTD: stats.RecTD ?? 0,
+      } : {}),
     };
   }
   if (pos === 'RB') {
@@ -142,7 +152,12 @@ function getStatsForDisplay(player, season) {
   if (pos === 'WR' || pos === 'TE') {
     return {
       Rec: stats.Rec ?? 0, RecYds: stats.RecYds ?? 0, YPR: stats.YPR ?? 0, RecTD: stats.RecTD ?? 0,
-      RushAtt: stats.RushAtt ?? 0, RushYds: stats.RushYds ?? 0,
+      RushAtt: stats.RushAtt ?? 0, RushYds: stats.RushYds ?? 0, RushYA: stats.RushYA ?? 0, RushTD: stats.RushTD ?? 0,
+      ...(isMultiPosition ? {
+        Cmp: stats.Cmp ?? 0, Att: stats.Att ?? 0, 'Cmp%': stats['Cmp%'] ?? 0,
+        Yds: stats.Yds ?? 0, TD: stats.TD ?? 0, Int: stats.Int ?? 0,
+        'Y/A': stats['Y/A'] ?? 0, Rate: stats.Rate ?? 0,
+      } : {}),
     };
   }
   return stats;
