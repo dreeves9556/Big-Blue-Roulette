@@ -7,12 +7,13 @@ import {
 import { footballPlayerSeasonStatsById } from '../data/footballPlayerSeasonStats.js';
 import { Search, X, Users, RotateCcw, Download } from 'lucide-react';
 
-const SLOTS = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
+const SLOTS = ['QB', 'RB', 'WR1', 'WR2', 'TE', 'FLEX'];
 const SLOT_LABELS = {
   QB: 'Quarterback',
   RB: 'Running Back',
   WR1: 'Wide Receiver 1',
   WR2: 'Wide Receiver 2',
+  TE: 'Tight End',
   FLEX: 'Flex',
 };
 
@@ -21,11 +22,12 @@ const SLOT_COLORS = {
   RB: 'border-purple-500/40 bg-purple-500/10',
   WR1: 'border-green-500/40 bg-green-500/10',
   WR2: 'border-teal-500/40 bg-teal-500/10',
+  TE: 'border-rose-500/40 bg-rose-500/10',
   FLEX: 'border-orange-500/40 bg-orange-500/10',
 };
 
 const SLOT_ACCENT_HEX = {
-  QB: '#3b82f6', RB: '#a855f7', WR1: '#22c55e', WR2: '#14b8a6', FLEX: '#f97316',
+  QB: '#3b82f6', RB: '#a855f7', WR1: '#22c55e', WR2: '#14b8a6', TE: '#f43f5e', FLEX: '#f97316',
 };
 
 const POSITION_ORDER = { QB: 0, RB: 1, WR: 2, TE: 3 };
@@ -35,11 +37,12 @@ const SLOT_ALLOWED_POSITIONS = {
   RB: ['RB'],
   WR1: ['WR'],
   WR2: ['WR'],
+  TE: ['TE'],
   FLEX: ['WR', 'RB', 'TE'],
 };
 
-const POSITION_BENCHMARKS = { QB: 120, RB: 85, WR: 100, FLEX: 70 };
-const PERFECT_TARGET = 700;
+const POSITION_BENCHMARKS = { QB: 120, RB: 85, WR: 100, TE: 90, FLEX: 70 };
+const PERFECT_TARGET = 800;
 const TE_BONUS = 1.4;
 
 function getStatsForDisplay(player, season) {
@@ -85,7 +88,7 @@ function getPositionValue(stats, position) {
 
 function getFootballProjection(lineup) {
   const picks = SLOTS.map((pos) => lineup[pos]).filter(Boolean);
-  if (picks.length !== 5) return null;
+  if (picks.length !== 6) return null;
 
   let totalValue = 0;
   const positionValues = {};
@@ -108,7 +111,7 @@ function getFootballProjection(lineup) {
     if (wins >= 12) return { label: 'NATIONAL CHAMPIONS', color: 'text-yellow-300' };
     if (wins >= 10) return { label: 'PLAYOFF BOUND', color: 'text-green-300' };
     if (wins >= 8) return { label: 'BOWL ELIGIBLE', color: 'text-blue-300' };
-    if (wins >= 6) return { label: 'BUBBLE TEAM', color: 'text-purple-300' };
+    if (wins >= 6) return { label: 'ON THE BUBBLE', color: 'text-purple-300' };
     if (wins >= 4) return { label: 'REBUILDING', color: 'text-orange-400' };
     return { label: 'COACH ON HOT SEAT', color: 'text-red-400' };
   })();
@@ -118,7 +121,7 @@ function getFootballProjection(lineup) {
 
 function getComedyVerdict(lineup, projection) {
   const picks = SLOTS.map((pos) => lineup[pos]).filter(Boolean);
-  if (picks.length !== 5 || !projection) return null;
+  if (picks.length !== 6 || !projection) return null;
 
   for (const pick of picks) {
     const name = pick.playerName.toLowerCase();
@@ -153,13 +156,13 @@ function getComedyVerdict(lineup, projection) {
   const years = picks.map((p) => parseInt(p.season));
   const eraSpan = Math.max(...years) - Math.min(...years);
 
-  if (maxExact === 5) {
-    return { emoji: '🪞', text: `Five clones of the same ${topName} season. The locker room is just one very confused man.` };
+  if (maxExact === 6) {
+    return { emoji: '🪞', text: `Six clones of the same ${topName} season. The locker room is just one very confused man.` };
   }
   if (maxExact >= 3) {
     return { emoji: '👯', text: `${maxExact} copies of the exact same season? The NCAA compliance office just got a tip.` };
   }
-  if (maxPlayer === 5) {
+  if (maxPlayer === 6) {
     return { emoji: '🌀', text: `A ${topName} for every era. You built a multiverse, not a lineup.` };
   }
   if (maxPlayer >= 3) {
@@ -173,7 +176,7 @@ function getComedyVerdict(lineup, projection) {
   if (w >= 12) return { emoji: '🏆', text: 'Undefeated cheat code. Vegas refuses to take action on this team.' };
   if (w >= 10) return { emoji: '🔥', text: 'Playoff lock. SEC coaches are sending your film to the league office.' };
   if (w >= 8) return { emoji: '💪', text: 'Bowl eligible and dangerous. Bring the marching band.' };
-  if (w >= 6) return { emoji: '🙂', text: 'Bubble team vibes. You are one controversial targeting call away from Shreveport.' };
+  if (w >= 6) return { emoji: '🙂', text: 'On the bubble. You are one controversial targeting call away from Shreveport.' };
   if (w >= 4) return { emoji: '😬', text: 'Rebuilding year. The message boards are already calling for a new OC.' };
   return { emoji: '💀', text: 'This roster lost to Vanderbilt. Twice. Start over.' };
 }
@@ -226,7 +229,7 @@ function rr(ctx, x, y, w, h, r) {
 
 function generateFootballDreamRosterImage(lineup, projection, verdict) {
   const W = 640;
-  const H = 780;
+  const H = 880;
   const canvas = document.createElement('canvas');
   canvas.width = W * 2;
   canvas.height = H * 2;
@@ -271,7 +274,7 @@ function generateFootballDreamRosterImage(lineup, projection, verdict) {
   ctx.fillText('DREAM ROSTER', 24, 86);
   ctx.fillStyle = '#3b82f6';
   ctx.font = 'bold 14px system-ui, -apple-system, sans-serif';
-  ctx.fillText('QB / RB / 2×WR / Flex • Any season', 24, 108);
+  ctx.fillText('QB / RB / 2×WR / TE / Flex • Any season', 24, 108);
 
   ctx.textAlign = 'right';
   ctx.fillStyle = '#60a5fa';
@@ -282,9 +285,9 @@ function generateFootballDreamRosterImage(lineup, projection, verdict) {
   ctx.fillText(`${projection.tier.label} · ${projection.strength} STR`, W - 24, 110);
   ctx.textAlign = 'left';
 
-  const slots = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
-  const slotLabels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', FLEX: 'Flex' };
-  const colW = (W - 48) / 5;
+  const slots = ['QB', 'RB', 'WR1', 'WR2', 'TE', 'FLEX'];
+  const slotLabels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', TE: 'TE', FLEX: 'Flex' };
+  const colW = (W - 48) / 6;
   slots.forEach((key, i) => {
     const bx = 24 + i * colW;
     const by = 128;
@@ -374,7 +377,7 @@ function generateFootballDreamRosterImage(lineup, projection, verdict) {
   if (verdict) {
     const boxX = 24;
     const boxW = W - 48;
-    const boxY = 728;
+    const boxY = 828;
     const boxH = 38;
     ctx.fillStyle = 'rgba(59,130,246,0.12)';
     rr(ctx, boxX, boxY, boxW, boxH, 8);
@@ -619,7 +622,7 @@ export default function FootballLineupBuilder({ onBack }) {
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Dream Lineup Builder</h2>
           <p className="text-sm text-gray-400 mt-1">
-            QB, RB, two WRs, and a flex. No duplicate players. Any season.
+            QB, RB, two WRs, a TE, and a flex. No duplicate players. Any season.
           </p>
         </div>
         <button
@@ -639,7 +642,7 @@ export default function FootballLineupBuilder({ onBack }) {
                 Projected Record: <span className="text-white font-semibold">{projection.wins}-{projection.losses}</span> <span className="text-gray-500">(of 12)</span>
               </div>
               <div className="text-xs text-gray-500 mt-0.5">Strength Rating: {projection.strength}</div>
-              <div className="grid grid-cols-5 gap-1.5 mt-3">
+              <div className="grid grid-cols-6 gap-1.5 mt-3">
                 {SLOTS.map((slot) => (
                   <div key={slot} className="rounded-lg bg-black/25 border border-white/10 p-1.5 text-center">
                     <div className="text-[9px] tracking-widest text-gray-500 uppercase">{slot}</div>
@@ -656,8 +659,8 @@ export default function FootballLineupBuilder({ onBack }) {
             </div>
           ) : (
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-              <div className="text-sm text-gray-300 font-semibold">{filledCount} / 5 slots filled</div>
-              <div className="text-xs text-gray-500 mt-1">Fill all five to reveal your projected record.</div>
+              <div className="text-sm text-gray-300 font-semibold">{filledCount} / 6 slots filled</div>
+              <div className="text-xs text-gray-500 mt-1">Fill all six to reveal your projected record.</div>
             </div>
           )}
 

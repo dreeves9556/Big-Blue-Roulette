@@ -9,7 +9,7 @@ import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw, Link2, Download, Us
 import FootballLineupBuilder from './components/FootballLineupBuilder.jsx';
 import './App.css';
 
-const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, FLEX: null };
+const EMPTY_LINEUP = { QB: null, RB: null, WR1: null, WR2: null, TE: null, FLEX: null };
 
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -21,7 +21,7 @@ function getPlayablePositions(player, season) {
   if (pos === 'WR') base.push('WR1', 'WR2', 'FLEX');
   if (pos === 'QB') base.push('QB');
   if (pos === 'RB') base.push('RB', 'FLEX');
-  if (pos === 'TE') base.push('FLEX');
+  if (pos === 'TE') base.push('TE', 'FLEX');
   // Lynn Bowden Jr. played QB in the 2019 season
   if (player.id === 'lynn_bowden_jr' && season === '2019') {
     if (!base.includes('QB')) base.push('QB');
@@ -32,6 +32,12 @@ function getPlayablePositions(player, season) {
   // Matt Roark played QB in the 2011 season
   if (player.id === 'matt_roark' && season === '2011') {
     if (!base.includes('QB')) base.push('QB');
+    if (!base.includes('WR1')) base.push('WR1');
+    if (!base.includes('WR2')) base.push('WR2');
+    if (!base.includes('FLEX')) base.push('FLEX');
+  }
+  // Randall Cobb played QB and WR during his Kentucky career
+  if (player.id === 'randall_cobb') {
     if (!base.includes('WR1')) base.push('WR1');
     if (!base.includes('WR2')) base.push('WR2');
     if (!base.includes('FLEX')) base.push('FLEX');
@@ -179,11 +185,12 @@ const POSITION_COLORS = {
   RB: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
   WR1: 'bg-green-500/20 text-green-300 border-green-500/40',
   WR2: 'bg-teal-500/20 text-teal-300 border-teal-500/40',
+  TE: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
   FLEX: 'bg-orange-500/20 text-orange-300 border-orange-500/40',
 };
 
 const POSITION_COLORS_HEX = {
-  QB: '#3b82f6', RB: '#a855f7', WR1: '#22c55e', WR2: '#14b8a6', FLEX: '#f97316',
+  QB: '#3b82f6', RB: '#a855f7', WR1: '#22c55e', WR2: '#14b8a6', TE: '#f43f5e', FLEX: '#f97316',
 };
 
 function PositionBadge({ position }) {
@@ -236,10 +243,11 @@ const POSITION_BENCHMARKS = {
   QB: 132,
   RB: 94,
   WR: 110,
+  TE: 95,
   FLEX: 77,
 };
 
-const PERFECT_TARGET = 770; // requires near-elite at every position
+const PERFECT_TARGET = 880; // requires near-elite at every position
 
 function getPositionValue(stats, position) {
   if (!stats) return 0;
@@ -259,7 +267,7 @@ const TE_BONUS = 1.4;
 
 function getFootballProjection(lineup) {
   const picks = FOOTBALL_POSITIONS.map((pos) => lineup[pos]).filter(Boolean);
-  if (picks.length !== 5) return null;
+  if (picks.length !== 6) return null;
 
   let totalValue = 0;
   const positionValues = {};
@@ -286,7 +294,7 @@ function getFootballProjection(lineup) {
     if (wins >= 12) return { label: 'NATIONAL CHAMPIONS', color: 'text-yellow-300' };
     if (wins >= 10) return { label: 'PLAYOFF BOUND', color: 'text-green-300' };
     if (wins >= 8) return { label: 'BOWL ELIGIBLE', color: 'text-blue-300' };
-    if (wins >= 6) return { label: 'BUBBLE TEAM', color: 'text-purple-300' };
+    if (wins >= 6) return { label: 'ON THE BUBBLE', color: 'text-purple-300' };
     if (wins >= 4) return { label: 'REBUILDING', color: 'text-orange-400' };
     return { label: 'COACH ON HOT SEAT', color: 'text-red-400' };
   })();
@@ -362,7 +370,7 @@ function roundRectPolyfill(ctx, x, y, w, h, r) {
 
 function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   const W = 640;
-  const H = 760;
+  const H = 880;
   const canvas = document.createElement('canvas');
   canvas.width = W * 2;
   canvas.height = H * 2;
@@ -425,7 +433,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
     'NATIONAL CHAMPIONS': ['#854d0e', '#fde047'],
     'PLAYOFF BOUND': ['#14532d', '#86efac'],
     'BOWL ELIGIBLE': ['#1e3a5f', '#93c5fd'],
-    'BUBBLE TEAM': ['#3b0764', '#d8b4fe'],
+    'ON THE BUBBLE': ['#3b0764', '#d8b4fe'],
     'REBUILDING': ['#431407', '#fb923c'],
     'COACH ON HOT SEAT': ['#450a0a', '#fca5a5'],
   };
@@ -458,9 +466,9 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   ctx.fillText(`Team Strength: ${projection.strength}`, 24, 144);
 
   // Position values bar
-  const slots = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
-  const slotLabels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', FLEX: 'Flex' };
-  const colW = (W - 48) / 5;
+  const slots = ['QB', 'RB', 'WR1', 'WR2', 'TE', 'FLEX'];
+  const slotLabels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', TE: 'TE', FLEX: 'Flex' };
+  const colW = (W - 48) / 6;
   slots.forEach((key, i) => {
     const bx = 24 + i * colW;
     const by = 156;
@@ -566,10 +574,10 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
 }
 
 function FootballMetricBar({ projection }) {
-  const slots = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
-  const labels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', FLEX: 'Flex' };
+  const slots = ['QB', 'RB', 'WR1', 'WR2', 'TE', 'FLEX'];
+  const labels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', TE: 'TE', FLEX: 'Flex' };
   return (
-    <div className="grid grid-cols-5 gap-1.5">
+    <div className="grid grid-cols-6 gap-1.5">
       {slots.map((slot) => (
         <div key={slot} className="rounded-xl bg-black/25 border border-white/10 p-1.5 text-center">
           <div className="text-[9px] tracking-widest text-gray-500 uppercase">{labels[slot]}</div>
@@ -586,7 +594,8 @@ function FootballTeamAnalysis({ projection }) {
     { slot: 'RB', pos: 'RB', label: 'Ground Game', high: 'Dominant Rushing', mid: 'Adequate Rushing', weak: 'Rushing Struggles' },
     { slot: 'WR1', pos: 'WR', label: 'WR1 Threat', high: 'Explosive WR1', mid: 'Solid WR1', weak: 'WR1 Needs Work' },
     { slot: 'WR2', pos: 'WR', label: 'WR2 Threat', high: 'Explosive WR2', mid: 'Solid WR2', weak: 'WR2 Needs Work' },
-    { slot: 'FLEX', pos: 'TE', label: 'Flex Threat', high: 'Elite Flex Play', mid: 'Solid Flex', weak: 'Flex Is a Liability' },
+    { slot: 'TE', pos: 'TE', label: 'Tight End Threat', high: 'Elite TE Play', mid: 'Solid TE', weak: 'TE Needs Work' },
+    { slot: 'FLEX', pos: 'FLEX', label: 'Flex Threat', high: 'Elite Flex Play', mid: 'Solid Flex', weak: 'Flex Is a Liability' },
   ];
 
   const scored = items.map((item) => ({
@@ -644,7 +653,7 @@ function FootballIntroScreen({ onStart }) {
         </h1>
         <p className="mt-3 text-gray-400 text-sm leading-relaxed max-w-sm mx-auto">
           Spin a random Kentucky coaching era, pick any player from that coach's tenure,
-          and fill your five-man skill position lineup.
+          and fill your six-man skill position lineup.
         </p>
       </div>
 
@@ -653,8 +662,9 @@ function FootballIntroScreen({ onStart }) {
         <div className="text-sm text-gray-300">1. Spin the coaching era roulette.</div>
         <div className="text-sm text-gray-300">2. Pick any player from that coach's era.</div>
         <div className="text-sm text-gray-300">3. Place him into one open position he can play.</div>
-        <div className="text-sm text-gray-300">4. FLEX is a flex spot — WRs, RBs, and TEs can slot there.</div>
-        <div className="text-sm text-gray-300">5. Fill all five slots to finish your lineup.</div>
+        <div className="text-sm text-gray-300">4. TE is a dedicated tight end slot.</div>
+        <div className="text-sm text-gray-300">5. FLEX is a flex spot — WRs, RBs, and TEs can slot there.</div>
+        <div className="text-sm text-gray-300">6. Fill all six slots to finish your lineup.</div>
       </div>
 
       <div className="w-full flex flex-col gap-3">
@@ -737,7 +747,7 @@ function FootballPlayingScreen({
           onClick={() => setMobileTab('lineup')}
           className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all ${mobileTab === 'lineup' ? 'bg-blue-600 text-white' : 'text-gray-400'}`}
         >
-          Lineup ({FOOTBALL_POSITIONS.filter(p => lineup[p]).length}/5)
+          Lineup ({FOOTBALL_POSITIONS.filter(p => lineup[p]).length}/6)
         </button>
       </div>
 
@@ -1341,7 +1351,7 @@ export default function FootballApp({ onUnlockFootball }) {
               <span className="mr-2 text-blue-300 uppercase tracking-widest">
                 {gameMode === 'classic' ? 'Classic' : 'Ball-Knower'}
               </span>
-              Round <span className="text-white font-semibold">{roundNumber}</span> of 5
+              Round <span className="text-white font-semibold">{roundNumber}</span> of 6
             </div>
           )}
         </div>
