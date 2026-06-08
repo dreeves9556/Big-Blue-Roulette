@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import FootballApp from './FootballApp.jsx'
 
-const FOOTBALL_PASSWORD = 'Asher20!';
+const FOOTBALL_PASSWORDS = ['Asher20!', 'Gocats123'];
 
 function SportWrapper() {
   const [sport, setSport] = useState('basketball');
@@ -13,7 +13,7 @@ function SportWrapper() {
 
   const unlockFootball = useCallback(() => {
     const input = window.prompt('');
-    if (input === FOOTBALL_PASSWORD) {
+    if (FOOTBALL_PASSWORDS.includes(input)) {
       setShowFootball(true);
       setSport('football');
     } else if (input !== null) {
