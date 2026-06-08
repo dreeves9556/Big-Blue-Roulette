@@ -1464,7 +1464,7 @@ export const footballPlayers = [
     "id": "jacob_tamme",
     "fullName": "Jacob Tamme",
     "seasons": ["2004", "2005", "2006", "2007"],
-    "primaryPosition": "WR"
+    "primaryPosition": "TE"
   },
   {
     "id": "jalen_whitlow",

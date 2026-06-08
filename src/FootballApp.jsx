@@ -15,6 +15,19 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function getSlotStatPosition(pick, slot) {
+  if (pick.playerId === 'randall_cobb' && (slot === 'WR1' || slot === 'WR2' || slot === 'FLEX')) {
+    return 'WR';
+  }
+  if (pick.playerId === 'lynn_bowden_jr' && pick.season === '2019' && (slot === 'QB' || slot === 'FLEX')) {
+    return 'QB';
+  }
+  if (pick.playerId === 'matt_roark' && pick.season === '2011' && (slot === 'QB' || slot === 'FLEX')) {
+    return 'QB';
+  }
+  return pick.primaryPosition;
+}
+
 function getPlayablePositions(player, season) {
   const pos = player.primaryPosition;
   const base = [];
@@ -288,8 +301,9 @@ function getFootballProjection(lineup) {
   const positionValues = {};
 
   for (const pick of picks) {
-    let value = getPositionValue(pick.stats, pick.primaryPosition);
     const slot = Object.entries(lineup).find(([_, p]) => p === pick)?.[0];
+    const statPos = getSlotStatPosition(pick, slot);
+    let value = getPositionValue(pick.stats, statPos);
     // Boost actual TE players when they slot at TE
     if (slot === 'FLEX' && pick.primaryPosition === 'TE') {
       value *= TE_BONUS;
@@ -563,7 +577,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
       WR: [{ k: 'Rec', l: 'Rec/G' }, { k: 'RecYds', l: 'Rec Yds/G' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD/G' }],
       TE: [{ k: 'Rec', l: 'Rec/G' }, { k: 'RecYds', l: 'Rec Yds/G' }, { k: 'YPR', l: 'Y/R' }, { k: 'RecTD', l: 'Rec TD/G' }],
     };
-    const statKeys = statMap[pick.primaryPosition] || statMap.WR;
+    const statKeys = statMap[getSlotStatPosition(pick, pos)] || statMap.WR;
     const statW = (cardW - 28) / statKeys.length;
     statKeys.forEach((sk, si) => {
       const sx = cx + 14 + si * statW;
@@ -1042,9 +1056,9 @@ function FootballFinalLineup({ lineup, onRestart, onCopyShare, shareStatus, game
               <div className="text-sm font-semibold text-white">{pick.playerName}</div>
               <div className="text-xs text-gray-400 mt-1">{pick.season} &bull; {pick.primaryPosition}</div>
               {pick.stats && gameMode === 'classic' && (
-                <StatGrid stats={pick.stats} position={pick.primaryPosition} />
+                <StatGrid stats={pick.stats} position={getSlotStatPosition(pick, position)} />
               )}
-              <div className="mt-2 text-[11px] text-gray-500">Value: {posVal.toFixed(1)} vs {POSITION_BENCHMARKS[pick.primaryPosition]} benchmark</div>
+              <div className="mt-2 text-[11px] text-gray-500">Value: {posVal.toFixed(1)} vs {POSITION_BENCHMARKS[getSlotStatPosition(pick, position)]} benchmark</div>
             </div>
           );
         })}
