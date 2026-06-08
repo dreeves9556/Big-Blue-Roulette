@@ -441,21 +441,21 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   ctx.font = '12px system-ui, -apple-system, sans-serif';
   ctx.fillText('Kentucky Football Draft', 24, 58);
 
-  // Ball-Knower badge
-  if (gameMode === 'ballknower') {
-    ctx.fillStyle = '#2563eb';
-    ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
-    const badgeText = 'BALL-KNOWER';
-    const badgeW = ctx.measureText(badgeText).width + 16;
-    const badgeX = W - badgeW - 20;
-    const badgeY = 70;
-    rr(badgeX, badgeY, badgeW, 20, 4);
-    ctx.fill();
-    ctx.fillStyle = '#ffffff';
-    ctx.textAlign = 'center';
-    ctx.fillText(badgeText, badgeX + badgeW / 2, badgeY + 14);
-    ctx.textAlign = 'left';
-  }
+  // Mode badge
+  const modeBadge = gameMode === 'ballknower'
+    ? { text: 'BALL-KNOWER', color: '#2563eb' }
+    : { text: 'CLASSIC', color: '#16a34a' };
+  ctx.fillStyle = modeBadge.color;
+  ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+  const badgeW = ctx.measureText(modeBadge.text).width + 16;
+  const badgeX = W - badgeW - 20;
+  const badgeY = 70;
+  rr(badgeX, badgeY, badgeW, 20, 4);
+  ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  ctx.textAlign = 'center';
+  ctx.fillText(modeBadge.text, badgeX + badgeW / 2, badgeY + 14);
+  ctx.textAlign = 'left';
 
   // Tier badge
   const tierColors = {
@@ -1055,7 +1055,7 @@ function FootballFinalLineup({ lineup, onRestart, onCopyShare, shareStatus, game
               </div>
               <div className="text-sm font-semibold text-white">{pick.playerName}</div>
               <div className="text-xs text-gray-400 mt-1">{pick.season} &bull; {pick.primaryPosition}</div>
-              {pick.stats && gameMode === 'classic' && (
+              {pick.stats && (
                 <StatGrid stats={pick.stats} position={getSlotStatPosition(pick, position)} />
               )}
               <div className="mt-2 text-[11px] text-gray-500">Value: {posVal.toFixed(1)} vs {POSITION_BENCHMARKS[getSlotStatPosition(pick, position)]} benchmark</div>
