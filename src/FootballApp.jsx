@@ -433,13 +433,18 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   ctx.font = '13px system-ui, -apple-system, sans-serif';
   ctx.fillText('Projected Record (of 12)', 24, 124);
 
+  // Team Strength
+  ctx.fillStyle = '#3b82f6';
+  ctx.font = 'bold 14px system-ui, -apple-system, sans-serif';
+  ctx.fillText(`Team Strength: ${projection.strength}`, 24, 144);
+
   // Position values bar
   const slots = ['QB', 'RB', 'WR1', 'WR2', 'FLEX'];
   const slotLabels = { QB: 'QB', RB: 'RB', WR1: 'WR1', WR2: 'WR2', FLEX: 'Flex' };
   const colW = (W - 48) / 5;
   slots.forEach((key, i) => {
     const bx = 24 + i * colW;
-    const by = 140;
+    const by = 156;
     ctx.fillStyle = 'rgba(255,255,255,0.05)';
     rr(bx, by, colW - 6, 44, 6);
     ctx.fill();
@@ -461,8 +466,8 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   ctx.strokeStyle = 'rgba(255,255,255,0.08)';
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.moveTo(24, 200);
-  ctx.lineTo(W - 24, 200);
+  ctx.moveTo(24, 216);
+  ctx.lineTo(W - 24, 216);
   ctx.stroke();
 
   // Player cards
@@ -470,7 +475,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
     const pick = lineup[pos];
     if (!pick) return;
     const cx = 24;
-    const cy = 212 + i * 104;
+    const cy = 228 + i * 104;
     const cardH = 94;
     const cardW = W - 48;
 
