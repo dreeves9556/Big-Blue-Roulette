@@ -3,8 +3,6 @@ import {
   footballPlayers,
   FOOTBALL_POSITIONS,
   FOOTBALL_POSITION_LABELS,
-  footballAllSeasons,
-  footballSeasonPlayersMap,
 } from './data/footballPlayers.js';
 import { footballPlayerSeasonStatsById } from './data/footballPlayerSeasonStats.js';
 import { ChevronRight, Shuffle, Sparkles, Trophy, RotateCcw, Link2, Download, Users } from 'lucide-react';
@@ -39,6 +37,63 @@ function getPlayablePositions(player, season) {
     if (!base.includes('FLEX')) base.push('FLEX');
   }
   return base;
+}
+
+const ALL_FOOTBALL_ERAS = ['Pre-1980 (-79)', "80's", "90's", "00's", "10's", "20's"];
+
+function getFootballEraLabel(season) {
+  const year = parseInt(season, 10);
+  if (year <= 1979) return 'Pre-1980 (-79)';
+  if (year <= 1989) return "80's";
+  if (year <= 1999) return "90's";
+  if (year <= 2009) return "00's";
+  if (year <= 2019) return "10's";
+  return "20's";
+}
+
+function getBestFootballSeasonInEra(player, eraLabel) {
+  const seasonsInEra = player.seasons.filter((season) => getFootballEraLabel(season) === eraLabel);
+  if (seasonsInEra.length === 0) return null;
+
+  let bestSeason = seasonsInEra[0];
+  let bestStats = getStatsForDisplay(player, bestSeason);
+  let bestValue = -1;
+
+  if (bestStats) {
+    bestValue = (bestStats.Yds || 0) + (bestStats.RushYds || 0) + (bestStats.RecYds || 0);
+  }
+
+  for (let i = 1; i < seasonsInEra.length; i++) {
+    const season = seasonsInEra[i];
+    const stats = getStatsForDisplay(player, season);
+    if (stats) {
+      const value = (stats.Yds || 0) + (stats.RushYds || 0) + (stats.RecYds || 0);
+      if (value > bestValue) {
+        bestSeason = season;
+        bestStats = stats;
+        bestValue = value;
+      }
+    }
+  }
+
+  return { season: bestSeason, stats: bestStats };
+}
+
+function footballEraHasUsablePlayers(eraLabel, openPositions, draftedPlayerIds, playerIdSet) {
+  for (const player of footballPlayers) {
+    if (!playerIdSet.has(player.id)) continue;
+    if (draftedPlayerIds.has(player.id)) continue;
+    const seasonsInEra = player.seasons.filter((season) => getFootballEraLabel(season) === eraLabel);
+    if (seasonsInEra.length === 0) continue;
+    for (const season of seasonsInEra) {
+      const playable = getPlayablePositions(player, season);
+      if (!playable.some((pos) => openPositions.includes(pos))) continue;
+      if (getStatsForDisplay(player, season) !== null) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 function getStatsForDisplay(player, season) {
@@ -564,15 +619,15 @@ function FootballIntroScreen({ onStart }) {
           BIG BLUE <span className="text-blue-400">ROULETTE</span>
         </h1>
         <p className="mt-3 text-gray-400 text-sm leading-relaxed max-w-sm mx-auto">
-          Spin a random Kentucky football season, pick any player from that roster,
+          Spin a random Kentucky football era, pick any player from that era,
           and fill your five-man skill position lineup.
         </p>
       </div>
 
       <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-left flex flex-col gap-3">
         <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">How It Works</div>
-        <div className="text-sm text-gray-300">1. Spin the year roulette.</div>
-        <div className="text-sm text-gray-300">2. Pick any player on that season's roster.</div>
+        <div className="text-sm text-gray-300">1. Spin the era roulette.</div>
+        <div className="text-sm text-gray-300">2. Pick any player from that era.</div>
         <div className="text-sm text-gray-300">3. Place him into one open position he can play.</div>
         <div className="text-sm text-gray-300">4. FLEX is a flex spot — WRs, RBs, and TEs can slot there.</div>
         <div className="text-sm text-gray-300">5. Fill all five slots to finish your lineup.</div>
@@ -604,18 +659,18 @@ function FootballIntroScreen({ onStart }) {
 }
 
 function FootballPlayingScreen({
-  gameMode, rouletteSeason, currentSeason, spinning, openPositions,
+  gameMode, rouletteEra, currentEra, spinning, openPositions,
   sortMetric, sortDirection, setSortMetric, setSortDirection, sortedRoster,
   selectedPlayer, setSelectedPlayer, selectedPosition, setSelectedPosition,
   selectedPlayerOpenPositions, spinRoulette, placePlayer,
-  lineup, usedSeasons, roundNumber,
+  lineup, usedEras, roundNumber,
 }) {
   const [mobileTab, setMobileTab] = useState('draft');
   const [positionFilter, setPositionFilter] = useState(null);
 
   useEffect(() => {
     setPositionFilter(null);
-  }, [currentSeason]);
+  }, [currentEra]);
 
   useEffect(() => {
     if (positionFilter === 'QB') {
@@ -666,18 +721,18 @@ function FootballPlayingScreen({
         <section className={`bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 animate-fadeIn ${mobileTab === 'lineup' ? 'hidden lg:block' : ''}`}>
           <div className="flex items-center justify-between mb-4">
             <div>
-              <div className="text-xs uppercase tracking-widest text-blue-300 font-semibold">Year Roulette</div>
+              <div className="text-xs uppercase tracking-widest text-blue-300 font-semibold">Era Roulette</div>
               <div className="text-xl sm:text-2xl font-black text-white mt-1 min-h-[2.2rem]">
-                {rouletteSeason ? `${rouletteSeason} Wildcats` : 'Spin for a season'}
+                {rouletteEra ? `${rouletteEra} Wildcats` : 'Spin for an era'}
               </div>
             </div>
             <button
               onClick={spinRoulette}
-              disabled={spinning || openPositions.length === 0 || currentSeason}
+              disabled={spinning || openPositions.length === 0 || currentEra}
               className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-2.5 text-sm font-bold transition-all"
             >
               {spinning ? <Sparkles className="w-4 h-4 animate-pulse" /> : <Shuffle className="w-4 h-4" />}
-              {spinning ? 'Spinning...' : (currentSeason ? 'Spin New Year' : 'Spin Roulette')}
+              {spinning ? 'Spinning...' : (currentEra ? 'Spin New Era' : 'Spin Roulette')}
             </button>
           </div>
 
@@ -687,9 +742,9 @@ function FootballPlayingScreen({
             </div>
           )}
 
-          {!spinning && currentSeason && (
+          {!spinning && currentEra && (
             <>
-              <div className="mb-3 text-sm text-gray-400">Choose any player from this roster:</div>
+              <div className="mb-3 text-sm text-gray-400">Choose any player from this era:</div>
 
               <div className="mb-3 rounded-xl border border-white/10 bg-black/20 p-3 animate-fadeIn">
                 <div className="text-[11px] text-gray-500 uppercase tracking-widest mb-2">Filter By Position <span className="text-gray-600 normal-case">({filteredRoster.length} shown)</span></div>
@@ -761,7 +816,7 @@ function FootballPlayingScreen({
                     >
                       <div className="text-sm font-semibold">{player.fullName}</div>
                       <div className="mt-1 flex flex-wrap gap-1">
-                        {getPlayablePositions(player, currentSeason).map((position) => (
+                        {getPlayablePositions(player, eraSeason).map((position) => (
                           <PositionBadge key={`${player.id}-${position}`} position={position} />
                         ))}
                       </div>
@@ -787,7 +842,7 @@ function FootballPlayingScreen({
               </div>
               {gameMode === 'classic' && selectedPlayer.stats && (
                 <div className="text-[11px] text-gray-400 mt-1">
-                  {selectedPlayer.primaryPosition} &bull; {selectedPlayer.season}
+                  {selectedPlayer.primaryPosition} &bull; {selectedPlayer.eraSeason}
                 </div>
               )}
               <div className="flex flex-wrap gap-2 mt-2">
@@ -852,7 +907,7 @@ function FootballPlayingScreen({
           <div className="mt-4 text-xs text-gray-500">
             Open slots: {openPositions.length > 0 ? openPositions.join(', ') : 'None'}
           </div>
-          <div className="mt-3 text-xs text-gray-500">Drafted years: {usedSeasons.length}</div>
+          <div className="mt-3 text-xs text-gray-500">Drafted eras: {usedEras.length}</div>
 
           <button
             type="button"
@@ -1027,12 +1082,12 @@ export default function FootballApp({ onUnlockFootball }) {
   const [phase, setPhase] = useState('intro');
   const [gameMode, setGameMode] = useState('ballknower');
   const [lineup, setLineup] = useState({ ...EMPTY_LINEUP });
-  const [currentSeason, setCurrentSeason] = useState(null);
-  const [rouletteSeason, setRouletteSeason] = useState(null);
+  const [currentEra, setCurrentEra] = useState(null);
+  const [rouletteEra, setRouletteEra] = useState(null);
   const [spinning, setSpinning] = useState(false);
   const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [selectedPosition, setSelectedPosition] = useState(null);
-  const [usedSeasons, setUsedSeasons] = useState([]);
+  const [usedEras, setUsedEras] = useState([]);
   const [sortMetric, setSortMetric] = useState('name');
   const [sortDirection, setSortDirection] = useState('desc');
   const [shareStatus, setShareStatus] = useState('');
@@ -1051,8 +1106,15 @@ export default function FootballApp({ onUnlockFootball }) {
   );
 
   const roster = useMemo(
-    () => (currentSeason ? footballSeasonPlayersMap[currentSeason] || [] : []),
-    [currentSeason],
+    () => {
+      if (!currentEra) return [];
+      return footballPlayers.filter(
+        (p) =>
+          playerIdSet.has(p.id) &&
+          p.seasons.some((season) => getFootballEraLabel(season) === currentEra)
+      );
+    },
+    [currentEra, playerIdSet],
   );
 
   const roundNumber = FOOTBALL_POSITIONS.length - openPositions.length + 1;
@@ -1061,18 +1123,21 @@ export default function FootballApp({ onUnlockFootball }) {
 
   const selectedPlayerOpenPositions = useMemo(() => {
     if (!selectedPlayer) return [];
-    return getPlayablePositions(selectedPlayer, currentSeason).filter((position) => openPositions.includes(position));
-  }, [selectedPlayer, openPositions, currentSeason]);
+    return getPlayablePositions(selectedPlayer, selectedPlayer.eraSeason).filter((position) => openPositions.includes(position));
+  }, [selectedPlayer, openPositions]);
 
   const sortedRoster = useMemo(() => {
     const rows = roster
-      .filter((player) => playerIdSet.has(player.id))
       .map((player) => {
-        const stats = getStatsForDisplay(player, currentSeason);
-        const availableForPlayer = getPlayablePositions(player, currentSeason).filter((position) => openPositions.includes(position));
+        const best = getBestFootballSeasonInEra(player, currentEra);
+        const stats = best?.stats ?? null;
+        const eraSeason = best?.season ?? null;
+        const availableForPlayer = eraSeason
+          ? getPlayablePositions(player, eraSeason).filter((position) => openPositions.includes(position))
+          : [];
         const alreadyDrafted = draftedPlayerIds.has(player.id);
         const canPlace = availableForPlayer.length > 0 && !alreadyDrafted;
-        return { player, stats, availableForPlayer, alreadyDrafted, canPlace };
+        return { player, stats, eraSeason, availableForPlayer, alreadyDrafted, canPlace };
       });
 
     const activeSortMetric = gameMode === 'classic' ? sortMetric : 'name';
@@ -1086,10 +1151,8 @@ export default function FootballApp({ onUnlockFootball }) {
         const posOrder = { QB: 0, RB: 1, WR: 2, TE: 3 };
         comparison = (posOrder[a.player.primaryPosition] ?? 99) - (posOrder[b.player.primaryPosition] ?? 99);
       } else {
-        const aStats = getStatsForDisplay(a.player, currentSeason);
-        const bStats = getStatsForDisplay(b.player, currentSeason);
-        const aValue = aStats?.[activeSortMetric] ?? -Infinity;
-        const bValue = bStats?.[activeSortMetric] ?? -Infinity;
+        const aValue = a.stats?.[activeSortMetric] ?? -Infinity;
+        const bValue = b.stats?.[activeSortMetric] ?? -Infinity;
         comparison = aValue - bValue;
       }
       if (comparison === 0) {
@@ -1099,54 +1162,50 @@ export default function FootballApp({ onUnlockFootball }) {
     });
 
     return rows;
-  }, [currentSeason, draftedPlayerIds, gameMode, openPositions, playerIdSet, roster, sortDirection, sortMetric]);
+  }, [currentEra, draftedPlayerIds, gameMode, openPositions, roster, sortDirection, sortMetric]);
 
-  const seasonHasUsablePlayers = useCallback((season) => {
-    const seasonRoster = footballSeasonPlayersMap[season] || [];
-    for (const player of seasonRoster) {
-      if (!playerIdSet.has(player.id)) continue;
-      if (draftedPlayerIds.has(player.id)) continue;
-      const playable = getPlayablePositions(player, season);
-      if (!playable.some((pos) => openPositions.includes(pos))) continue;
-      return true;
-    }
-    return false;
+  const eraHasUsablePlayers = useCallback((eraLabel) => {
+    return footballEraHasUsablePlayers(eraLabel, openPositions, draftedPlayerIds, playerIdSet);
   }, [openPositions, draftedPlayerIds, playerIdSet]);
 
   const spinRoulette = useCallback(() => {
-    if (spinning || openPositions.length === 0 || currentSeason) return;
-    const unusedSeasons = footballAllSeasons.filter((season) => !usedSeasons.includes(season));
-    const allValidSeasons = [...footballAllSeasons];
-    let seasonPool = unusedSeasons.filter((season) => seasonHasUsablePlayers(season));
+    if (spinning || openPositions.length === 0 || currentEra) return;
+
+    const unusedEras = ALL_FOOTBALL_ERAS.filter((era) => !usedEras.includes(era));
+
+    let eraPool = unusedEras.filter((era) => eraHasUsablePlayers(era));
     let isFromUnused = true;
-    if (seasonPool.length === 0) {
-      seasonPool = allValidSeasons.filter((season) => seasonHasUsablePlayers(season));
+
+    if (eraPool.length === 0) {
+      eraPool = ALL_FOOTBALL_ERAS.filter((era) => eraHasUsablePlayers(era));
       isFromUnused = false;
     }
-    if (seasonPool.length === 0) {
-      seasonPool = unusedSeasons.length > 0 ? unusedSeasons : allValidSeasons;
-      isFromUnused = unusedSeasons.length > 0;
+
+    if (eraPool.length === 0) {
+      eraPool = unusedEras.length > 0 ? unusedEras : ALL_FOOTBALL_ERAS;
+      isFromUnused = unusedEras.length > 0;
     }
-    if (seasonPool.length === 0) return;
+
+    if (eraPool.length === 0) return;
 
     setSpinning(true);
-    setCurrentSeason(null);
+    setCurrentEra(null);
     setSelectedPlayer(null);
     setSelectedPosition(null);
 
     const intervalId = window.setInterval(() => {
-      setRouletteSeason(getRandom(seasonPool));
+      setRouletteEra(getRandom(eraPool));
     }, 80);
 
     window.setTimeout(() => {
       window.clearInterval(intervalId);
-      const chosenSeason = getRandom(seasonPool);
-      setRouletteSeason(chosenSeason);
-      setCurrentSeason(chosenSeason);
-      setUsedSeasons((prev) => (isFromUnused ? [...prev, chosenSeason] : [chosenSeason]));
+      const chosenEra = getRandom(eraPool);
+      setRouletteEra(chosenEra);
+      setCurrentEra(chosenEra);
+      setUsedEras((prev) => (isFromUnused ? [...prev, chosenEra] : [chosenEra]));
       setSpinning(false);
     }, 1400);
-  }, [spinning, usedSeasons, openPositions, draftedPlayerIds, playerIdSet, currentSeason, seasonHasUsablePlayers]);
+  }, [spinning, usedEras, openPositions, draftedPlayerIds, playerIdSet, currentEra, eraHasUsablePlayers]);
 
   const startGame = useCallback((mode) => {
     clearShareQueryParam();
@@ -1157,11 +1216,11 @@ export default function FootballApp({ onUnlockFootball }) {
     }
     setGameMode(mode);
     setLineup({ ...EMPTY_LINEUP });
-    setCurrentSeason(null);
-    setRouletteSeason(null);
+    setCurrentEra(null);
+    setRouletteEra(null);
     setSelectedPlayer(null);
     setSelectedPosition(null);
-    setUsedSeasons([]);
+    setUsedEras([]);
     setPhase('playing');
   }, []);
 
@@ -1216,16 +1275,16 @@ export default function FootballApp({ onUnlockFootball }) {
   }, [shareStatus]);
 
   const placePlayer = useCallback(() => {
-    if (!selectedPlayer || !selectedPosition || !currentSeason) return;
+    if (!selectedPlayer || !selectedPosition || !currentEra) return;
     if (!openPositions.includes(selectedPosition)) return;
-    const stats = getStatsForDisplay(selectedPlayer, currentSeason);
-    const playablePositions = getPlayablePositions(selectedPlayer, currentSeason);
+    const stats = getStatsForDisplay(selectedPlayer, selectedPlayer.eraSeason);
+    const playablePositions = getPlayablePositions(selectedPlayer, selectedPlayer.eraSeason);
     setLineup((prev) => ({
       ...prev,
       [selectedPosition]: {
         playerId: selectedPlayer.id,
         playerName: selectedPlayer.fullName,
-        season: currentSeason,
+        season: selectedPlayer.eraSeason,
         primaryPosition: selectedPlayer.primaryPosition,
         stats,
         playablePositions,
@@ -1233,12 +1292,12 @@ export default function FootballApp({ onUnlockFootball }) {
     }));
     setSelectedPlayer(null);
     setSelectedPosition(null);
-    setCurrentSeason(null);
-    setRouletteSeason(null);
+    setCurrentEra(null);
+    setRouletteEra(null);
     if (openPositions.length === 1) {
       window.setTimeout(() => setPhase('done'), 200);
     }
-  }, [currentSeason, openPositions, selectedPlayer, selectedPosition]);
+  }, [currentEra, openPositions, selectedPlayer, selectedPosition]);
 
   return (
     <div className="min-h-screen bg-[#0a0c14] text-white">
@@ -1270,8 +1329,8 @@ export default function FootballApp({ onUnlockFootball }) {
         {phase === 'playing' && (
           <FootballPlayingScreen
             gameMode={gameMode}
-            rouletteSeason={rouletteSeason}
-            currentSeason={currentSeason}
+            rouletteEra={rouletteEra}
+            currentEra={currentEra}
             spinning={spinning}
             openPositions={openPositions}
             sortMetric={sortMetric}
@@ -1287,7 +1346,7 @@ export default function FootballApp({ onUnlockFootball }) {
             spinRoulette={spinRoulette}
             placePlayer={placePlayer}
             lineup={lineup}
-            usedSeasons={usedSeasons}
+            usedEras={usedEras}
             roundNumber={roundNumber}
           />
         )}
