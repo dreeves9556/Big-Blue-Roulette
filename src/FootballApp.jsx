@@ -878,6 +878,9 @@ function FootballPlayingScreen({
                       }`}
                     >
                       <div className="text-sm font-semibold">{player.fullName}</div>
+                      {gameMode === 'ballknower' && eraSeason && (
+                        <div className="text-[11px] text-gray-400 mt-0.5">{eraSeason}</div>
+                      )}
                       <div className="mt-1 flex flex-wrap gap-1">
                         {getPlayablePositions(player, eraSeason).map((position) => (
                           <PositionBadge key={`${player.id}-${position}`} position={position} />
@@ -903,7 +906,7 @@ function FootballPlayingScreen({
               <div className="text-sm text-gray-300">
                 Place <span className="font-semibold text-white">{selectedPlayer.fullName}</span> at:
               </div>
-              {gameMode === 'classic' && selectedPlayer.stats && (
+              {selectedPlayer.eraSeason && (
                 <div className="text-[11px] text-gray-400 mt-1">
                   {selectedPlayer.primaryPosition} &bull; {selectedPlayer.eraSeason}
                 </div>
