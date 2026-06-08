@@ -596,7 +596,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   ctx.fillStyle = '#374151';
   ctx.font = '11px system-ui, -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('bigbluehistory.net • Kentucky Football Draft', W / 2, H - 14);
+  ctx.fillText('bigbluehistory.net • Kentucky Football Draft • @BigBlueRoulette', W / 2, H - 14);
   ctx.textAlign = 'left';
 
   return canvas;
@@ -999,7 +999,7 @@ function FootballFinalLineup({ lineup, onRestart, onCopyShare, shareStatus, game
         const shareData = {
           files: [new File([blob], 'big-blue-roulette-football.png', { type: 'image/png' })],
           title: 'Big Blue Roulette Football',
-          text: `My Kentucky football draft went ${projection.wins}-${projection.losses}! ${projection.tier.label}`,
+          text: `My Kentucky football draft went ${projection.wins}-${projection.losses}! ${projection.tier.label} @BigBlueRoulette`,
         };
         if (navigator.canShare && navigator.canShare(shareData)) {
           navigator.share(shareData).catch(() => {

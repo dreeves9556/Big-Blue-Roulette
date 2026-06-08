@@ -904,7 +904,7 @@ function generateShareImage(lineup, projection, isMattJonesMode = false, isStats
   ctx.fillStyle = '#374151';
   ctx.font = '11px system-ui, -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('bigbluehistory.net • Kentucky Wildcats Draft', W / 2, H - 14);
+  ctx.fillText('bigbluehistory.net • Kentucky Wildcats Draft • @BigBlueRoulette', W / 2, H - 14);
   ctx.textAlign = 'left';
 
   return canvas;
@@ -982,7 +982,7 @@ function FinalLineup({ lineup, projection, onRestart, onCopyShare, shareStatus, 
       const shareData = {
         files: [new File([blob], 'big-blue-roulette.png', { type: 'image/png' })],
         title: 'Big Blue Roulette',
-        text: `My Kentucky draft went ${projection.wins}-${projection.losses}! ${projection.tier.label}`,
+        text: `My Kentucky draft went ${projection.wins}-${projection.losses}! ${projection.tier.label} @BigBlueRoulette`,
       };
       if (navigator.canShare && navigator.canShare(shareData)) {
         navigator.share(shareData).catch(() => {
