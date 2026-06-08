@@ -1349,7 +1349,7 @@ function PlayingScreen({
   );
 }
 
-export default function App({ onUnlockFootball }) {
+export default function App() {
   const [phase, setPhase] = useState('intro');
   const [gameMode, setGameMode] = useState('hoopIQ');
   const [isMattJonesMode, setIsMattJonesMode] = useState(false);
@@ -1777,12 +1777,7 @@ export default function App({ onUnlockFootball }) {
           bigbluehistory.net
         </a>
         <br />
-        <button
-          onClick={onUnlockFootball}
-          className="mt-2 text-gray-500 hover:text-gray-300 transition-colors cursor-pointer bg-transparent border-0"
-        >
-          Created by Daniel Reeves
-        </button>
+        <span className="mt-2 text-gray-500">Created by Daniel Reeves</span>
         <div className="mt-4">
           <a
             href="https://www.buymeacoffee.com/danielt279y"
