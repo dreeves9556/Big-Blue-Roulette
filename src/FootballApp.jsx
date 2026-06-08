@@ -214,13 +214,13 @@ function StatGrid({ stats, position }) {
 
 // Position scoring benchmarks calibrated from dataset p90 percentiles
 const POSITION_BENCHMARKS = {
-  QB: 120,
-  RB: 85,
-  WR: 100,
-  FLEX: 70,
+  QB: 132,
+  RB: 94,
+  WR: 110,
+  FLEX: 77,
 };
 
-const PERFECT_TARGET = 700; // requires near-elite at every position
+const PERFECT_TARGET = 770; // requires near-elite at every position
 
 function getPositionValue(stats, position) {
   if (!stats) return 0;
@@ -283,8 +283,8 @@ function getFootballProjection(lineup) {
     return { position: pos, value: val, benchmark: bench, ratio };
   }).sort((a, b) => b.ratio - a.ratio);
 
-  const strengths = analysis.slice(0, 2).filter((a) => a.ratio >= 0.85);
-  const weaknesses = analysis.slice(-2).filter((a) => a.ratio <= 0.65);
+  const strengths = analysis.slice(0, 2).filter((a) => a.ratio >= 0.935);
+  const weaknesses = analysis.slice(-2).filter((a) => a.ratio <= 0.715);
 
   return {
     wins,
