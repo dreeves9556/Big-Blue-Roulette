@@ -795,14 +795,14 @@ function FootballPlayingScreen({
               )}
 
               <div className={`grid grid-cols-1 gap-2 overflow-y-auto pr-1 ${selectedPlayer ? 'max-h-[300px]' : 'max-h-[400px]'}`}>
-                {filteredRoster.map(({ player, stats, alreadyDrafted, availableForPlayer, canPlace }) => {
+                {filteredRoster.map(({ player, stats, eraSeason, alreadyDrafted, availableForPlayer, canPlace }) => {
                   const selected = selectedPlayer?.id === player.id;
                   return (
                     <button
                       key={player.id}
                       onClick={() => {
                         if (!canPlace) return;
-                        setSelectedPlayer({ ...player, stats });
+                        setSelectedPlayer({ ...player, stats, eraSeason });
                         setSelectedPosition(availableForPlayer.length === 1 ? availableForPlayer[0] : null);
                       }}
                       disabled={!canPlace}
