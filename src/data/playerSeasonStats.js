@@ -4924,7 +4924,7 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 2
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 1.5,
       "reb": 1.2,
       "ast": 0.4,
@@ -5254,7 +5254,7 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 35
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 7.8,
       "reb": 1.9,
       "ast": 2.4,
@@ -5544,7 +5544,7 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 35
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 1.9,
       "reb": 1.6,
       "ast": 0.1,
@@ -5646,7 +5646,7 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 32
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 18.9,
       "reb": 6.9,
       "ast": 2.7,
@@ -5688,7 +5688,7 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 32
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 14.2,
       "reb": 9.1,
       "ast": 1.7,
@@ -5730,7 +5730,7 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 22
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 1.8,
       "reb": 0.4,
       "ast": 0.8,
@@ -6792,7 +6792,7 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 31
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 12.2,
       "reb": 6.4,
       "ast": 0.9,
@@ -6834,7 +6834,7 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 30
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 10.7,
       "reb": 4.1,
       "ast": 4.8,
@@ -6876,7 +6876,7 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 31
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 9.8,
       "reb": 5.2,
       "ast": 1.4,
@@ -7258,7 +7258,7 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 32
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 6.6,
       "reb": 1.3,
       "ast": 2.1,
@@ -7318,7 +7318,7 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 19
     },
-    "1976-71": {
+    "1970-71": {
       "pts": 2.5,
       "reb": 1.3,
       "ast": 1.0,
@@ -7354,7 +7354,7 @@ export const playerSeasonStatsById = {
     }
   },
   "lawless_brad": {
-    "1976-71": {
+    "1970-71": {
       "pts": 0.0,
       "reb": 0.0,
       "ast": 0.0,
@@ -7372,7 +7372,7 @@ export const playerSeasonStatsById = {
     }
   },
   "williams_steve": {
-    "1976-71": {
+    "1970-71": {
       "pts": 0.0,
       "reb": 0.0,
       "ast": 0.0,

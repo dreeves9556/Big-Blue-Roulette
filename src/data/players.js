@@ -582,7 +582,7 @@ export const players = [
     "id": "lawless_brad",
     "fullName": "Brad Lawless",
     "seasons": [
-      "1976-71",
+      "1970-71",
       "1976-77"
     ],
     "primaryPosition": "SG"
@@ -1476,7 +1476,7 @@ export const players = [
     "fullName": "Dwane Casey",
     "seasons": [
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78",
       "1978-79"
@@ -1963,7 +1963,7 @@ export const players = [
     "seasons": [
       "1974-75",
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78"
     ],
@@ -2053,7 +2053,7 @@ export const players = [
     "seasons": [
       "1974-75",
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78"
     ],
@@ -2168,7 +2168,7 @@ export const players = [
     "jerseyNumber": "25",
     "fullName": "Jay Shidler",
     "seasons": [
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78",
       "1978-79",
@@ -2862,10 +2862,13 @@ export const players = [
       "1973-74",
       "1974-75",
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77"
     ],
     "primaryPosition": "PF",
+    "positionPerSeason": {
+      "1976-77": "PG"
+    },
     "height": 74
   },
   {
@@ -2924,7 +2927,7 @@ export const players = [
     "jerseyNumber": "52",
     "fullName": "Lavon Williams",
     "seasons": [
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78",
       "1978-79",
@@ -3209,7 +3212,7 @@ export const players = [
       "1973-74",
       "1974-75",
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77"
     ],
     "primaryPosition": "PF"
@@ -3281,7 +3284,7 @@ export const players = [
   },
   {
     "id": "flynn_mike",
-    "jerseyNumber": "23",
+    "jerseyNumber": "24",
     "fullName": "Mike Flynn",
     "seasons": [
       "1972-73",
@@ -3296,7 +3299,7 @@ export const players = [
     "seasons": [
       "1974-75",
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78"
     ],
@@ -3887,7 +3890,7 @@ export const players = [
     "seasons": [
       "1974-75",
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78"
     ],
@@ -4336,7 +4339,7 @@ export const players = [
     "id": "williams_steve",
     "fullName": "Steve Williams",
     "seasons": [
-      "1976-71",
+      "1970-71",
       "1976-77"
     ],
     "primaryPosition": "PG"
@@ -4440,7 +4443,7 @@ export const players = [
     "jerseyNumber": "12",
     "fullName": "Tim Stephens",
     "seasons": [
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78",
       "1978-79"
@@ -4666,7 +4669,7 @@ export const players = [
     "fullName": "Truman Claytor",
     "seasons": [
       "1975-76",
-      "1976-71",
+      "1970-71",
       "1976-77",
       "1977-78",
       "1978-79"
