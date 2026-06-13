@@ -1,5 +1,5 @@
 // Kentucky Wildcats Head Coaching Eras
-// Data sourced from bigbluehistory.net and Wikipedia
+// Data sourced from bigbluehistory.com and Wikipedia
 
 export const COACHING_ERAS = [
   {
