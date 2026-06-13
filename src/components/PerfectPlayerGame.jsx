@@ -917,35 +917,36 @@ export default function PerfectPlayerGame({ onBack }) {
             </button>
           )}
 
-          {/* Sort by Attribute */}
-          <div className="mb-3">
-            <div className="text-xs text-gray-500 uppercase mb-2">Sort by Attribute</div>
-            <div className="flex flex-wrap gap-1">
-              <button
-                onClick={() => setSortByAttribute(null)}
-                className={`px-2 py-1 text-xs font-medium rounded-lg transition-all ${
-                  sortByAttribute === null 
-                    ? 'bg-yellow-500 text-white' 
-                    : 'bg-white/10 text-gray-400 hover:bg-white/20'
-                }`}
-              >
-                Name
-              </button>
-              {ATTRIBUTES.filter(a => selections[a.key] === null).map(attr => (
+          {gameMode === 'visible' && (
+            <div className="mb-3">
+              <div className="text-xs text-gray-500 uppercase mb-2">Sort by Attribute</div>
+              <div className="flex flex-wrap gap-1">
                 <button
-                  key={attr.key}
-                  onClick={() => setSortByAttribute(attr.key)}
+                  onClick={() => setSortByAttribute(null)}
                   className={`px-2 py-1 text-xs font-medium rounded-lg transition-all ${
-                    sortByAttribute === attr.key 
+                    sortByAttribute === null 
                       ? 'bg-yellow-500 text-white' 
                       : 'bg-white/10 text-gray-400 hover:bg-white/20'
                   }`}
                 >
-                  {attr.shortLabel}
+                  Name
                 </button>
-              ))}
+                {ATTRIBUTES.filter(a => selections[a.key] === null).map(attr => (
+                  <button
+                    key={attr.key}
+                    onClick={() => setSortByAttribute(attr.key)}
+                    className={`px-2 py-1 text-xs font-medium rounded-lg transition-all ${
+                      sortByAttribute === attr.key 
+                        ? 'bg-yellow-500 text-white' 
+                        : 'bg-white/10 text-gray-400 hover:bg-white/20'
+                    }`}
+                  >
+                    {attr.shortLabel}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="max-h-64 overflow-y-auto space-y-2">
             {availablePlayers
