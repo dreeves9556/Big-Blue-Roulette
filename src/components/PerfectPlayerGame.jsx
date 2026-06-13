@@ -294,7 +294,7 @@ export default function PerfectPlayerGame({ onBack }) {
   }, [currentPlayer]);
 
   // Generate share image for Perfect Player mode
-  const generatePerfectPlayerShareImage = useCallback((score, tier) => {
+  const generatePerfectPlayerShareImage = useCallback((score, tier, isBlindMode) => {
     // FORCE 640x640 aspect ratio at 2x scale for Retina
     const width = 640;
     const height = 640;
@@ -340,6 +340,22 @@ export default function PerfectPlayerGame({ onBack }) {
     ctx.fillStyle = '#6b7280';
     ctx.font = '12px system-ui, -apple-system, sans-serif';
     ctx.fillText('KENTUCKY WILDCATS ULTIMATE BUILD', width / 2, 70);
+
+    // Blind Mode badge
+    if (isBlindMode) {
+      ctx.font = 'bold 10px system-ui, -apple-system, sans-serif';
+      const badgeText = 'STATS HIDDEN';
+      const badgeW = ctx.measureText(badgeText).width + 20;
+      const badgeX = (width - badgeW) / 2;
+      ctx.fillStyle = 'rgba(124, 58, 237, 0.2)';
+      roundRect(badgeX, 78, badgeW, 18, 9);
+      ctx.fill();
+      ctx.strokeStyle = '#7c3aed';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.fillStyle = '#c4b5fd';
+      ctx.fillText(badgeText, width / 2, 90);
+    }
 
     // 3. HERO SCORE CARD (Y: 110-230px)
     const tierStyles = {
@@ -543,7 +559,7 @@ export default function PerfectPlayerGame({ onBack }) {
   const handleShareImage = useCallback(() => {
     const score = calculatePerfectionScore();
     const tier = getTierFromScore(score);
-    const canvas = generatePerfectPlayerShareImage(score, tier);
+    const canvas = generatePerfectPlayerShareImage(score, tier, gameMode === 'hidden');
     
     canvas.toBlob((blob) => {
       if (!blob) { setImageStatus('Could not generate image.'); return; }
@@ -579,7 +595,7 @@ export default function PerfectPlayerGame({ onBack }) {
       
       setTimeout(() => setImageStatus(''), 2500);
     });
-  }, [calculatePerfectionScore, generatePerfectPlayerShareImage]);
+  }, [calculatePerfectionScore, gameMode, generatePerfectPlayerShareImage]);
 
   if (phase === PHASES.INTRO) {
     return (
