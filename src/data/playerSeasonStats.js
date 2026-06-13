@@ -6538,24 +6538,24 @@ export const playerSeasonStatsById = {
   "conner_jimmydan": {
     "1972-73": {
       "pts": 11.2,
-      "reb": 0,
-      "ast": 0,
+      "reb": 4.6,
+      "ast": 0.4,
       "stl": 0,
       "blk": 0,
       "games": 28
     },
     "1973-74": {
       "pts": 12,
-      "reb": 0,
-      "ast": 0,
+      "reb": 4.4,
+      "ast": 2.9,
       "stl": 0,
       "blk": 0,
       "games": 26
     },
     "1974-75": {
       "pts": 12.4,
-      "reb": 0,
-      "ast": 0,
+      "reb": 3.3,
+      "ast": 3.4,
       "stl": 0,
       "blk": 0,
       "games": 31
