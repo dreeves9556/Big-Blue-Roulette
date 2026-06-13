@@ -5931,7 +5931,7 @@ export const playerSeasonStatsById = {
     "1964-65": {
       "pts": 17.0,
       "reb": 4.9,
-      "ast": 0.0,
+      "ast": 3.4,
       "stl": 0.0,
       "blk": 0.0,
       "games": 25
@@ -7805,7 +7805,7 @@ export const playerSeasonStatsById = {
     "1964-65": {
       "pts": 11.8,
       "reb": 8.6,
-      "ast": 0.0,
+      "ast": 8.6,
       "stl": 0.0,
       "blk": 0.0,
       "games": 25
@@ -8127,7 +8127,7 @@ export const playerSeasonStatsById = {
     "1960-61": {
       "pts": 14.2,
       "reb": 9.5,
-      "ast": 0.0,
+      "ast": 0.9,
       "stl": 0.0,
       "blk": 0.0,
       "games": 28
