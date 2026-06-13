@@ -6807,19 +6807,19 @@ export const playerSeasonStatsById = {
   },
   "ellis_leron": {
     "1987-88": {
-      "pts": 3.5,
-      "reb": 0.8,
-      "ast": 1.5,
-      "stl": 1.9,
-      "blk": 3,
+      "pts": 4.3,
+      "reb": 3.0,
+      "ast": 0.5,
+      "stl": 0.5,
+      "blk": 0.6,
       "games": 28
     },
     "1988-89": {
-      "pts": 12.5,
-      "reb": 3.5,
-      "ast": 5.1,
-      "stl": 2.1,
-      "blk": 5.5,
+      "pts": 16.0,
+      "reb": 5.5,
+      "ast": 2.0,
+      "stl": 1.1,
+      "blk": 1.1,
       "games": 32
     }
   },
