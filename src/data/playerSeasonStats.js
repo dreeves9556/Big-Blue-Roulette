@@ -1956,14 +1956,6 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 6
     },
-    "2013-14": {
-      "pts": 0,
-      "reb": 0,
-      "ast": 0,
-      "stl": 0,
-      "blk": 0,
-      "games": 0
-    },
     "2014-15": {
       "pts": 0.4,
       "reb": 0,
@@ -4924,14 +4916,6 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 2
     },
-    "1970-71": {
-      "pts": 1.5,
-      "reb": 1.2,
-      "ast": 0.4,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 29
-    },
     "1975-76": {
       "pts": 2.3,
       "reb": 1.5,
@@ -5254,14 +5238,6 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 35
     },
-    "1970-71": {
-      "pts": 7.8,
-      "reb": 1.9,
-      "ast": 2.4,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 28
-    }
   },
   "cowan_fred": {
     "1977-78": {
@@ -5544,14 +5520,6 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 35
     },
-    "1970-71": {
-      "pts": 1.9,
-      "reb": 1.6,
-      "ast": 0.1,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 25
-    }
   },
   "gettelfinger_chris": {
     "1977-78": {
@@ -5646,14 +5614,6 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 32
     },
-    "1970-71": {
-      "pts": 18.9,
-      "reb": 6.9,
-      "ast": 2.7,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 30
-    }
   },
   "robey_rick": {
     "1974-75": {
@@ -5688,14 +5648,6 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 32
     },
-    "1970-71": {
-      "pts": 14.2,
-      "reb": 9.1,
-      "ast": 1.7,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 30
-    }
   },
   "casey_dwane": {
     "1975-76": {
@@ -5730,14 +5682,6 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 22
     },
-    "1970-71": {
-      "pts": 1.8,
-      "reb": 0.4,
-      "ast": 0.8,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 27
-    }
   },
   "grevey_kevin": {
     "1972-73": {
@@ -6792,14 +6736,6 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 31
     },
-    "1970-71": {
-      "pts": 12.2,
-      "reb": 6.4,
-      "ast": 0.9,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 28
-    }
   },
   "johnson_larry": {
     "1973-74": {
@@ -6834,14 +6770,6 @@ export const playerSeasonStatsById = {
       "blk": 0,
       "games": 30
     },
-    "1970-71": {
-      "pts": 10.7,
-      "reb": 4.1,
-      "ast": 4.8,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 30
-    }
   },
   "lee_james": {
     "1974-75": {
@@ -6876,14 +6804,6 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 31
     },
-    "1970-71": {
-      "pts": 9.8,
-      "reb": 5.2,
-      "ast": 1.4,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 30
-    }
   },
   "ellis_leron": {
     "1987-88": {
@@ -7258,14 +7178,6 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 32
     },
-    "1970-71": {
-      "pts": 6.6,
-      "reb": 1.3,
-      "ast": 2.1,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 26
-    },
     "1975-76": {
       "pts": 6.0,
       "reb": 0.9,
@@ -7318,14 +7230,6 @@ export const playerSeasonStatsById = {
       "blk": 0.0,
       "games": 19
     },
-    "1970-71": {
-      "pts": 2.5,
-      "reb": 1.3,
-      "ast": 1.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 12
-    },
     "1976-77": {
       "pts": 2.5,
       "reb": 1.3,
@@ -7354,14 +7258,6 @@ export const playerSeasonStatsById = {
     }
   },
   "lawless_brad": {
-    "1970-71": {
-      "pts": 0.0,
-      "reb": 0.0,
-      "ast": 0.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 1
-    },
     "1976-77": {
       "pts": 0.0,
       "reb": 0.0,
@@ -7372,14 +7268,6 @@ export const playerSeasonStatsById = {
     }
   },
   "williams_steve": {
-    "1970-71": {
-      "pts": 0.0,
-      "reb": 0.0,
-      "ast": 0.0,
-      "stl": 0.0,
-      "blk": 0.0,
-      "games": 1
-    },
     "1976-77": {
       "pts": 0.0,
       "reb": 0.0,
