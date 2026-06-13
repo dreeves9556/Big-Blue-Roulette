@@ -7,6 +7,7 @@ import JerseyGame from './components/JerseyGame.jsx';
 import HometownGame from './components/HometownGame.jsx';
 import TwentyQuestionsGame from './components/TwentyQuestionsGame.jsx';
 import LineupBuilder from './components/LineupBuilder.jsx';
+import PerfectPlayerGame from './components/PerfectPlayerGame.jsx';
 
 const POSITION_FLEXIBILITY = {
   PG: ['PG', 'SG'],
@@ -457,7 +458,7 @@ function SharedLineup({ payload, onStartNew }) {
   );
 }
 
-function IntroScreen({ onStart }) {
+function IntroScreen({ onStart, perfectPlayerUnlocked }) {
   return (
     <div className="w-full max-w-md mx-auto flex flex-col items-center gap-6 text-center animate-fadeIn">
       <div>
@@ -481,54 +482,76 @@ function IntroScreen({ onStart }) {
         <div className="text-sm text-gray-300">4. Fill all five slots to finish your lineup.</div>
       </div>
 
-      <div className="w-full flex flex-col gap-3">
-        <button
-          onClick={() => onStart('classic')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150 shadow-lg shadow-blue-600/30"
-        >
-          Play Classic (Stats On)
-        </button>
-        <button
-          onClick={() => onStart('hoopIQ')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-white/5 hover:bg-white/10 border border-white/15 active:scale-95 text-white font-bold rounded-xl transition-all duration-150"
-        >
-          Play HoopIQ (Stats Hidden) <ChevronRight className="w-4 h-4" />
-        </button>
-        <button
-          onClick={() => onStart('mattjones')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-red-600 hover:bg-red-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150 shadow-lg shadow-red-600/30"
-        >
-          Matt Jones Mode (No Dan Issel)
-        </button>
-        <div className="h-px bg-white/10 my-2" />
-        <button
-          onClick={() => onStart('jersey')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 active:scale-95 text-purple-200 font-bold rounded-xl transition-all duration-150"
-        >
-          <Hash className="w-4 h-4" />
-          Jersey Guesser Mini-Game
-        </button>
-        <button
-          onClick={() => onStart('hometown')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 active:scale-95 text-green-200 font-bold rounded-xl transition-all duration-150"
-        >
-          <MapPin className="w-4 h-4" />
-          Hometown Guesser Mini-Game
-        </button>
-        <button
-          onClick={() => onStart('twentyquestions')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/30 active:scale-95 text-amber-200 font-bold rounded-xl transition-all duration-150"
-        >
-          <HelpCircle className="w-4 h-4" />
-          20 Questions Mini-Game
-        </button>
-        <button
-          onClick={() => onStart('lineupbuilder')}
-          className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-teal-600/20 hover:bg-teal-600/30 border border-teal-500/30 active:scale-95 text-teal-200 font-bold rounded-xl transition-all duration-150"
-        >
-          <Users className="w-4 h-4" />
-          Dream Lineup Builder
-        </button>
+      <div className="w-full flex flex-col gap-4">
+        {/* Main Modes */}
+        <div className="flex flex-col gap-3">
+          <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Main Modes</div>
+          <button
+            onClick={() => onStart('classic')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150 shadow-lg shadow-blue-600/30"
+          >
+            Play Classic (Stats On)
+          </button>
+          <button
+            onClick={() => onStart('hoopIQ')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-white/5 hover:bg-white/10 border border-white/15 active:scale-95 text-white font-bold rounded-xl transition-all duration-150"
+          >
+            Play HoopIQ (Stats Hidden) <ChevronRight className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => onStart('mattjones')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-red-600 hover:bg-red-500 active:scale-95 text-white font-bold rounded-xl transition-all duration-150 shadow-lg shadow-red-600/30"
+          >
+            Matt Jones Mode (No Dan Issel)
+          </button>
+        </div>
+
+        {perfectPlayerUnlocked && (
+          <div className="flex flex-col gap-3 animate-fadeIn">
+            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Perfect Player</div>
+            <button
+              onClick={() => onStart('perfectplayer')}
+              className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-yellow-600/20 hover:bg-yellow-600/30 border border-yellow-500/30 active:scale-95 text-yellow-200 font-bold rounded-xl transition-all duration-150"
+            >
+              <Trophy className="w-4 h-4" />
+              Perfect Player
+            </button>
+          </div>
+        )}
+
+        {/* Mini Games */}
+        <div className="flex flex-col gap-3">
+          <div className="text-xs font-bold text-gray-500 uppercase tracking-widest">Mini Games</div>
+          <button
+            onClick={() => onStart('jersey')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 active:scale-95 text-purple-200 font-bold rounded-xl transition-all duration-150"
+          >
+            <Hash className="w-4 h-4" />
+            Jersey Guesser
+          </button>
+          <button
+            onClick={() => onStart('hometown')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 active:scale-95 text-green-200 font-bold rounded-xl transition-all duration-150"
+          >
+            <MapPin className="w-4 h-4" />
+            Hometown Guesser
+          </button>
+          <button
+            onClick={() => onStart('twentyquestions')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-amber-600/20 hover:bg-amber-600/30 border border-amber-500/30 active:scale-95 text-amber-200 font-bold rounded-xl transition-all duration-150"
+          >
+            <HelpCircle className="w-4 h-4" />
+            20 Questions
+          </button>
+          <button
+            onClick={() => onStart('lineupbuilder')}
+            className="flex items-center justify-center gap-2 w-full py-3.5 px-6 bg-teal-600/20 hover:bg-teal-600/30 border border-teal-500/30 active:scale-95 text-teal-200 font-bold rounded-xl transition-all duration-150"
+          >
+            <Users className="w-4 h-4" />
+            Dream Lineup Builder
+          </button>
+        </div>
+
         <div className="h-px bg-white/10 my-2" />
         <button
           onClick={() => onStart('howitworks')}
@@ -1365,6 +1388,9 @@ export default function App() {
   const [sharedPayload, setSharedPayload] = useState(null);
   const [sortMetric, setSortMetric] = useState('pts');
   const [sortDirection, setSortDirection] = useState('desc');
+  const [perfectPlayerUnlocked, setPerfectPlayerUnlocked] = useState(false);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
 
   const playerIdSet = useMemo(
     () => new Set(players.map((player) => player.id)),
@@ -1573,6 +1599,11 @@ export default function App() {
       return;
     }
 
+    if (mode === 'perfectplayer') {
+      setPhase('perfectplayer');
+      return;
+    }
+
     if (mode === 'howitworks') {
       setPhase('howitworks');
       return;
@@ -1708,7 +1739,7 @@ export default function App() {
       </header>
 
       <main className="max-w-4xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
-        {phase === 'intro' && <IntroScreen onStart={startGame} />}
+        {phase === 'intro' && <IntroScreen onStart={startGame} perfectPlayerUnlocked={perfectPlayerUnlocked} />}
 
         {phase === 'jersey' && <JerseyGame onBack={() => setPhase('intro')} />}
 
@@ -1717,6 +1748,8 @@ export default function App() {
         {phase === 'twentyquestions' && <TwentyQuestionsGame onBack={() => setPhase('intro')} />}
 
         {phase === 'lineupbuilder' && <LineupBuilder onBack={() => setPhase('intro')} />}
+
+        {phase === 'perfectplayer' && <PerfectPlayerGame onBack={() => setPhase('intro')} />}
 
         {phase === 'howitworks' && <HowItWorks onBack={() => setPhase('intro')} />}
 
@@ -1777,7 +1810,12 @@ export default function App() {
           bigbluehistory.net
         </a>
         <br />
-        <span className="mt-2 text-gray-500">Created by Daniel Reeves</span>
+        <span
+          className="mt-2 text-gray-500 cursor-default select-none"
+          onClick={() => setShowPasswordModal(true)}
+        >
+          Created by Daniel Reeves
+        </span>
         <div className="mt-4">
           <a
             href="https://www.buymeacoffee.com/danielt279y"
@@ -1789,6 +1827,58 @@ export default function App() {
           </a>
         </div>
       </footer>
+
+      {/* Password Modal */}
+      {showPasswordModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="bg-[#0a0c14] border border-white/15 rounded-2xl p-6 w-full max-w-sm mx-4 shadow-2xl">
+            <h3 className="text-lg font-bold text-white mb-2">Enter Password</h3>
+            <p className="text-sm text-gray-400 mb-4">This area is restricted.</p>
+            <input
+              type="text"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  if (passwordInput === 'gocats123') {
+                    setPerfectPlayerUnlocked(true);
+                    setShowPasswordModal(false);
+                    setPasswordInput('');
+                  } else {
+                    setPasswordInput('');
+                  }
+                }
+              }}
+              placeholder="Password"
+              className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-all"
+              autoFocus
+            />
+            <div className="flex gap-3 mt-4">
+              <button
+                onClick={() => {
+                  if (passwordInput === 'gocats123') {
+                    setPerfectPlayerUnlocked(true);
+                  }
+                  setShowPasswordModal(false);
+                  setPasswordInput('');
+                }}
+                className="flex-1 py-2.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all"
+              >
+                Unlock
+              </button>
+              <button
+                onClick={() => {
+                  setShowPasswordModal(false);
+                  setPasswordInput('');
+                }}
+                className="flex-1 py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-white/15 text-gray-300 font-semibold rounded-xl transition-all"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
