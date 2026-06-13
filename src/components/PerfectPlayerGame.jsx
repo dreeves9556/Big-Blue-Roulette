@@ -976,6 +976,13 @@ export default function PerfectPlayerGame({ onBack }) {
                       ))}
                     </div>
                   )}
+                  {gameMode === 'hidden' && sortByAttribute && (
+                    <div className="mt-2">
+                      <span className="text-[10px] px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-300">
+                        Sorted by {ATTRIBUTES.find(a => a.key === sortByAttribute)?.shortLabel}
+                      </span>
+                    </div>
+                  )}
                 </button>
               ))}
           </div>
