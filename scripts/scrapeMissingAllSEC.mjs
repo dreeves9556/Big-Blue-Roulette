@@ -19,7 +19,7 @@ const missingAllSEC = [
   { id: 'miller_derrick', fullName: 'Derrick Miller', position: 'G' }
 ];
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 const roundToTenths = (value) => Math.round(value * 10) / 10;
 
 const fetchText = async (url) => {
@@ -170,7 +170,7 @@ const main = async () => {
   
   // Write updated players.js
   const playersOutput = `// Kentucky Wildcats Basketball Player Dataset
-// Source: bigbluehistory.net/bb/statistics/
+// Source: bigbluehistory.com/bb/statistics/
 // Every player from every roster page scraped from the site.
 // Positions: PG, SG, SF, PF, C
 

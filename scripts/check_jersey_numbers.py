@@ -1,6 +1,6 @@
 import re, json, urllib.request
 
-url = 'http://www.bigbluehistory.net/bb/statistics/playersjersey.html'
+url = 'http://www.bigbluehistory.com/bb/statistics/playersjersey.html'
 html = urllib.request.urlopen(url).read().decode('utf-8', errors='ignore')
 
 from_page = {}

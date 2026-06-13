@@ -19,7 +19,7 @@ const playersToFix = [
   'tsioropoulos_lou', 'linville_shelby', 'watson_bobby'
 ];
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 const roundToTenths = (value) => Math.round(value * 10) / 10;
 
 const fetchText = async (url) => {

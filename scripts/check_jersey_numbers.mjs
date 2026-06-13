@@ -4,7 +4,7 @@ import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const resp = await fetch('http://www.bigbluehistory.net/bb/statistics/playersjersey.html');
+const resp = await fetch('http://www.bigbluehistory.com/bb/statistics/playersjersey.html');
 const html = await resp.text();
 
 // Parse all player entries from HTML: number sections + player links

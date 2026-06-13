@@ -1,4 +1,4 @@
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 
 const players = [
   'Bird_Jerry', 'Burrow_Bob', 'Evans_Billy', 'Cohen_Sid', 'Tsioropoulos_Lou'

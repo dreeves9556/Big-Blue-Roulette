@@ -596,7 +596,7 @@ function generateFootballShareImage(lineup, projection, gameMode = 'classic') {
   ctx.fillStyle = '#374151';
   ctx.font = '11px system-ui, -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('bigbluehistory.net • Kentucky Football Draft • @BigBlueRoulette', W / 2, H - 14);
+  ctx.fillText('bigbluehistory.com • Kentucky Football Draft • @BigBlueRoulette', W / 2, H - 14);
   ctx.textAlign = 'left';
 
   return canvas;

@@ -144,7 +144,7 @@ Major discrepancies found between current app data and Sports-Reference official
 
 ## Root Cause Analysis
 
-The discrepancies suggest the data was sourced from **Big Blue History** (bigbluehistory.net), which has different stat calculations than Sports-Reference. The key differences:
+The discrepancies suggest the data was sourced from **Big Blue History** (bigbluehistory.com), which has different stat calculations than Sports-Reference. The key differences:
 
 1. **Games played** - Different sources count games differently (conference only vs all games)
 2. **Rebounding** - Significant variances (possibly team rebounds vs individual)

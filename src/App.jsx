@@ -927,7 +927,7 @@ function generateShareImage(lineup, projection, isMattJonesMode = false, isStats
   ctx.fillStyle = '#374151';
   ctx.font = '11px system-ui, -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('bigbluehistory.net • Kentucky Wildcats Draft • @BigBlueRoulette', W / 2, H - 14);
+  ctx.fillText('bigbluehistory.com • Kentucky Wildcats Draft • @BigBlueRoulette', W / 2, H - 14);
   ctx.textAlign = 'left';
 
   return canvas;
@@ -1802,12 +1802,12 @@ export default function App() {
       <footer className="mt-8 pb-8 text-center text-xs text-gray-600">
         Data sourced from{' '}
         <a
-          href="http://www.bigbluehistory.net/bb/statistics/"
+          href="http://www.bigbluehistory.com/bb/statistics/"
           target="_blank"
           rel="noreferrer"
           className="text-blue-500 hover:text-blue-400 underline"
         >
-          bigbluehistory.net
+          bigbluehistory.com
         </a>
         <br />
         <span

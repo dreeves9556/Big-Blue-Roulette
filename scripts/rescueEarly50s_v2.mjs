@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import { playerSeasonStatsById } from '../src/data/playerSeasonStats.js';
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 
 const TARGETS = [
   { id: 'bird_jerry', name: 'Jerry Bird' },

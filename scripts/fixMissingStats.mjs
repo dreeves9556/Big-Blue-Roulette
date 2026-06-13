@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import { players } from '../src/data/players.js';
 import { playerSeasonStatsById } from '../src/data/playerSeasonStats.js';
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 
 // Find missing players
 const missingPlayers = players.filter(p => {

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import vm from 'vm';
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 
 function evalJsExport(filePath, varName) {
   const text = fs.readFileSync(filePath, 'utf8');

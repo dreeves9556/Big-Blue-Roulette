@@ -1,5 +1,5 @@
 // Comprehensive hometown data for Kentucky basketball players
-// Sourced from bigbluehistory.net + manual additions
+// Sourced from bigbluehistory.com + manual additions
 // Total players: 365
 
 export const HOMETOWN_DATA = {

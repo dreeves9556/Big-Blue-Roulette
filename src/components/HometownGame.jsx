@@ -269,7 +269,7 @@ function HometownGame({ onBack }) {
         </div>
 
         <div className="text-xs text-gray-500 text-center max-w-sm">
-          Hometown data sourced from bigbluehistory.net
+          Hometown data sourced from bigbluehistory.com
         </div>
 
         <button onClick={onBack} className="text-gray-400 hover:text-white text-sm transition-colors">

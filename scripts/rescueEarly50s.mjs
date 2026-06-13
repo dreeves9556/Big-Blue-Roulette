@@ -10,7 +10,7 @@ const TARGETS = [
   { id: 'tsioropoulos_lou', name: 'Lou Tsioropoulos', seasons: ['1952-53'] },
 ];
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 const roundToTenths = (value) => Math.round(value * 10) / 10;

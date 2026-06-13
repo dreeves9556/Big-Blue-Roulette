@@ -27,7 +27,7 @@ function buildBigBlueHistoryUrl(player) {
   const lastName = nameParts[nameParts.length - 1];
   const firstName = nameParts.slice(0, -1).join(' ');
   
-  return `http://www.bigbluehistory.net/bb/statistics/Players/${lastName}_${firstName}.html`;
+  return `http://www.bigbluehistory.com/bb/statistics/Players/${lastName}_${firstName}.html`;
 }
 
 // Scrape hometown from BigBlueHistory page

@@ -1,5 +1,5 @@
 // Kentucky Wildcats Basketball Player Dataset
-// Source: bigbluehistory.net/bb/statistics/
+// Source: bigbluehistory.com/bb/statistics/
 // Every player from every roster page scraped from the site.
 // Positions: PG, SG, SF, PF, C
 

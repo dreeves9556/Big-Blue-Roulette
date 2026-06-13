@@ -1,8 +1,8 @@
 import fs from 'fs/promises';
 import { players } from '../src/data/players.js';
 
-const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.net/bb/statistics/Players';
-const PLAYERS_INDEX_HTML_URL = 'http://www.bigbluehistory.net/bb/statistics/players.html';
+const PLAYER_PAGE_BASE = 'http://www.bigbluehistory.com/bb/statistics/Players';
+const PLAYERS_INDEX_HTML_URL = 'http://www.bigbluehistory.com/bb/statistics/players.html';
 
 const normalizeName = (value) => value
   .normalize('NFD')
