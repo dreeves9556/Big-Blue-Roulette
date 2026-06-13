@@ -839,26 +839,31 @@ export default function PerfectPlayerGame({ onBack }) {
         </div>
       </div>
 
-      <div className="w-full bg-white/5 rounded-full h-2 overflow-hidden">
-        <div 
-          className="h-full bg-gradient-to-r from-blue-500 to-yellow-500 transition-all duration-500"
-          style={{ width: `${completionPercentage}%` }}
-        />
-      </div>
+      {gameMode === 'visible' && (
+        <div className="w-full bg-white/5 rounded-full h-2 overflow-hidden">
+          <div 
+            className="h-full bg-gradient-to-r from-blue-500 to-yellow-500 transition-all duration-500"
+            style={{ width: `${completionPercentage}%` }}
+          />
+        </div>
+      )}
 
       <div className="w-full bg-white/5 border border-white/10 rounded-2xl p-4">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-sm font-bold text-white uppercase tracking-wider">Your Player So Far</h3>
-          <span className="text-xs text-yellow-400 font-medium">{completionPercentage}% Complete</span>
+          {gameMode === 'visible' && (
+            <span className="text-xs text-yellow-400 font-medium">{completionPercentage}% Complete</span>
+          )}
         </div>
         <div className="grid grid-cols-4 gap-2">
           {ATTRIBUTES.map(attr => {
-            const value = selections[attr.key]?.value;
+            const selection = selections[attr.key];
+            const isFilled = selection !== null;
             return (
-              <div key={attr.key} className={`text-center p-2 rounded-lg ${value ? 'bg-blue-500/20 border border-blue-500/30' : 'bg-white/5'}`}>
+              <div key={attr.key} className={`text-center p-2 rounded-lg ${isFilled ? 'bg-blue-500/20 border border-blue-500/30' : 'bg-white/5'}`}>
                 <div className="text-[10px] text-gray-500 uppercase">{attr.shortLabel}</div>
-                <div className={`text-sm font-bold ${value ? 'text-white' : 'text-gray-600'}`}>
-                  {formatStat(value)}
+                <div className={`text-sm font-bold ${isFilled ? 'text-white' : 'text-gray-600'}`}>
+                  {gameMode === 'visible' ? formatStat(selection?.value) : (isFilled ? '?' : '-')}
                 </div>
               </div>
             );
@@ -871,7 +876,7 @@ export default function PerfectPlayerGame({ onBack }) {
           <div className="w-full bg-gradient-to-b from-white/10 to-white/5 border-2 border-white/20 rounded-2xl p-8 text-center">
             <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Kentucky Season Roulette</div>
             <div className={`text-4xl font-black text-white transition-all ${spinning ? 'animate-pulse' : ''}`}>
-              {rouletteSeason || '---'}
+              {rouletteSeason || (spinning ? '' : '---')}
             </div>
           </div>
 
@@ -976,13 +981,6 @@ export default function PerfectPlayerGame({ onBack }) {
                       ))}
                     </div>
                   )}
-                  {gameMode === 'hidden' && sortByAttribute && (
-                    <div className="mt-2">
-                      <span className="text-[10px] px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-300">
-                        Sorted by {ATTRIBUTES.find(a => a.key === sortByAttribute)?.shortLabel}
-                      </span>
-                    </div>
-                  )}
                 </button>
               ))}
           </div>
@@ -1046,18 +1044,24 @@ export default function PerfectPlayerGame({ onBack }) {
                   disabled={isFilled}
                   className={`p-3 rounded-xl text-left transition-all ${
                     isFilled 
-                      ? 'bg-green-900/30 border border-green-700/50 cursor-not-allowed' 
+                      ? 'bg-white/5 border border-white/10 cursor-not-allowed' 
                       : 'bg-white/10 hover:bg-white/20 border border-white/20 active:scale-95'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-400">{attr.shortLabel}</span>
-                    {isFilled && <span className="text-xs text-green-400">✓</span>}
+                    {isFilled && gameMode === 'visible' && <span className="text-xs text-green-400">✓</span>}
                   </div>
-                  <div className={`text-lg font-bold ${getStatColor(value, perfect)}`}>
-                    {formatStat(value, attr.key)}
-                  </div>
-                  {!isFilled && perfect > 0 && (
+                  {gameMode === 'visible' ? (
+                    <div className={`text-lg font-bold ${getStatColor(value, perfect)}`}>
+                      {formatStat(value, attr.key)}
+                    </div>
+                  ) : (
+                    <div className="text-lg font-bold text-gray-500">
+                      {isFilled ? '?' : 'Select'}
+                    </div>
+                  )}
+                  {gameMode === 'visible' && !isFilled && perfect > 0 && (
                     <div className="w-full bg-white/10 rounded-full h-1 mt-2">
                       <div 
                         className="h-full bg-blue-400 rounded-full"
