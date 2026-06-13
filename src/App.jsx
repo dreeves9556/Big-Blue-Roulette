@@ -1840,7 +1840,7 @@ export default function App() {
               onChange={(e) => setPasswordInput(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
-                  if (passwordInput === 'gocats123') {
+                  if (passwordInput === 'gocats123' || passwordInput === 'Gocats123') {
                     setPerfectPlayerUnlocked(true);
                     setShowPasswordModal(false);
                     setPasswordInput('');
@@ -1856,7 +1856,7 @@ export default function App() {
             <div className="flex gap-3 mt-4">
               <button
                 onClick={() => {
-                  if (passwordInput === 'gocats123') {
+                  if (passwordInput === 'gocats123' || passwordInput === 'Gocats123') {
                     setPerfectPlayerUnlocked(true);
                   }
                   setShowPasswordModal(false);
