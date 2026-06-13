@@ -1388,9 +1388,7 @@ export default function App() {
   const [sharedPayload, setSharedPayload] = useState(null);
   const [sortMetric, setSortMetric] = useState('pts');
   const [sortDirection, setSortDirection] = useState('desc');
-  const [perfectPlayerUnlocked, setPerfectPlayerUnlocked] = useState(false);
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const [passwordInput, setPasswordInput] = useState('');
+  const [perfectPlayerUnlocked] = useState(true);
 
   const playerIdSet = useMemo(
     () => new Set(players.map((player) => player.id)),
@@ -1810,10 +1808,7 @@ export default function App() {
           bigbluehistory.com
         </a>
         <br />
-        <span
-          className="mt-2 text-gray-500 cursor-default select-none"
-          onClick={() => setShowPasswordModal(true)}
-        >
+        <span className="mt-2 text-gray-500 cursor-default select-none">
           Created by Daniel Reeves
         </span>
         <div className="mt-4">
@@ -1828,57 +1823,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Password Modal */}
-      {showPasswordModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm">
-          <div className="bg-[#0a0c14] border border-white/15 rounded-2xl p-6 w-full max-w-sm mx-4 shadow-2xl">
-            <h3 className="text-lg font-bold text-white mb-2">Enter Password</h3>
-            <p className="text-sm text-gray-400 mb-4">This area is restricted.</p>
-            <input
-              type="text"
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  if (passwordInput === 'gocats123' || passwordInput === 'Gocats123') {
-                    setPerfectPlayerUnlocked(true);
-                    setShowPasswordModal(false);
-                    setPasswordInput('');
-                  } else {
-                    setPasswordInput('');
-                  }
-                }
-              }}
-              placeholder="Password"
-              className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-all"
-              autoFocus
-            />
-            <div className="flex gap-3 mt-4">
-              <button
-                onClick={() => {
-                  if (passwordInput === 'gocats123' || passwordInput === 'Gocats123') {
-                    setPerfectPlayerUnlocked(true);
-                  }
-                  setShowPasswordModal(false);
-                  setPasswordInput('');
-                }}
-                className="flex-1 py-2.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all"
-              >
-                Unlock
-              </button>
-              <button
-                onClick={() => {
-                  setShowPasswordModal(false);
-                  setPasswordInput('');
-                }}
-                className="flex-1 py-2.5 px-4 bg-white/5 hover:bg-white/10 border border-white/15 text-gray-300 font-semibold rounded-xl transition-all"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
